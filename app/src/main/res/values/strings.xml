@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">sogongsogong</string>
+
+    <string name="privacy">개인정보처리방침</string>
+    <string name="privacyInfo">개인 정보 제3자 제공에 동의합니다.</string>
+
+    <string name="user">익명</string>
+    <string name="date"> </string>
+    <string name="title"> </string>
+    <string name="body"> </string>
+    <string name="count">0</string>
 </resources>
