@@ -4,24 +4,24 @@ import java.io.Serializable
 
 data class PostList (
     val success: String,
-    val data: ArrayList<Post>
+    val data: MutableList<String>
 ): Serializable
 
 data class PostDetail (
     val success: String,
-    val data: ArrayList<Post>,
-    val imagepath: ArrayList<String>
+    val data: MutableList<String>,
+    val imagePath: ArrayList<String>
 ): Serializable
 
 data class Post (
-    val board_id: Int,
+    val boardId: Int,
     val title: String,
     val body: String,
-    val user_id: String,
+    val userId: String,
     val regdate: String,
     val type: String,
     val goodCount: Int,
-    val CommentCount: Int,
+    val commentCount: Int,
     val scrapCount: Int,
     val goodCheck: String,
     val scrapCheck: String,

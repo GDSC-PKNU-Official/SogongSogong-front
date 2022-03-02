@@ -4,19 +4,19 @@ import java.io.Serializable
 
 data class NotiList(
     val success: String,
-    val data: ArrayList<Noti>
+    val data: MutableList<String>
 ): Serializable
 
 data class NotiPost(
     val title: String,
     val body: String,
-    val board_id: Int
+    val boardId: Int
 ): Serializable
 
 data class Noti (
     val title: String,
     val body: String,
-    val board_id: Int,
+    val boardId: Int,
     val type: String,
-    val regdate: String
+    val regDate: String
 ): Serializable
