@@ -224,7 +224,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:background="@null"
-            android:hint="댓글을 입력해 주세요"
+            android:hint="@string/boardWrite"
             android:inputType="textMultiLine"
             android:maxLines="3"
             android:padding="16dp"

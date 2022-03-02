@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="내 정보 수정"
+            android:text="@string/correctionInfo"
             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
             android:textColor="@color/black"
             android:textStyle="bold" />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="ID"
+            android:text="@string/ID"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
@@ -60,7 +60,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="이름"
+            android:text="@string/userName"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
@@ -80,7 +80,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="전화번호"
+            android:text="@string/userPhoneNum"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
@@ -100,7 +100,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="생년월일"
+            android:text="@string/userBirth"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
@@ -120,7 +120,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="사업자번호"
+            android:text="@string/userBusinessNum"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText
@@ -140,7 +140,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
             android:textColor="@color/black"
-            android:text="이메일"
+            android:text="@string/userEmail"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <EditText

@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/round_border"
-            android:hint="아이디"
+            android:hint="@string/ID"
             android:inputType="text"
             android:padding="14dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/round_border"
-            android:hint="비밀번호"
+            android:hint="@string/PW"
             android:inputType="textPassword"
             android:padding="14dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -71,7 +71,7 @@
             android:layout_marginTop="24dp"
             android:background="@drawable/shape_btn"
             android:padding="10dp"
-            android:text="로그인"
+            android:text="@string/login"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -84,7 +84,7 @@
             android:layout_marginTop="24dp"
             android:clickable="true"
             android:focusable="true"
-            android:text="비밀번호 찾기" />
+            android:text="@string/findPW" />
     </LinearLayout>
 
     <LinearLayout
@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:text="아직 회원이 아니시라면?"
+            android:text="@string/firstUser"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <TextView
@@ -112,7 +112,7 @@
             android:layout_marginStart="6dp"
             android:clickable="true"
             android:focusable="true"
-            android:text="회원가입"
+            android:text="@string/signUp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/main_color"
             android:textStyle="bold" />

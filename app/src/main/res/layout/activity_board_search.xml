@@ -26,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="1dp"
             android:layout_marginRight="1dp"
-            app:mt_placeholder="검색어를 입력해 주세요"
-            app:mt_hint="검색어를 입력해 주세요"
+            app:mt_placeholder="@string/enterSearchWord"
+            app:mt_hint="@string/enterSearchWord"
             android:background="@drawable/shape_post"
             app:mt_speechMode="false" />
     </LinearLayout>

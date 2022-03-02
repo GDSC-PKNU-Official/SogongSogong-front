@@ -42,7 +42,7 @@
                 android:id="@+id/SignUpIdTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="아이디"
+                android:text="@string/ID"
                 android:textColor="@color/black"
                 android:layout_marginStart="4dp"/>
 
@@ -59,7 +59,7 @@
                     android:layout_weight="3"
                     android:background="@drawable/shape_post"
                     android:ems="10"
-                    android:hint="아이디"
+                    android:hint="@string/ID"
                     android:inputType="text"
                     android:padding="10dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -70,7 +70,7 @@
                     android:layout_height="40sp"
                     android:layout_marginStart="4dp"
                     android:background="@drawable/ok_btn"
-                    android:text="중복확인"
+                    android:text="@string/checkSame"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -81,7 +81,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="비밀번호"
+                android:text="@string/PW"
                 android:textColor="@color/black"
                 android:layout_marginStart="4dp"/>
 
@@ -90,7 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape_post"
-                android:hint="비밀번호"
+                android:hint="@string/PW"
                 android:inputType="text|textPassword"
                 android:padding="10dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
@@ -101,14 +101,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="비밀번호 확인"
+                android:text="@string/checkPW"
                 android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/SignUpPassWordCheckEditTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="비밀번호 확인"
+                android:hint="@string/checkPW"
                 android:inputType="text|textPassword"
                 android:background="@drawable/shape_post"
                 android:padding="10dp"
@@ -120,14 +120,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="이름"
+                android:text="@string/userName"
                 android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/SignUpNameEditTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="이름"
+                android:hint="@string/userName"
                 android:inputType="text"
                 android:background="@drawable/shape_post"
                 android:padding="10dp"
@@ -139,14 +139,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="생년월일"
+                android:text="@string/userBirth"
                 android:textColor="@color/black" />
 
             <EditText
                 android:id="@+id/SignUpBirthEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="생년월일 8자리 ex) 20210101"
+                android:hint="생년월일 8자리 ex) 20220101"
                 android:inputType="number"
                 android:background="@drawable/shape_post"
                 android:padding="10dp"
@@ -158,7 +158,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="사업자번호"
+                android:text="@string/userBusinessNum"
                 android:textColor="@color/black" />
 
             <LinearLayout
@@ -186,7 +186,7 @@
                     android:layout_marginStart="4dp"
                     android:background="@drawable/ok_btn"
                     android:ems="1"
-                    android:text="인증"
+                    android:text="@string/prove"
                     android:textColor="@color/black"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </LinearLayout>
@@ -197,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="전화번호"
+                android:text="@string/userPhoneNum"
                 android:textColor="@color/black" />
 
             <EditText
@@ -216,7 +216,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginStart="4dp"
-                android:text="이메일"
+                android:text="@string/userEmail"
                 android:textColor="@color/black" />
 
             <EditText
@@ -284,7 +284,7 @@
         android:layout_marginBottom="8dp"
         android:background="@drawable/shape_btn"
         android:padding="10dp"
-        android:text="회원가입하기"
+        android:text="@string/signUp"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@color/white"
         android:textStyle="bold"
