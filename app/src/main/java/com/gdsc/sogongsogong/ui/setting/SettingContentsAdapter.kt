@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import com.gdsc.sogongsogong.databinding.ItemSettingContentsBinding
-import com.gdsc.sogongsogong.ui.BaseViewHolder
+import com.gdsc.sogongsogong.ui.base.BaseViewHolder
 
 
 class SettingContentsAdapter: ListAdapter<Any, BaseViewHolder<ItemSettingContentsBinding>>(diffUtil) {

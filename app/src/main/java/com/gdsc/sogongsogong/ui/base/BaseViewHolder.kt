@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.ui
+package com.gdsc.sogongsogong.ui.base
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -7,7 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.gdsc.sogongsogong.MainActivity
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityJoinBinding
-import com.gdsc.sogongsogong.ui.BaseActivity
+import com.gdsc.sogongsogong.ui.base.BaseActivity
 
 class JoinActivity : BaseActivity<ActivityJoinBinding>(R.layout.activity_join) {
 
