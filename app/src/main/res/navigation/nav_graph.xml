@@ -16,4 +16,10 @@
             app:destination="@id/abcFragment" />
         -->
     </fragment>
+
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.gdsc.sogongsogong.ui.board.BoardFragment"
+        tools:layout="@layout/fragment_base_board">
+    </fragment>
 </navigation>
