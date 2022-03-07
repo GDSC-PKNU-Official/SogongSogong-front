@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+    #tools:context=".board.SearchActivity"
+
+    <LinearLayout
+        android:id="@+id/board_search_linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:id="@+id/board_search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            app:mt_placeholder="@string/enterSearchWord"
+            app:mt_hint="@string/enterSearchWord"
+            android:background="@drawable/shape_post"
+            app:mt_speechMode="false" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
+        android:overScrollMode="never"
+        android:padding="6dp"
+        android:scrollbars="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/board_search_linear" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
