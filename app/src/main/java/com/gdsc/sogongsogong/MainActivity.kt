@@ -3,8 +3,8 @@ package com.gdsc.sogongsogong
 import android.os.Bundle
 import android.os.PersistableBundle
 import com.gdsc.sogongsogong.databinding.ActivityMainBinding
-import com.gdsc.sogongsogong.ui.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
+import com.gdsc.sogongsogong.ui.base.BaseActivity
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {

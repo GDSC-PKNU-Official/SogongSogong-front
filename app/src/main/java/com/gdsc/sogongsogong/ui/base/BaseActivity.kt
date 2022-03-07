@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.ui
+package com.gdsc.sogongsogong.ui.base
 
 import android.os.Bundle
 import android.os.PersistableBundle

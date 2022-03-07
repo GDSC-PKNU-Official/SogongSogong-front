@@ -1,20 +1,19 @@
-package com.gdsc.sogongsogong.ui.setting
+package com.gdsc.sogongsogong.ui.board
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.gdsc.sogongsogong.databinding.ItemSettingContentsBinding
+import com.gdsc.sogongsogong.R
+import com.gdsc.sogongsogong.databinding.ItemBoardBinding
 import com.gdsc.sogongsogong.ui.base.BaseViewHolder
 
+class BoardAdapter : ListAdapter<Any, BaseViewHolder<ItemBoardBinding>>(diffUtil) {
 
-class SettingContentsAdapter: ListAdapter<Any, BaseViewHolder<ItemSettingContentsBinding>>(diffUtil) {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<ItemBoardBinding> =
+        BaseViewHolder(parent, R.layout.item_board)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<ItemSettingContentsBinding> {
-        TODO("Not yet implemented")
-    }
-
-    override fun onBindViewHolder(holder: BaseViewHolder<ItemSettingContentsBinding>, position: Int) {
-        TODO("Not yet implemented")
+    override fun onBindViewHolder(holder: BaseViewHolder<ItemBoardBinding>, position: Int) {
+//        holder.binding.item = getItem(position)
     }
 
     companion object {

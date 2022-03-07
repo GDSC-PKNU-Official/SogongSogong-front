@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.FragmentSettingBinding
-import com.gdsc.sogongsogong.ui.BaseFragment
+import com.gdsc.sogongsogong.ui.base.BaseFragment
 
 class SettingFragment : BaseFragment<FragmentSettingBinding>(R.layout.fragment_setting) {
 
