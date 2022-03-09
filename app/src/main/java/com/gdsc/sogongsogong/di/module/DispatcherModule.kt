@@ -1,5 +1,7 @@
-package com.gdsc.sogongsogong.di.dispatcher
+package com.gdsc.sogongsogong.di.module
 
+import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
+import com.gdsc.sogongsogong.di.dispatcher.DispatcherProviderImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
