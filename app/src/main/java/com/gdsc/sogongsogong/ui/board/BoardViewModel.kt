@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.repository.datasource.PostRemoteDataSource
+import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -14,8 +16,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class BoardViewModel @Inject constructor(
-    val postRemoteDataSource: PostRemoteDataSource
-) : ViewModel() {
+    dispatcherProvider: DispatcherProvider,
+    private val postRemoteDataSource: PostRemoteDataSource
+) : BaseViewModel(dispatcherProvider) {
 
     private var _board: MutableLiveData<String> = MutableLiveData() // FIXME: entity로 변경
     val board: LiveData<String> = _board
