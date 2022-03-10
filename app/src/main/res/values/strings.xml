@@ -27,5 +27,6 @@
     <string name="checkPW">비밀번호 확인</string>
     <string name="prove">인증</string>
     <string name="enterSearchWord">검색어를 입력해 주세요</string>
+    <string name="thumbnail">썸네일</string>
 
 </resources>
