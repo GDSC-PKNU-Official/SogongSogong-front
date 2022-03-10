@@ -10,6 +10,12 @@ buildscript {
 
         // hilt
         hilt_version = "2.40"
+
+        //kotest
+        kotest_version = "5.1.0"
+
+        // mockk
+        mockk_version = "1.12.3"
     }
     repositories {
         google()
