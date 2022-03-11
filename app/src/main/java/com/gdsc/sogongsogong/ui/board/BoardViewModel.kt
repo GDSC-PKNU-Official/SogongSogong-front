@@ -38,9 +38,7 @@ class BoardViewModel @Inject constructor(
         postRemoteDataSource.fetchPost(postId)
     }
 
-    fun emitRecyclerViewClickEvent() {
-        viewModelScope.launch {
+    fun emitRecyclerViewClickEvent() = onMain {
             _recyclerViewClickEvent.emit(Unit)
-        }
     }
 }
