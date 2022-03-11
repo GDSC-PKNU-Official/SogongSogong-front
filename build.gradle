@@ -16,6 +16,9 @@ buildscript {
 
         // mockk
         mockk_version = "1.12.3"
+
+        // retrofit
+        retrofit_version = "2.9.0"
     }
     repositories {
         google()
