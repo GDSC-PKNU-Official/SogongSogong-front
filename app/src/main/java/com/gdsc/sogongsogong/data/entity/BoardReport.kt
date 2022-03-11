@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.dataclass
+package com.gdsc.sogongsogong.data.entity
 
 data class BoardReport (
     val boardId: Int,

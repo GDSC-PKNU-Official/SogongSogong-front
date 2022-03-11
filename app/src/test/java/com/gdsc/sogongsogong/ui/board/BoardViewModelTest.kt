@@ -1,21 +1,15 @@
 package com.gdsc.sogongsogong.ui.board
 
 import com.gdsc.sogongsogong.FakeDispatcherProvider
-import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
-import com.gdsc.sogongsogong.repository.datasource.PostRemoteDataSource
+import com.gdsc.sogongsogong.data.remote.datasource.PostRemoteDataSource
 import io.kotest.core.spec.Spec
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
-import io.mockk.every
 import io.mockk.mockk
-import io.mockk.verify
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.setMain
-import org.junit.jupiter.api.Assertions.*
-
-import org.junit.jupiter.api.Test
 
 @ExperimentalCoroutinesApi
 @DelicateCoroutinesApi
