@@ -28,5 +28,10 @@
     <string name="prove">인증</string>
     <string name="enterSearchWord">검색어를 입력해 주세요</string>
     <string name="thumbnail">썸네일</string>
+    <string name="jobCategory">업종</string>
+    <string name="jobItem">종목</string>
+    <string name="inputContents">내용을 입력하세요.</string>
+    <string name="addImage">사진 추가하기</string>
+    <string name="addImageButton">사진추가버튼</string>
 
 </resources>
