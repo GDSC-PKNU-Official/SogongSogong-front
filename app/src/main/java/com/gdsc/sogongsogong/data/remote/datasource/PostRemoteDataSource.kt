@@ -1,6 +1,6 @@
-package com.gdsc.sogongsogong.repository.datasource
+package com.gdsc.sogongsogong.data.remote.datasource
 
-import com.gdsc.sogongsogong.dataclass.Post
+import com.gdsc.sogongsogong.data.entity.Post
 
 interface PostRemoteDataSource {
 
