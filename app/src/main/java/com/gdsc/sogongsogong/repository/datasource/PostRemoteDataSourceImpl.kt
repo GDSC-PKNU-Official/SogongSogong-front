@@ -1,8 +1,9 @@
 package com.gdsc.sogongsogong.repository.datasource
 
 import com.gdsc.sogongsogong.dataclass.Post
+import javax.inject.Inject
 
-class PostRemoteDataSourceImpl : PostRemoteDataSource {
+class PostRemoteDataSourceImpl @Inject constructor(): PostRemoteDataSource {
 
     override fun fetchPost(postId: Long): Post {
         TODO("Not yet implemented" )
