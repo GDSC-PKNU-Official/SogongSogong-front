@@ -1,0 +1,38 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        nav_version = "2.4.1"
+
+        // firebase
+        google_service_version = "4.3.10"
+        auth_version = "20.1.0"
+        bom_version = "29.0.4"
+
+        // hilt
+        hilt_version = "2.40"
+
+        //kotest
+        kotest_version = "5.1.0"
+
+        // mockk
+        mockk_version = "1.12.3"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:7.0.4"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+
+        // firebase
+        classpath "com.google.gms:google-services:$google_service_version"
+
+        // hilt
+        classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
