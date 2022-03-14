@@ -33,5 +33,16 @@
     <string name="inputContents">내용을 입력하세요.</string>
     <string name="addImage">사진 추가하기</string>
     <string name="addImageButton">사진추가버튼</string>
+    
+    <string name="main_mypage">마이페이지</string>
+    <string name="myPage_my_fav_scrap">좋아요/스크랩 조회</string>
+    <string name="myPage_my_fav">좋아요 한 게시글</string>
+    <string name="myPage_my_scrap">스크랩 한 게시글</string>
+    <string name="myPage_app_info">앱 정보</string>
+    <string name="myPage_setting">설정</string>
+    <string name="myPage_user_info_policy">개인정보처리방침</string>
+    <string name="myPage_feedback">개발자에게 피드백 전송</string>
+    
+    
 
 </resources>
