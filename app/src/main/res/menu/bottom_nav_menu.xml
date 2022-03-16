@@ -4,14 +4,18 @@
     <item
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
-        android:title="@string/homeButton" />
+        android:title="@string/homeButton"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/createPost"
         android:icon="@drawable/ic_add_circle"
-        android:title="@string/createPost" />
+        android:title="@string/createPost"
+        app:showAsAction="ifRoom" />
+
     <item
         android:id="@+id/myPage"
         android:icon="@drawable/ic_person"
-        android:title="@string/myPage" />
+        android:title="@string/myPage"
+        app:showAsAction="ifRoom" />
 </menu>
