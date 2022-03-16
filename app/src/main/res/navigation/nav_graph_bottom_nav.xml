@@ -22,6 +22,6 @@
     <fragment
         android:id="@+id/myPageFragment"
         android:name="com.gdsc.sogongsogong.ui.setting.SettingFragment"
-        android:label="@string/myPage"
+        android:label="@string/main_mypage"
         tools:layout="@layout/fragment_setting" />
 </navigation>

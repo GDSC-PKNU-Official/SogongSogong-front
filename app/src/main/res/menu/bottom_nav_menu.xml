@@ -16,6 +16,6 @@
     <item
         android:id="@+id/myPage"
         android:icon="@drawable/ic_person"
-        android:title="@string/myPage"
+        android:title="@string/main_mypage"
         app:showAsAction="ifRoom" />
 </menu>

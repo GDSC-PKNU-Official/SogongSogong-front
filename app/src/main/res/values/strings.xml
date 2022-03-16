@@ -42,7 +42,9 @@
     <string name="myPage_setting">설정</string>
     <string name="myPage_user_info_policy">개인정보처리방침</string>
     <string name="myPage_feedback">개발자에게 피드백 전송</string>
-    
-    
+
+    <string name="homeButton">홈버튼</string>
+    <string name="createPost">글작성</string>
+
 
 </resources>
