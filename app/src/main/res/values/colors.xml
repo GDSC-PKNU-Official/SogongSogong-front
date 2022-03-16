@@ -13,4 +13,5 @@
     <color name="selected">#8A8A8A</color>
     <color name="privacy">#616161</color>
     <color name="scrap">#ECD302</color>
+    <color name="GoogleTextColor">#444444</color>
 </resources>

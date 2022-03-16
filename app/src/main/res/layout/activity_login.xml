@@ -43,48 +43,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_linear">
 
-        <EditText
-            android:id="@+id/LoginIdEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/round_border"
-            android:hint="@string/ID"
-            android:inputType="text"
-            android:padding="14dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <EditText
-            android:id="@+id/LoginPasswordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/round_border"
-            android:hint="@string/PW"
-            android:inputType="textPassword"
-            android:padding="14dp"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <Button
-            android:id="@+id/LoginButton"
+            android:id="@+id/google_sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/shape_btn"
-            android:padding="10dp"
-            android:text="@string/login"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:iconTint="@color/main_color" />
+            android:layout_centerInParent="true"
+            android:background="@drawable/rounded_corners"
+            android:drawableStart="@drawable/google_icon"
+            android:drawableLeft="@drawable/google_icon"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="Sign in with Google"
+            android:textAllCaps="false"
+            android:textColor="@color/GoogleTextColor"
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/LoginFindIdPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:text="@string/findPW" />
     </LinearLayout>
 
     <LinearLayout
