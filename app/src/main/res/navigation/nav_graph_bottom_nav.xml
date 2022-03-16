@@ -4,11 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_bottom_nav"
-    app:startDestination="@id/homeFragment" >
+    app:startDestination="@id/boardFragment" >
 
     <!-- FIXME: set home fragment -->
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/boardFragment"
         android:name="com.gdsc.sogongsogong.ui.board.BoardFragment"
         android:label="홈"
         tools:layout="@layout/fragment_base_board" />
