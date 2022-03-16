@@ -17,23 +17,22 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        setInitialFragment()
-//        setBottomNav()
+        setInitialFragment()
     }
 
     private fun setInitialFragment() {
-        val navHost = NavHostFragment.create(R.navigation.nav_graph)
+        val navHost = NavHostFragment.create(R.navigation.nav_graph_bottom_nav)
         supportFragmentManager.beginTransaction()
-            .replace(R.id.homeFragment, navHost)
+            .replace(R.id.fragment_main, navHost)
             .setPrimaryNavigationFragment(navHost)
             .commit()
-    }
 
-    private fun setBottomNav() {
-        val navController = findNavController(R.id.nav_graph_bottom_nav)
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.postFragment, R.id.settingFragment))
-
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navMainBottomNav.setupWithNavController(navController)
+        // TODO: 홈버튼, 글작성버튼, 마이페이지 버튼 when 분기
+        binding.navMainBottomNav.setOnItemSelectedListener { item ->
+            when(item.itemId) {
+                R.menu.bottom_nav_menu -> {true}
+                else -> {true}
+            }
+        }
     }
 }
