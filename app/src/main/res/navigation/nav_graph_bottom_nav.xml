@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_bottom_nav"
+    app:startDestination="@id/boardFragment" >
+
+    <!-- FIXME: set home fragment -->
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.gdsc.sogongsogong.ui.board.BoardFragment"
+        android:label="홈"
+        tools:layout="@layout/fragment_base_board" />
+
+    <fragment
+        android:id="@+id/postFragment"
+        android:name="com.gdsc.sogongsogong.ui.post.PostFragment"
+        android:label="@string/createPost"
+        tools:layout="@layout/fragment_post" />
+
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.gdsc.sogongsogong.ui.setting.SettingFragment"
+        android:label="@string/main_mypage"
+        tools:layout="@layout/fragment_setting" />
+</navigation>

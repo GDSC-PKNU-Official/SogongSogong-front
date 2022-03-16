@@ -14,9 +14,9 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class BoardFragment: BaseFragment<FragmentBaseBoardBinding>(R.layout.fragment_base_board) {
 
-    private lateinit var adapter: BoardAdapter
+    private val adapter by lazy { BoardAdapter() }
 
-    private val boardViewModel: BoardViewModel by navGraphViewModels(R.layout.fragment_base_board) { defaultViewModelProviderFactory }
+    private val boardViewModel: BoardViewModel by navGraphViewModels(R.id.nav_graph_bottom_nav) { defaultViewModelProviderFactory }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
