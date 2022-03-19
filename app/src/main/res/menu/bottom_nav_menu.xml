@@ -2,20 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/home"
+        android:id="@+id/menu_home"
         android:icon="@drawable/ic_home"
-        android:title="@string/homeButton"
+        android:title=""
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/createPost"
+        android:id="@+id/menu_createPost"
         android:icon="@drawable/ic_add_circle"
-        android:title="@string/createPost"
+        android:title=""
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/myPage"
+        android:id="@+id/menu_notification"
+        android:icon="@drawable/ic_notification"
+        android:title=""
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/menu_myPage"
         android:icon="@drawable/ic_person"
-        android:title="@string/main_mypage"
+        android:title=""
         app:showAsAction="ifRoom" />
 </menu>
