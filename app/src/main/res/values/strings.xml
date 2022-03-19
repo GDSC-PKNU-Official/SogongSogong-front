@@ -27,13 +27,6 @@
     <string name="checkPW">비밀번호 확인</string>
     <string name="prove">인증</string>
     <string name="enterSearchWord">검색어를 입력해 주세요</string>
-    <string name="thumbnail">썸네일</string>
-    <string name="jobCategory">업종</string>
-    <string name="jobItem">종목</string>
-    <string name="inputContents">내용을 입력하세요.</string>
-    <string name="addImage">사진 추가하기</string>
-    <string name="addImageButton">사진추가버튼</string>
-    
     <string name="main_mypage">마이페이지</string>
     <string name="myPage_my_fav_scrap">좋아요/스크랩 조회</string>
     <string name="myPage_my_fav">좋아요 한 게시글</string>
@@ -42,7 +35,10 @@
     <string name="myPage_setting">설정</string>
     <string name="myPage_user_info_policy">개인정보처리방침</string>
     <string name="myPage_feedback">개발자에게 피드백 전송</string>
-    
-    
 
+    <string name="edit">수정하기</string>
+    <string name="delete">삭제하기</string>
+    <string name="report">신고하기</string>
+
+    <string name="main_menu_myinfo">마이페이지</string>
 </resources>
