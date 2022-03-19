@@ -2,15 +2,13 @@ package com.gdsc.sogongsogong.ui.board
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
-import com.gdsc.sogongsogong.repository.datasource.PostRemoteDataSource
+import com.gdsc.sogongsogong.data.remote.datasource.PostRemoteDataSource
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -38,9 +36,7 @@ class BoardViewModel @Inject constructor(
         postRemoteDataSource.fetchPost(postId)
     }
 
-    fun emitRecyclerViewClickEvent() {
-        viewModelScope.launch {
+    fun emitRecyclerViewClickEvent() = onMain {
             _recyclerViewClickEvent.emit(Unit)
-        }
     }
 }

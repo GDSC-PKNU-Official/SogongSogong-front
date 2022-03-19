@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".setting.SettingActivity">
+    android:layout_height="match_parent" >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/setting_toolbar"
@@ -125,7 +124,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="@string/myPage_setting"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -220,7 +219,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:text="@string/myPage_my_fav_scrap"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/black"
                         android:textStyle="bold" />
@@ -239,7 +238,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="6dp"
                         android:gravity="center_vertical"
-                        android:text="@string/myPage_my_fav"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                 </LinearLayout>
 
@@ -256,7 +255,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="6dp"
                         android:gravity="center_vertical"
-                        android:text="@string/myPage_my_scrap"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                 </LinearLayout>
 
@@ -301,7 +300,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="6dp"
                         android:gravity="center_vertical"
-                        android:text="@string/myPage_feedback"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                 </LinearLayout>
 
@@ -318,7 +317,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginStart="6dp"
                         android:gravity="center_vertical"
-                        android:text="@string/myPage_user_info_policy"
+                        android:text=""
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
                 </LinearLayout>
 
