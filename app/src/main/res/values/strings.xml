@@ -45,6 +45,7 @@
 
     <string name="homeButton">홈버튼</string>
     <string name="createPost">글작성</string>
-
-
+    <string name="sogongsogong">소공소공</string>
+    <string name="goodInfo">알아두면 좋을 정보</string>
+    <string name="sogongsogongboard">소공소공 게시판</string>
 </resources>
