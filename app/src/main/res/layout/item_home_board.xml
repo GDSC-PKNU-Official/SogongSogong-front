@@ -8,6 +8,13 @@
             name="item"
             type="com.gdsc.sogongsogong.data.entity.Post" />
 
+        <variable
+            name="scrapCount"
+            type="Integer" />
+
+        <variable
+            name="commentCount"
+            type="Integer" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
+            android:text="@{scrapCount.toString()}"
             app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
             app:layout_constraintEnd_toStartOf="@id/tv_homeBoard_comment"
             app:drawableStartCompat="@drawable/ic_star"
@@ -52,6 +60,7 @@
             android:id="@+id/tv_homeBoard_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{commentCount.toString()}"
             app:drawableStartCompat="@drawable/ic_comment"
             app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
             app:layout_constraintEnd_toEndOf="parent"

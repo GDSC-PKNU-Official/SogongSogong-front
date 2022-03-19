@@ -13,8 +13,10 @@ class HomeBoardAdapter : ListAdapter<Post, BaseViewHolder<ItemHomeBoardBinding>>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<ItemHomeBoardBinding> =
         BaseViewHolder(parent, R.layout.item_home_board)
 
-    override fun onBindViewHolder(holder: BaseViewHolder<ItemHomeBoardBinding>, position: Int) {
-        holder.binding.item = getItem(position)
+    override fun onBindViewHolder(holder: BaseViewHolder<ItemHomeBoardBinding>, position: Int) = with(holder.binding) {
+        item = getItem(position)
+        scrapCount = getItem(position).scrapCount
+        commentCount = getItem(position).scrapCount
     }
 
     companion object {
