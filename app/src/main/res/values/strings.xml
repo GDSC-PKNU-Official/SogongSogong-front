@@ -48,4 +48,6 @@
     <string name="sogongsogong">소공소공</string>
     <string name="goodInfo">알아두면 좋을 정보</string>
     <string name="sogongsogongboard">소공소공 게시판</string>
+    <string name="liveSogongsogongIs"># 실시간 소공소공은?</string>
+    <string name="pleaseInputSearchKeyword">검색어를 입력해주세요.</string>
 </resources>
