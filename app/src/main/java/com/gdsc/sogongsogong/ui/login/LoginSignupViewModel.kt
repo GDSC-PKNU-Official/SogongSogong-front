@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
 
 
-class LoginSignupViewModel {
+class LoginSignupViewModel { // 로그인은 나중에
 
     val LOGIN_FAIL_STATUS:String = "아이디 또는 비밀번호가 틀렸습니다"
     val LOGIN_SUCCESS_STATUS:String = "로그인 성공" // string 수정 필요

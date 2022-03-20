@@ -41,7 +41,7 @@ class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.fragment_post) {
     }
 
     private fun requestGalleryAuthor() {
-        // TODO: 갤러리 접근권한 요청
+        // TODO: 갤러리 접근권한 요청 // 세팅에서 설정 페이지로 넘어갈지 아님 권한설정알림을 띄울지 결정해야 할 것 같습니다.
     }
 
     private fun showGallery() {

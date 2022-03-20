@@ -23,7 +23,7 @@
 
         <ImageView
             android:id="@+id/LoginImageView"
-            android:layout_width="280sp"
+            android:layout_width="331dp"
             android:layout_height="210dp"
             android:layout_marginTop="72dp"
             app:srcCompat="@drawable/sogongsogong_login" />
