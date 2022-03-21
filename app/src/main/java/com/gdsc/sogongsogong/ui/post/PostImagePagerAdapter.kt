@@ -14,7 +14,10 @@ class PostImagePagerAdapter(
     private val uriPaths: ArrayList<Uri>,
     private val inflater: LayoutInflater
 ): RecyclerView.Adapter<PostImagePagerAdapter.PostImagePagerViewHolder>() {
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/hotfix/0320
     inner class PostImagePagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val img: ImageView = itemView.post_img_viewpager_itemView
 
