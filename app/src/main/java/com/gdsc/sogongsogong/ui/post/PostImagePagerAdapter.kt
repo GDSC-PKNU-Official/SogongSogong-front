@@ -4,28 +4,26 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.gdsc.sogongsogong.R
-import kotlinx.android.synthetic.main.post_img_viewpager_item.view.*
 
 class PostImagePagerAdapter(
     private val uriPaths: ArrayList<Uri>,
     private val inflater: LayoutInflater
 ): RecyclerView.Adapter<PostImagePagerAdapter.PostImagePagerViewHolder>() {
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/hotfix/0320
+    // FIXME: data binding 방식으로 변경
+    // FIXME: 매개변수 제거
+    // TODO: Base ViewHolder로 migration
+    // TODO: list adapter로 migration (diffUtil 적용)
     inner class PostImagePagerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val img: ImageView = itemView.post_img_viewpager_itemView
-
-        fun bind(postUri: Uri) {
-            Glide.with(itemView.context)
-                .load(postUri)
-                .into(img)
-        }
+//        val img: ImageView = itemView.post_img_viewpager_itemView
+//
+//        fun bind(postUri: Uri) {
+//            Glide.with(itemView.context)
+//                .load(postUri)
+//                .into(img)
+//        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostImagePagerViewHolder {
@@ -34,7 +32,7 @@ class PostImagePagerAdapter(
     }
 
     override fun onBindViewHolder(holder: PostImagePagerViewHolder, position: Int) {
-        holder.bind(uriPaths[position])
+//        holder.bind(uriPaths[position])
     }
 
     override fun getItemCount(): Int = uriPaths.size
