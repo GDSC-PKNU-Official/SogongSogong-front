@@ -1,7 +1,8 @@
 package com.gdsc.sogongsogong
 
 import android.os.Bundle
-import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.gdsc.sogongsogong.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import com.gdsc.sogongsogong.ui.base.BaseActivity
@@ -16,10 +17,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun setNavHostFragment() {
-        val navHost = NavHostFragment.create(R.navigation.nav_graph_bottom_nav)
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_main, navHost)
-            .setPrimaryNavigationFragment(navHost)
-            .commit()
+        binding.navMainBottomNav.setupWithNavController(findNavController(R.id.fragment_navHost))
     }
 }
