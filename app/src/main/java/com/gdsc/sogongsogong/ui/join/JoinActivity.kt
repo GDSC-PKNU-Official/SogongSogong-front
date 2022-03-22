@@ -34,10 +34,10 @@ class JoinActivity : BaseActivity<ActivityJoinBinding>(R.layout.activity_join) {
 
     // TODO: set init fragment
     private fun setInitFragment() {
-        val navHost = NavHostFragment.create(R.navigation.nav_graph_join)
-        supportFragmentManager.beginTransaction()
+//        val navHost = NavHostFragment.create(R.navigation.nav_graph_join)
+//        supportFragmentManager.beginTransaction()
 //            .replace(R.id., navHost) // TODO: set start fragment id
-            .setPrimaryNavigationFragment(navHost)
-            .commit()
+//            .setPrimaryNavigationFragment(navHost)
+//            .commit()
     }
 }
