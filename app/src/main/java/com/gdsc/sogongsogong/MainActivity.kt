@@ -10,6 +10,8 @@ import com.gdsc.sogongsogong.ui.base.BaseActivity
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
+    private val navController by lazy { findNavController(R.id.fragment_navHost) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,6 +19,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     }
 
     private fun setNavHostFragment() {
-        binding.navMainBottomNav.setupWithNavController(findNavController(R.id.fragment_navHost))
+        binding.navMainBottomNav.setupWithNavController(navController)
     }
 }
