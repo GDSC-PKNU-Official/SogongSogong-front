@@ -12,6 +12,10 @@
         android:label="홈"
         tools:layout="@layout/fragment_home">
 
+        <action
+            android:id="@+id/action_home_to_search"
+            app:popUpTo="@id/homeFragment"
+            app:destination="@id/boardSearchActivity" />
         <!--bottom nav-->
         <action
             android:id="@+id/action_home_to_post"
@@ -20,6 +24,12 @@
             android:id="@+id/action_home_to_myPage"
             app:destination="@id/myPageFragment" />
     </fragment>
+
+        <activity
+            android:id="@+id/boardSearchActivity"
+            android:name="com.gdsc.sogongsogong.ui.search.BoardSearchActivity"
+            android:label="검색"
+            tools:layout="@layout/activity_board_search" />
 
     <fragment
         android:id="@+id/postFragment"
