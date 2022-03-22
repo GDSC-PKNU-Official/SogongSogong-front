@@ -2,6 +2,7 @@ package com.gdsc.sogongsogong.ui.post
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.navGraphViewModels
 import com.gdsc.sogongsogong.R
@@ -14,7 +15,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.fragment_post) {
 
-    private val viewModel: PostViewModel by navGraphViewModels(R.layout.fragment_post) {defaultViewModelProviderFactory}
+    private val viewModel: PostViewModel by viewModels {defaultViewModelProviderFactory}
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
