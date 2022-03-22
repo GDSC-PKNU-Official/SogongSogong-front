@@ -57,7 +57,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private suspend fun collectSearchBarClickEvent() {
         navViewModel.searchBarClickEvent.collect {
-            findNavController().navigate(R.id.boardSearchActivity)
+            findNavController().navigate(R.id.action_home_to_search)
         }
     }
 }
