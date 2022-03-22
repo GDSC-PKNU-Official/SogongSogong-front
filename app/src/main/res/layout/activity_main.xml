@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="navViewModel"
-            type="com.gdsc.sogongsogong.NavViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
