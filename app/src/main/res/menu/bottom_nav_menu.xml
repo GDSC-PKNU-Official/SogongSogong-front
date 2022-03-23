@@ -8,7 +8,7 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/postFragment"
+        android:id="@+id/boardListFragment"
         android:icon="@drawable/ic_add_circle"
         android:title=""
         app:showAsAction="ifRoom" />

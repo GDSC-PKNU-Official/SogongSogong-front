@@ -59,4 +59,5 @@
     <string name="sogongsogongBoard">소공소공 게시판</string>
     <string name="liveSogongsogongIs"># 실시간 소공소공은?</string>
     <string name="pleaseInputSearchKeyword">검색어를 입력해주세요.</string>
+    <string name="boardList">게시판목록</string>
 </resources>

@@ -18,8 +18,8 @@
             app:destination="@id/boardSearchActivity" />
         <!--bottom nav-->
         <action
-            android:id="@+id/action_home_to_post"
-            app:destination="@id/postFragment" />
+            android:id="@+id/action_home_to_boardList"
+            app:destination="@id/boardListFragment" />
         <action
             android:id="@+id/action_home_to_myPage"
             app:destination="@id/myPageFragment" />
@@ -32,17 +32,17 @@
             tools:layout="@layout/activity_board_search" />
 
     <fragment
-        android:id="@+id/postFragment"
-        android:name="com.gdsc.sogongsogong.ui.post.PostFragment"
-        android:label="@string/createPost"
-        tools:layout="@layout/fragment_post">
+        android:id="@+id/boardListFragment"
+        android:name="com.gdsc.sogongsogong.ui.boardlist.BoardListFragment"
+        android:label="@string/boardList"
+        tools:layout="@layout/fragment_board_list">
 
         <!--bottom nav-->
         <action
-            android:id="@+id/action_post_to_home"
+            android:id="@+id/action_boardList_to_home"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_post_to_myPage"
+            android:id="@+id/action_boardList_to_myPage"
             app:destination="@id/myPageFragment" />
     </fragment>
 
@@ -57,7 +57,7 @@
             android:id="@+id/action_myPage_to_home"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_myPage_to_post"
-            app:destination="@id/postFragment" />
+            android:id="@+id/action_myPage_to_boardList"
+            app:destination="@id/boardListFragment" />
     </fragment>
 </navigation>
