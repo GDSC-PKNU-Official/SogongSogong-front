@@ -66,4 +66,6 @@
 
     <string name="boardList">게시판목록</string>
 
+    <string name="notice">알림</string>
+
 </resources>

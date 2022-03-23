@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_home_to_myPage"
             app:destination="@id/myPageFragment" />
+        <action
+            android:id="@+id/action_home_to_nnotification"
+            app:destination="@id/notificationFragment"/>
     </fragment>
 
         <activity
@@ -44,6 +47,29 @@
         <action
             android:id="@+id/action_boardList_to_myPage"
             app:destination="@id/myPageFragment" />
+        <action
+            android:id="@+id/action_boardList_to_notification"
+            app:destination="@id/myPageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/noticeFragment"
+        android:name="com.gdsc.sogongsogong.ui.notification.NotificationFragment"
+        android:label="@string/notice"
+        tools:layout="@layout/fragment_notification">
+
+        <!--bottom nav-->
+        <action
+            android:id="@+id/action_notification_to_home"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_notification_to_myPage"
+            app:destination="@id/myPageFragment" />
+
+        <action
+            android:id="@+id/action_notification_to_boardList"
+            app:destination="@id/boardListFragment" />
+
     </fragment>
 
     <fragment
@@ -58,6 +84,9 @@
             app:destination="@id/homeFragment" />
         <action
             android:id="@+id/action_myPage_to_boardList"
+            app:destination="@id/boardListFragment" />
+        <action
+            android:id="@+id/action_myPage_to_notification"
             app:destination="@id/boardListFragment" />
     </fragment>
 </navigation>
