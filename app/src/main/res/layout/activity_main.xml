@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="navViewModel"
-            type="com.gdsc.sogongsogong.NavViewModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +15,17 @@
             android:id="@+id/fragment_main"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toTopOf="@id/nav_main_bottomNav" />
+            app:layout_constraintBottom_toTopOf="@id/nav_main_bottomNav">
+
+            <fragment
+                android:id="@+id/fragment_navHost"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/nav_graph"
+                tools:layout="@layout/fragment_home"/>
+        </androidx.fragment.app.FragmentContainerView>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_main_bottomNav"
