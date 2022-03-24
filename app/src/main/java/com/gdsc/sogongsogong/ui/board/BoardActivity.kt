@@ -1,32 +1,36 @@
 package com.gdsc.sogongsogong.ui.board
 
 import android.os.Bundle
-import android.view.View
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.navGraphViewModels
 import com.gdsc.sogongsogong.R
-import com.gdsc.sogongsogong.databinding.FragmentBaseBoardBinding
-import com.gdsc.sogongsogong.ui.base.BaseFragment
+import com.gdsc.sogongsogong.databinding.ActivityBoardBinding
+import com.gdsc.sogongsogong.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BoardFragment: BaseFragment<FragmentBaseBoardBinding>(R.layout.fragment_base_board) {
+class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board) {
 
     private val adapter by lazy { BoardAdapter() }
 
-    private val boardViewModel: BoardViewModel by navGraphViewModels(R.id.nav_graph_bottom_nav) { defaultViewModelProviderFactory }
+    private val boardViewModel: BoardViewModel by viewModels { defaultViewModelProviderFactory }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
+        setBinding()
         setAdapter()
         setCoroutine()
     }
 
+    private fun setBinding() {
+        binding.viewModel = boardViewModel
+    }
+
     private fun setAdapter() {
-        binding.rvBaseBoardBoard.adapter = adapter
+        binding.rvBoardPost.adapter = adapter
     }
 
     private suspend fun collectRecyclerView() {
@@ -40,7 +44,7 @@ class BoardFragment: BaseFragment<FragmentBaseBoardBinding>(R.layout.fragment_ba
     }
 
     private fun setCoroutine() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        lifecycleScope.launch {
             collectRecyclerView()
         }
     }
