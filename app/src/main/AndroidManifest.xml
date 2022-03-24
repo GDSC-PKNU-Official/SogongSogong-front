@@ -31,6 +31,5 @@
         <activity
             android:name=".ui.search.BoardSearchActivity"
             android:exported="true" />
-
     </application>
 </manifest>
