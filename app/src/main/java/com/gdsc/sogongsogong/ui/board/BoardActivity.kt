@@ -3,6 +3,8 @@ package com.gdsc.sogongsogong.ui.board
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
+import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityBoardBinding
 import com.gdsc.sogongsogong.ui.base.BaseActivity
@@ -15,7 +17,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private val adapter by lazy { BoardAdapter() }
 
-    private val boardViewModel: BoardViewModel by viewModels { defaultViewModelProviderFactory }
+    private val navViewModel: NavViewModel by viewModels { defaultViewModelProviderFactory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,26 +28,22 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     }
 
     private fun setBinding() {
-        binding.viewModel = boardViewModel
+        binding.navViewModel = navViewModel
     }
 
     private fun setAdapter() {
         binding.rvBoardPost.adapter = adapter
     }
 
-    private suspend fun collectRecyclerView() {
-        boardViewModel.recyclerViewClickEvent.collect {
-            navigatePost()
+    private fun setCoroutine() {
+        lifecycleScope.launch {
+            collectBackButtonClickEvent()
         }
     }
 
-    private fun navigatePost() {
-        // TODO: 전달받은 게시글로 이동
-    }
-
-    private fun setCoroutine() {
-        lifecycleScope.launch {
-            collectRecyclerView()
+    private suspend fun collectBackButtonClickEvent() {
+        navViewModel.backButtonEvent.collect {
+            finish()
         }
     }
 }
