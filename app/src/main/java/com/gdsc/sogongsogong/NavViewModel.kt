@@ -13,7 +13,15 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     private var _searchBarClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val searchBarClickEvent: SharedFlow<Unit> = _searchBarClickEvent
 
+    // TODO: 어떤 게시판인지 넘겨받기
+    private val _boardClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val boardClickEvent: SharedFlow<Unit> = _boardClickEvent
+
     fun emitSearchBarClickEvent() = onMain {
         _searchBarClickEvent.emit(Unit)
+    }
+
+    fun emitBoardClickEvent() = onMain {
+        _boardClickEvent.emit(Unit)
     }
 }
