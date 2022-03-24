@@ -17,11 +17,18 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     private val _boardClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val boardClickEvent: SharedFlow<Unit> = _boardClickEvent
 
+    private val _backButtonEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val backButtonEvent: SharedFlow<Unit> = _backButtonEvent
+
     fun emitSearchBarClickEvent() = onMain {
         _searchBarClickEvent.emit(Unit)
     }
 
     fun emitBoardClickEvent() = onMain {
         _boardClickEvent.emit(Unit)
+    }
+
+    fun emitBackButtonEvent() = onMain {
+        _backButtonEvent.emit(Unit)
     }
 }
