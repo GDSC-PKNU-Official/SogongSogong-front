@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.gdsc.sogongsogong.ui.board.BoardViewModel" />
+            name="navViewModel"
+            type="com.gdsc.sogongsogong.NavViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="51.17dp"
             android:layout_marginStart="14.84dp"
+            android:onClick="@{() -> navViewModel.emitBackButtonEvent()}"
             app:drawableStartCompat="@drawable/ic_back"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
