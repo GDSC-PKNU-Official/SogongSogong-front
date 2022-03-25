@@ -16,6 +16,11 @@
             android:id="@+id/action_home_to_search"
             app:popUpTo="@id/homeFragment"
             app:destination="@id/boardSearchActivity" />
+
+        <action
+            android:id="@+id/action_home_to_board"
+            app:popUpTo="@id/homeFragment"
+            app:destination="@id/boardActivity" />
         <!--bottom nav-->
         <action
             android:id="@+id/action_home_to_boardList"
@@ -41,6 +46,11 @@
         android:name="com.gdsc.sogongsogong.ui.boardlist.BoardListFragment"
         android:label="@string/boardList"
         tools:layout="@layout/fragment_board_list">
+
+        <action
+            android:id="@+id/action_boardList_to_board"
+            app:popUpTo="@id/boardListFragment"
+            app:destination="@id/boardActivity" />
 
         <!--bottom nav-->
         <action
@@ -73,6 +83,12 @@
             android:id="@+id/action_notification_to_boardListFragment"
             app:destination="@id/boardListFragment" />
     </fragment>
+
+    <activity
+        android:id="@+id/boardActivity"
+        android:name="com.gdsc.sogongsogong.ui.board.BoardActivity"
+        android:label="게시판"
+        tools:layout="@layout/activity_board" />
 
     <fragment
         android:id="@+id/myPageFragment"
