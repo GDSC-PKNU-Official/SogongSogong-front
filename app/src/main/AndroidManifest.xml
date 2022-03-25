@@ -32,5 +32,8 @@
             android:name=".ui.search.BoardSearchActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".ui.board.BoardActivity"
+            android:exported="true" />
     </application>
 </manifest>
