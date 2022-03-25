@@ -1,40 +1,40 @@
-package com.gdsc.sogongsogong.ui.post
+package com.gdsc.sogongsogong.ui.writepost
 
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.viewModels
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
-import com.gdsc.sogongsogong.databinding.FragmentPostBinding
-import com.gdsc.sogongsogong.ui.base.BaseFragment
+import com.gdsc.sogongsogong.databinding.ActivityWritePostBinding
+import com.gdsc.sogongsogong.ui.base.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.activity_write_post) {
+class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activity_write_post) {
 
-    private val viewModel: PostViewModel by viewModels {defaultViewModelProviderFactory}
+    private val navViewModel: NavViewModel by viewModels {defaultViewModelProviderFactory}
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         setBinding()
         setCoroutine()
     }
 
     private fun setBinding() {
-        binding.viewModel = viewModel
+        binding.navViewModel = navViewModel
     }
 
     private fun setCoroutine() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        lifecycleScope.launch {
             collectAddImageButton()
         }
     }
 
     private suspend fun collectAddImageButton() {
-        viewModel.addImageClickEvent.collect {
+        navViewModel.addImageClickEvent.collect {
             requestGalleryAuthor()
             showGallery()
         }

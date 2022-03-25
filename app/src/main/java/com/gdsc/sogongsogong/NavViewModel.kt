@@ -20,6 +20,9 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     private val _backButtonEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val backButtonEvent: SharedFlow<Unit> = _backButtonEvent
 
+    private val _addImageClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val addImageClickEvent: SharedFlow<Unit> = _addImageClickEvent
+
     fun emitSearchBarClickEvent() = onMain {
         _searchBarClickEvent.emit(Unit)
     }
@@ -33,6 +36,6 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     }
 
     fun emitAddImageClickEvent() = onMain {
-
+        _addImageClickEvent.emit(Unit)
     }
 }
