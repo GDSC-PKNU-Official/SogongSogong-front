@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/business_type"
+        app:srcCompat="@drawable/img_business_type"
         tools:layout_editor_absoluteY="34dp" />
 
     <LinearLayout

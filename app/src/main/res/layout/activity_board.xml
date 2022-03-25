@@ -85,7 +85,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/board_write"
+            app:srcCompat="@drawable/img_board_write"
             android:backgroundTint="@color/main_color"
             android:contentDescription="@string/createPost" />
     </androidx.constraintlayout.widget.ConstraintLayout>

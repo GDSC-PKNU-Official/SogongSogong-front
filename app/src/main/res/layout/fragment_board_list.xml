@@ -48,7 +48,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toTopOf="@id/edge_boardList_firstBox"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
@@ -63,7 +63,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myPost"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
@@ -78,7 +78,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myComment"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
@@ -93,7 +93,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myLike"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
@@ -123,7 +123,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toTopOf="@id/edge_boardList_secondBox"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
@@ -138,7 +138,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_hotBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
@@ -153,7 +153,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_bestBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
@@ -168,7 +168,7 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_sogongsogongBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
     </androidx.constraintlayout.widget.ConstraintLayout>
