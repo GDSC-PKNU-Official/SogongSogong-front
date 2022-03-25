@@ -34,7 +34,7 @@
                 android:id="@+id/child_reply_item_profile"
                 android:layout_width="28sp"
                 android:layout_height="28sp"
-                app:srcCompat="@drawable/profile_anonymous" />
+                app:srcCompat="@drawable/img_anonymous" />
 
             <TextView
                 android:id="@+id/child_reply_item_nickname"
@@ -55,7 +55,7 @@
                 android:layout_height="16sp"
                 android:layout_marginEnd="5dp"
                 android:layout_gravity="center_vertical"
-                app:srcCompat="@drawable/detail_like" />
+                app:srcCompat="@drawable/ic_heart" />
 
 
 
@@ -90,7 +90,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="2dp"
                 android:layout_marginStart="8dp"
-                app:srcCompat="@drawable/detail_like" />
+                app:srcCompat="@drawable/ic_heart" />
 
             <TextView
                 android:id="@+id/child_reply_item_like_cnt"

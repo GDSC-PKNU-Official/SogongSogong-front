@@ -61,7 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{commentCount.toString()}"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="12" />

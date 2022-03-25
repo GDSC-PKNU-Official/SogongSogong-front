@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:background="@drawable/round_border"
+                android:background="@drawable/shape_round_border"
                 android:padding="12dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -58,7 +58,7 @@
                         android:layout_width="103dp"
                         android:layout_height="104dp"
                         android:layout_marginStart="6dp"
-                        android:src="@drawable/profile_anonymous" />
+                        android:src="@drawable/img_anonymous" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -108,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/round_border"
+                android:background="@drawable/shape_round_border"
                 android:padding="12dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
@@ -205,7 +205,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/round_border"
+                android:background="@drawable/shape_round_border"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -267,7 +267,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="12dp"
-                android:background="@drawable/round_border"
+                android:background="@drawable/shape_round_border"
                 android:orientation="vertical"
                 android:padding="10dp">
 

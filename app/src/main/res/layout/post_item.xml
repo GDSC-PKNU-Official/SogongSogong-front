@@ -83,7 +83,7 @@
                 android:id="@+id/post_item_comment_img"
                 android:layout_width="14sp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/detail_comment" />
+                app:srcCompat="@drawable/ic_comment_black" />
 
             <TextView
                 android:id="@+id/post_item_comment_cnt"
@@ -97,7 +97,7 @@
                 android:id="@+id/post_item_like_img"
                 android:layout_width="14sp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/detail_like" />
+                app:srcCompat="@drawable/ic_heart" />
 
             <TextView
                 android:id="@+id/post_item_like_cnt"
@@ -111,7 +111,7 @@
                 android:id="@+id/post_item_scrap_img"
                 android:layout_width="14sp"
                 android:layout_height="match_parent"
-                android:src="@drawable/detail_scrap"
+                android:src="@drawable/ic_scrap"
                 app:tint="@color/scrap" />
 
             <TextView

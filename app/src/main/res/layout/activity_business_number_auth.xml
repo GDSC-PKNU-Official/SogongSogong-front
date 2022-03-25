@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/sogongsogong_signup"
+        app:srcCompat="@drawable/img_sogongsogong_signup"
         tools:layout_editor_absoluteY="50dp" />
 
     <LinearLayout

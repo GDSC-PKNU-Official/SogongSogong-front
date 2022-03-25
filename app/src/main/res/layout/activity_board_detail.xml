@@ -58,7 +58,7 @@
                             android:id="@+id/board_detail_profile"
                             android:layout_width="48sp"
                             android:layout_height="48sp"
-                            app:srcCompat="@drawable/profile_anonymous" />
+                            app:srcCompat="@drawable/img_anonymous" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -96,14 +96,14 @@
                             android:layout_height="32sp"
                             android:layout_marginEnd="3dp"
                             android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/detail_like" />
+                            app:srcCompat="@drawable/ic_heart" />
 
                         <ImageView
                             android:id="@+id/board_detail_scrap_btn"
                             android:layout_width="24sp"
                             android:layout_height="32sp"
                             android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/detail_scrap"
+                            app:srcCompat="@drawable/ic_scrap"
                             app:tint="@color/scrap" />
 
                     </LinearLayout>
@@ -143,7 +143,7 @@
                             android:layout_width="14sp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/detail_comment" />
+                            app:srcCompat="@drawable/ic_comment_black" />
 
                         <TextView
                             android:id="@+id/board_detail_comment_cnt"
@@ -158,7 +158,7 @@
                             android:layout_width="14sp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
-                            app:srcCompat="@drawable/detail_like" />
+                            app:srcCompat="@drawable/ic_heart" />
 
                         <TextView
                             android:id="@+id/board_detail_like_cnt"
@@ -173,7 +173,7 @@
                             android:layout_width="14sp"
                             android:layout_height="match_parent"
                             android:layout_gravity="center_vertical"
-                            android:src="@drawable/detail_scrap"
+                            android:src="@drawable/ic_scrap"
                             app:tint="@color/scrap" />
 
                         <TextView
@@ -238,7 +238,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:tint="@color/main_color"
-            app:srcCompat="@drawable/detail_comment_submit" />
+            app:srcCompat="@drawable/ic_complete_check" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
