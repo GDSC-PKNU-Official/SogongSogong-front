@@ -12,6 +12,7 @@ import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.databinding.FragmentHomeBinding
 import com.gdsc.sogongsogong.fake.FakeFactory
 import com.gdsc.sogongsogong.ui.base.BaseFragment
+import com.gdsc.sogongsogong.util.throttleFirst
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -56,7 +57,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
     }
 
     private suspend fun collectSearchBarClickEvent() {
-        navViewModel.searchBarClickEvent.collect {
+        navViewModel.searchBarClickEvent.throttleFirst().collect {
             findNavController().navigate(R.id.action_home_to_search)
         }
     }
