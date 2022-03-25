@@ -70,5 +70,6 @@
     <string name="canTwoMaxHashTag">최대 2개의 해시태그를 걸 수 있어요.</string>
     <string name="selectHashTag">해시태그를 선택해주세요.</string>
     <string name="roodCustomer">블랙컨슈머</string>
-
+    <string name="like">좋아요</string>
+    <string name="scrap">스크랩</string>
 </resources>
