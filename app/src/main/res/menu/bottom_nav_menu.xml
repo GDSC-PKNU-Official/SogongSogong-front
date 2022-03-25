@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/boardListFragment"
-        android:icon="@drawable/ic_add_circle"
+        android:icon="@drawable/img_board_list"
         android:title=""
         app:showAsAction="ifRoom" />
 
@@ -22,7 +22,7 @@
 
     <item
         android:id="@+id/myPageFragment"
-        android:icon="@drawable/ic_person"
+        android:icon="@drawable/img_my_page"
         android:title=""
         app:showAsAction="ifRoom" />
 </menu>
