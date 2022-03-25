@@ -94,11 +94,12 @@
             android:id="@+id/action_notification_to_home"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_notification_to_myPage"
-            app:destination="@id/myPageFragment" />
-        <action
             android:id="@+id/action_notification_to_boardList"
             app:destination="@id/boardListFragment" />
+        <action
+            android:id="@+id/action_notification_to_myPage"
+            app:destination="@id/myPageFragment" />
+
     </fragment>
 
 </navigation>

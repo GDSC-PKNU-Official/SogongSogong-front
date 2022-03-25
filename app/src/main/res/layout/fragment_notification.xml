@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_notification_titleLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="소공소공"/>
+
+        <View
+            android:id="@+id/edge_notification_firstBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/edge_notice"
+            android:layout_marginTop="15.69dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_notification_titleLogo" />
+
+        <TextView
+            android:id="@+id/tv_notification_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notice"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:gravity="center"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="24dp"
+            android:drawablePadding="29dp"
+            app:drawableStartCompat="@drawable/ic_comment"
+            app:layout_constraintTop_toTopOf="@id/edge_notification_firstBox"
+            app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
+
+        <TextView
+            android:id="@+id/tv_notification_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notice"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="24dp"
+            android:drawablePadding="29dp"
+            app:drawableStartCompat="@drawable/ic_comment"
+            app:layout_constraintTop_toBottomOf="@id/tv_notification_comment"
+            app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
