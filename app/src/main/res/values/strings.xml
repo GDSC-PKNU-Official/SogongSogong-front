@@ -77,5 +77,6 @@
     <string name="notice">알림</string>
     <string name="thumbs_up">따봉</string>
     <string name="writeButton">글쓰기 버튼</string>
+    <string name="profile">프로필 사진</string>
 
 </resources>
