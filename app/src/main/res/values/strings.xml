@@ -66,6 +66,16 @@
 
     <string name="boardList">게시판목록</string>
 
+
     <string name="notice">알림</string>
+
+
+    <string name="register">등록</string>
+    <string name="sogongsogongTalk">소공소공 말하기</string>
+    <string name="canTwoMaxHashTag">최대 2개의 해시태그를 걸 수 있어요.</string>
+    <string name="selectHashTag">해시태그를 선택해주세요.</string>
+    <string name="roodCustomer">블랙컨슈머</string>
+    <string name="like">좋아요</string>
+    <string name="scrap">스크랩</string>
 
 </resources>
