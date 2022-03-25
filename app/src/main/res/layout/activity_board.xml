@@ -63,9 +63,9 @@
             android:id="@+id/layout_board_swipeRefresh"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/tv_board_banner"
+            app:layout_constraintEnd_toEndOf="@id/tv_board_banner"
             app:layout_constraintStart_toStartOf="@id/tv_board_banner"
-            app:layout_constraintEnd_toEndOf="@id/tv_board_banner" >
+            app:layout_constraintTop_toBottomOf="@id/tv_board_banner">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_board_post"
@@ -74,19 +74,17 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_board_writeButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            android:layout_marginBottom="24dp"
-            android:clickable="true"
-            android:focusable="true"
+        <ImageView
+            android:id="@+id/tv_board_writeButton"
+            android:layout_width="92dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/shape_fab_border"
+            android:contentDescription="@string/writeButton"
+            android:elevation="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/img_board_write"
-            android:backgroundTint="@color/main_color"
-            android:contentDescription="@string/createPost" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/img_board_write" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
