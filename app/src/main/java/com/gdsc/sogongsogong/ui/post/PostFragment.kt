@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.navGraphViewModels
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.FragmentPostBinding
 import com.gdsc.sogongsogong.ui.base.BaseFragment
@@ -13,7 +12,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.fragment_post) {
+class PostFragment : BaseFragment<FragmentPostBinding>(R.layout.activity_write_post) {
 
     private val viewModel: PostViewModel by viewModels {defaultViewModelProviderFactory}
 

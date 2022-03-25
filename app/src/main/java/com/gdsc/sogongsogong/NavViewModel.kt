@@ -31,4 +31,8 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     fun emitBackButtonEvent() = onMain {
         _backButtonEvent.emit(Unit)
     }
+
+    fun emitAddImageClickEvent() = onMain {
+
+    }
 }
