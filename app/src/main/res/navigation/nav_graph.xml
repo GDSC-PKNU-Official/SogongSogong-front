@@ -28,11 +28,6 @@
         <action
             android:id="@+id/action_home_to_myPage"
             app:destination="@id/myPageFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_notification"
-            app:destination="@id/notificationFragment" />
-
-
     </fragment>
 
         <activity
@@ -62,26 +57,6 @@
         <action
             android:id="@+id/action_boardList_to_notification"
             app:destination="@id/notificationFragment" />
-
-
-    </fragment>
-
-    <fragment
-        android:id="@+id/notificationFragment"
-        android:name="com.gdsc.sogongsogong.ui.notification.NotificationFragment"
-        android:label="@string/notice"
-        tools:layout="@layout/fragment_notification">
-
-
-        <action
-            android:id="@+id/action_notification_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_notification_to_myPageFragment"
-            app:destination="@id/myPageFragment" />
-        <action
-            android:id="@+id/action_notification_to_boardListFragment"
-            app:destination="@id/boardListFragment" />
     </fragment>
 
     <activity
@@ -108,4 +83,22 @@
             app:destination="@id/notificationFragment" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.gdsc.sogongsogong.ui.notification.NotificationFragment"
+        android:label="@string/notice"
+        tools:layout="@layout/fragment_notification">
+        <!--bottom nav-->
+        <action
+            android:id="@+id/action_notification_to_home"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_notification_to_myPage"
+            app:destination="@id/myPageFragment" />
+        <action
+            android:id="@+id/action_notification_to_boardList"
+            app:destination="@id/boardListFragment" />
+    </fragment>
+
 </navigation>
