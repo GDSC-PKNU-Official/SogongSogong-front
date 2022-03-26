@@ -14,4 +14,6 @@
     <color name="privacy">#616161</color>
     <color name="scrap">#ECD302</color>
     <color name="GoogleTextColor">#444444</color>
+    <color name="fake_white">#F0F0F0</color>
+    <color name="dark_gray">#BBBBBB</color>
 </resources>

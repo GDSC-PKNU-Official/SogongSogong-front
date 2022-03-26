@@ -44,7 +44,7 @@
             android:layout_marginTop="14dp"
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toTopOf="@id/edge_notification_firstBox"
             app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
 
@@ -58,7 +58,7 @@
             android:layout_marginTop="14dp"
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
-            app:drawableStartCompat="@drawable/ic_comment"
+            app:drawableStartCompat="@drawable/ic_comment_purple"
             app:layout_constraintTop_toBottomOf="@id/tv_notification_comment"
             app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
 
