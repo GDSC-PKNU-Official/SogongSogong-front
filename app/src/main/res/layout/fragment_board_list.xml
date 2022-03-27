@@ -13,11 +13,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_boardList_titleLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/img_boardList_titleLogo"
+            android:layout_width="98.83dp"
+            android:layout_height="46.43dp"
             android:layout_marginTop="45dp"
+            android:contentDescription="@string/sogongSogong"
+            android:src="@drawable/img_logo_title_purple"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -26,35 +28,35 @@
         <View
             android:id="@+id/edge_boardList_firstBox"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="150dp"
             android:background="@drawable/edge_boardlist"
             android:layout_marginTop="15.69dp"
             android:layout_marginStart="28dp"
             android:layout_marginEnd="27dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_boardList_titleLogo"
-            app:layout_constraintBottom_toBottomOf="@id/tv_boardList_myScrap" />
+            app:layout_constraintTop_toBottomOf="@id/img_boardList_titleLogo" />
 
         <TextView
             android:id="@+id/tv_boardList_myPost"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/myPost"
             android:textColor="@color/black"
             android:textSize="14dp"
-            android:gravity="center"
             android:layout_marginTop="14dp"
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_firstBox"
             app:layout_constraintTop_toTopOf="@id/edge_boardList_firstBox"
-            app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
+            app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox"
+            app:drawableStartCompat="@drawable/img_board_list_my_post_custom" />
 
         <TextView
             android:id="@+id/tv_boardList_myComment"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/commentedPost"
             android:textColor="@color/black"
@@ -63,13 +65,15 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_firstBox"
+            app:drawableStartCompat="@drawable/img_board_list_my_comment_custom"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myPost"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
         <TextView
             android:id="@+id/tv_boardList_myLike"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/likePost"
             android:textColor="@color/black"
@@ -78,13 +82,15 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_firstBox"
+            app:drawableStartCompat="@drawable/img_board_list_heart_custom"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myComment"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
 
         <TextView
             android:id="@+id/tv_boardList_myScrap"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/scrapedPost"
             android:textColor="@color/black"
@@ -93,43 +99,44 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_firstBox"
+            app:drawableStartCompat="@drawable/img_board_list_scrap_custom"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_myLike"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_firstBox" />
-
 
         <View
             android:id="@+id/edge_boardList_secondBox"
             android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_height="184dp"
             android:background="@drawable/edge_boardlist"
-            android:layout_marginTop="15.69dp"
+            android:layout_marginTop="4dp"
             android:layout_marginStart="28dp"
             android:layout_marginEnd="27dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/edge_boardList_firstBox"
-            app:layout_constraintBottom_toBottomOf="@id/tv_boardList_marketBoard" />
+            app:layout_constraintTop_toBottomOf="@id/edge_boardList_firstBox" />
 
         <TextView
             android:id="@+id/tv_boardList_hotBoard"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/hotBoard"
             android:textColor="@color/black"
             android:textSize="14dp"
-            android:gravity="center"
             android:layout_marginTop="14dp"
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_secondBox"
+            app:drawableStartCompat="@drawable/img_board_list_hot_custom"
             app:layout_constraintTop_toTopOf="@id/edge_boardList_secondBox"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
         <TextView
             android:id="@+id/tv_boardList_bestBoard"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/bestBoard"
             android:textColor="@color/black"
@@ -138,13 +145,15 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_secondBox"
+            app:drawableStartCompat="@drawable/img_board_list_best_custom"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_hotBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
         <TextView
             android:id="@+id/tv_boardList_sogongsogongBoard"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/sogongsogongBoard"
             android:textColor="@color/black"
@@ -153,13 +162,32 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_secondBox"
+            app:drawableStartCompat="@drawable/img_board_list_sogong_sogong_custom"
             app:layout_constraintTop_toBottomOf="@id/tv_boardList_bestBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
 
         <TextView
+            android:id="@+id/tv_boardList_hashTagBoard"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hashTagBoard"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="24dp"
+            android:drawablePadding="29dp"
+            android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_secondBox"
+            app:drawableStartCompat="@drawable/img_board_list_hash_custom"
+            app:layout_constraintTop_toBottomOf="@id/tv_boardList_sogongsogongBoard"
+            app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox"/>
+
+        <TextView
             android:id="@+id/tv_boardList_marketBoard"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/marketBoard"
             android:textColor="@color/black"
@@ -168,8 +196,10 @@
             android:layout_marginStart="24dp"
             android:drawablePadding="29dp"
             android:onClick="@{() -> navViewModel.emitBoardClickEvent()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
-            app:layout_constraintTop_toBottomOf="@id/tv_boardList_sogongsogongBoard"
+            android:textAlignment="textStart"
+            app:layout_constraintEnd_toEndOf="@id/edge_boardList_secondBox"
+            app:drawableStartCompat="@drawable/img_board_list_box_custom"
+            app:layout_constraintTop_toBottomOf="@id/tv_boardList_hashTagBoard"
             app:layout_constraintStart_toStartOf="@id/edge_boardList_secondBox" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
