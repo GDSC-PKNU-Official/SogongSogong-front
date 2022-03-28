@@ -1,19 +1,25 @@
 package com.gdsc.sogongsogong
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import com.gdsc.sogongsogong.Repository
+import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Response
+import javax.inject.Inject
 
 
-class MainViewModel : BaseViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) : BaseViewModel(dispatcherProvider) {
 
-    var myResponse: MutableLiveData<Response<Post>> = MutableLiveData() //push
-    //var myResponse2: MutableLiveData<Response<Post>> = MutableLiveData() 
-    var myCustomPosts: MutableLiveData<Response<List<Post>>> = MutableLiveData()
-    //var myCustomPosts2: MutableLiveData<Response<List<Post>>> = MutableLiveData()
-    // 이 부분은 검사하 필요합니다... 자료마다 다 달라서 뭘 참고해야 될 지 모르겠어요ㅠㅜ
+    private var _myResponse: MutableLiveData//<Response<Post>>
+    val myResponse: MutableLiveData() = _myResponse
+    // var myResponse: MutableLiveData<Response<Post>> = MutableLiveData()
+
+    private var _myCustomPosts: MutableLiveData//<Response<List<Post>>>
+    val myCustomPosts: MutableLiveData() = _myCustomPosts
 
     fun pushPost(post: Post) {
         onMain {
@@ -56,223 +62,188 @@ class MainViewModel : BaseViewModel() {
     }
     fun getPostAuth(){
         onMain {
-            val response = repository.getPostAuth()
-            myResponse.value = response
+            myResponse.value = repository.getPostAuth()
         }
     }
     fun getPostAuth2(userId: Long, postId: Long){
         onMain {
-            val response = repository.getPostAuth2(userId, postId)
-            myResponse.value = response
+            myResponse.value = repository.getPostAuth2(userId, postId)
         }
     }
 
     fun getCommentAuth(){
         onMain {
-            val response = repository.getCommentAuth()
-            myResponse.value = response
+            myResponse.value = repository.getCommentAuth()
         }
     }
 
     fun getCommentAuth2(postId: Long, sort: String, order: String){
         onMain {
-            val response = repository.getCommentAuth2(postId, sort, order)
-            myResponse.value = response
+            myResponse.value = repository.getCommentAuth2(postId, sort, order)
         }
     }
 
     fun putPost(postId: Long, sort: String, order: String){
         onMain {
-            val response = repository.putPost(postId, sort, order)
-            myResponse.value = response
+            myResponse.value = repository.putPost(postId, sort, order)
         }
     }
 
     fun putComment(userId: Long, content: Map<String, String>){
         onMain {
-            val response = repository.putComment(userId, content)
-            myResponse.value = response
+            myResponse.value = repository.putComment(userId, content)
         }
     }
 
     fun deletePost(postId: Long){
         onMain {
-            val response = repository.deletePost(postId)
-            myResponse.value = response
+            myResponse.value = repository.deletePost(postId)
         }
     }
     fun deleteComment(commentId: Long){
         onMain {
-            val response = repository.deleteComment(commentId)
-            myResponse.value = response
+            myResponse.value = repository.deleteComment(commentId)
         }
     }
     fun getEntirePost(){
         onMain {
-            val response = repository.getEntirePost()
-            myCustomPosts.value = response
+            myCustomPosts.value = repository.getEntirePost()
         }
     }
     fun getEntirePost2(lastPost: Long){
         onMain {
-            val response = repository.getEntirePost2(lastPost)
-            myCustomPosts.value = response
+            myCustomPosts.value = repository.getEntirePost2(lastPost)
         }
     }fun getOnePost(){
         onMain {
-            val response = repository.getOnePost()
-            myResponse.value = response
+            myResponse.value = repository.getOnePost()
         }
     }
     fun getOnePost2(postId : Long){
         onMain {
-            val response = repository.getOnePost2(postId)
-            myResponse.value = response
+            myResponse.value = repository.getOnePost2(postId)
         }
     }
 
 
     fun getOnePostComment(){
         onMain {
-            val response = repository.getOnePostComment()
-            myResponse.value = response
+            myResponse.value = repository.getOnePostComment()
         }
     }fun getOnePostComment2(postId : Long, lastComment:Long){
         onMain {
-            val response = repository.getOnePostComment2(postId, lastComment)
-            myResponse.value = response
+            myResponse.value  = repository.getOnePostComment2(postId, lastComment)
         }
     }
     fun getOnePostScarpLike(){
         onMain {
-            val response = repository.getOnePostScarpLike()
-            myResponse.value = response
+            myResponse.value = repository.getOnePostScarpLike()
         }
     }
     fun getOnePostScarpLike2(userId : Long, scrapLike:Boolean, lastScrap:Long){
         onMain {
-            val response = repository.getOnePostScarpLike2(userId, scrapLike, lastScrap)
-            myResponse.value = response
+            myResponse.value =repository.getOnePostScarpLike2(userId, scrapLike, lastScrap)
         }
     }
 
     fun getHotPost(){
         onMain {
-            val response = repository.getHotPost()
-            myResponse.value = response
+            myResponse.value = repository.getHotPost()
         }
     }
     fun getHotPost2(lastPost : Long){
         onMain {
-            val response = repository.getHotPost2(lastPost)
-            myResponse.value = response
+            myResponse.value = repository.getHotPost2(lastPost)
         }
     }
     fun getBestPost(){
         onMain {
-            val response = repository.getBestPost()
-            myResponse.value = response
+            myResponse.value = repository.getBestPost()
         }
     }
     fun getBestPost2(lastPost : Long){
         onMain {
-            val response = repository.getBestPost2(lastPost)
-            myResponse.value = response
+            myResponse.value = repository.getBestPost2(lastPost)
         }
     }
 
     fun postHashtag(){
         onMain {
-            val response = repository.postHashtag()
-            myResponse.value = response
+            myResponse.value = repository.postHashtag()
         }
     }
     fun postHashtag2(postId: Post, hashName: List<String>){
         onMain {
-            val response = repository.postHashtag2(postId, hashName)
-            myResponse.value = response
+            myResponse.value = repository.postHashtag2(postId, hashName)
         }
     }
     fun putHashtag(postId: Post, hashName: List<String>){
         onMain {
-            val response = repository.putHashtag(postId, hashName)
-            myResponse.value = response
+            myResponse.value = repository.putHashtag(postId, hashName)
         }
     }
 
     fun getHashtagPost(){
         onMain {
-            val response = repository.getHashtagPost()
-            myResponse.value = response
+            myResponse.value = repository.getHashtagPost()
         }
     }
     fun getHashtagPost2(postId: Post){
         onMain {
-            val response = repository.getHashtagPost2(postId)
-            myResponse.value = response
+            myResponse.value = repository.getHashtagPost2(postId)
         }
     }
     fun postHashtagUser(post: Post){
         onMain {
-            val response = repository.postHashtagUser()
-            myResponse.value = response
+            myResponse.value = repository.postHashtagUser()
         }
     }
     fun postHashtagUser2(userId: Long, hashName: List<String>){
         onMain {
-            val response = repository.postHashtagUser2(userId, hashName)
-            myResponse.value = response
+            myResponse.value = repository.postHashtagUser2(userId, hashName)
         }
     }
     fun putHashtagUser(){
         onMain {
-            val response = repository.putHashtagUser()
-            myResponse.value = response
+            myResponse.value = repository.putHashtagUser()
         }
     }
     fun getHashtagUser2(userId : Long){
         onMain {
-            val response = repository.getHashtagUser2(userId)
-            myResponse.value = response
+            myResponse.value = repository.getHashtagUser2(userId)
         }
     }
     fun getHashtagSearchBar(){
         onMain {
-            val response = repository.getHashtagSearchBar()
-            myResponse.value = response
+            myResponse.value = repository.getHashtagSearchBar()
         }
     }
 
 
     fun getHashtagSearchBar2(hashtag : List<String>, lastPost : Long){
         onMain {
-            val response = repository.getHashtagSearchBar2(hashtag, lastPost)
-            myResponse.value = response
+            myResponse.value = repository.getHashtagSearchBar2(hashtag, lastPost)
         }
     }
     fun getHashtagSearchBoard(){
         onMain {
-            val response = repository.getHashtagSearchBoard()
-            myResponse.value = response
+            myResponse.value = repository.getHashtagSearchBoard()
         }
     }
     fun getHashtagSearchBoard2(userId : Long, lastPost : Long){
         onMain {
-            val response = repository.getHashtagSearchBoard2(userId, lastPost)
-            myResponse.value = response
+            myResponse.value = repository.getHashtagSearchBoard2(userId, lastPost)
         }
     }
     fun getUserBusiness(){
         onMain {
-            val response = repository.getUserBusiness()
-            myResponse.value = response
+            myResponse.value = repository.getUserBusiness()
         }
     }
 
     fun getUserBusiness2(num: String, startDate: String, pName: String){
         onMain {
-            val response = repository.getUserBusiness2(num, startDate, pName)
-            myResponse.value = response
+            myResponse.value = repository.getUserBusiness2(num, startDate, pName)
         }
     }
 
