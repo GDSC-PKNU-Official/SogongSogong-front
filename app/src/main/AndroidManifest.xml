@@ -31,9 +31,14 @@
         <activity
             android:name=".ui.search.BoardSearchActivity"
             android:exported="true" />
+
         <activity
             android:name=".ui.board.BoardActivity"
             android:exported="true" />
+
+        <activity android:name=".ui.writepost.WritePostActivity"
+            android:exported="true" />
+
         <activity android:name=".ui.selecthash.SelectHashActivity"
             android:exported="true" />
     </application>
