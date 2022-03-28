@@ -16,4 +16,5 @@
     <color name="GoogleTextColor">#444444</color>
     <color name="fake_white">#F0F0F0</color>
     <color name="dark_gray">#BBBBBB</color>
+    <color name="point_color">#FFB300</color>
 </resources>
