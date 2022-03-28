@@ -26,7 +26,7 @@ to solve the UN's SDGS No.8.<br><br>
       <ul>
         <li><a href="#Summary">Summary</a></li>
           <li><a href="#Flow-Chart">Flow Chart</a></li>
-          <li><a href="#Tech-Stack(Front-End)">Tech Stack(Front-End)</a></li>    
+          <li><a href="#Tech">Tech Stack(Front-End)</a></li>    
       </ul>
     </li>
     <li>
@@ -56,7 +56,9 @@ to solve the UN's SDGS No.8.<br><br>
 ### Flow Chart
 [See Flow Chart at the following Link!](https://www.figma.com/file/SvZevMfaXG9AiroGFX3JzK/%EC%86%8C%EA%B3%B5%EC%86%8C%EA%B3%B5-%ED%94%8C%EB%A1%9C%EC%9A%B0%EC%B0%A8%ED%8A%B8?node-id=0%3A1 "title")
 </br>
-### Tech Stack(Front-End)
+
+<h3 id="Tech"> Tech Stack(Front-End) </h3>
+
 <img src="https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white"><img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=android-studio&logoColor=white"><img src="https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white"><img src="https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase">
 <!-- https://github.com/Ileriayo/markdown-badges 에서 찾기~-->
 
