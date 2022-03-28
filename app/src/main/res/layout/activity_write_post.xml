@@ -64,17 +64,11 @@
             android:layout_marginStart="21dp"
             android:layout_marginEnd="160dp"
             android:textColor="@color/black"
+            android:textStyle="bold"
             android:textSize="12dp"
             app:layout_constraintTop_toBottomOf="@id/tv_writePost_title"
             app:layout_constraintStart_toStartOf="parent" />
 
-<!--        <Spinner-->
-<!--            android:id="@+id/spinner_writePost_jobCategory"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/tv_writePost_jobCategory"-->
-<!--            app:layout_constraintStart_toStartOf="@id/tv_writePost_jobCategory" />-->
-<!--        TODO: spinner-->
         <TextView
             android:id="@+id/spinner_writePost_jobCategory"
             android:layout_width="0dp"
@@ -85,6 +79,8 @@
             android:layout_marginEnd="21dp"
             android:textColor="@color/main_color"
             android:textSize="10dp"
+            android:padding="5dp"
+            android:background="@drawable/edge_notice"
             app:layout_constraintTop_toBottomOf="@id/tv_writePost_jobCategory"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -98,11 +94,13 @@
             android:text="@string/roodCustomer"
             android:layout_marginStart="21dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/shape_btn"
+            android:background="@drawable/shape_hash_tag"
             android:textColor="@color/white"
             android:textSize="12dp"
             app:layout_constraintTop_toBottomOf="@id/spinner_writePost_jobCategory"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:drawableEndCompat="@drawable/ic_close"
+            app:drawableTint="@color/white" />
 
         <View
             android:id="@+id/divider_writePost"
@@ -114,18 +112,20 @@
             app:layout_constraintStart_toStartOf="@id/chip_writePost_hashTag"
             app:layout_constraintEnd_toEndOf="@id/spinner_writePost_jobCategory"/>
 
-
-<!--        <EditText-->
-<!--            android:id="@+id/et_writePost_contents"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="0dp"-->
-<!--            android:autofillHints=""-->
-<!--            android:hint="@string/inputContents"-->
-<!--            android:inputType="text"-->
-<!--            android:minHeight="48dp"-->
-<!--            app:layout_constraintStart_toStartOf="@id/spinner_writePost_jobCategory"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/divider_writePost"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+        <EditText
+            android:id="@+id/et_writePost_contents"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:hint="@string/inputContents"
+            android:gravity="top"
+            android:textSize="12dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="null"
+            app:layout_constraintTop_toBottomOf="@id/divider_writePost"
+            app:layout_constraintBottom_toTopOf="@id/tv_writePost_addImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tv_writePost_addImage"
@@ -135,21 +135,32 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/tv_writePost_jobCategory"
-            app:layout_constraintBottom_toTopOf="@id/tv_writePost_addImageButton"/>
+            app:layout_constraintBottom_toTopOf="@id/edge_writePost_addImageBox"/>
 
 <!--        TODO: add edge & reset position-->
-        <TextView
-            android:id="@+id/tv_writePost_addImageButton"
-            android:layout_width="0dp"
+
+        <View
+            android:id="@+id/edge_writePost_addImageBox"
+            android:layout_width="320dp"
             android:layout_height="100dp"
-            android:contentDescription="@string/addImageButton"
-            android:onClick="@{() -> navViewModel.emitAddImageClickEvent()}"
             android:layout_marginStart="22dp"
             android:layout_marginEnd="18dp"
             android:layout_marginBottom="52dp"
+            android:background="@drawable/edge_notice"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:drawableTopCompat="@drawable/ic_camera" />
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/tv_writePost_addImageButton"
+            android:layout_width="20dp"
+            android:layout_height="18dp"
+            android:contentDescription="@string/addImageButton"
+            android:onClick="@{() -> navViewModel.emitAddImageClickEvent()}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/edge_writePost_addImageBox"
+            app:layout_constraintBottom_toBottomOf="@id/edge_writePost_addImageBox"
+            android:src="@drawable/ic_camera" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
