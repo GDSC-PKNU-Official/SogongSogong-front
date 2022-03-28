@@ -2,6 +2,7 @@ package com.gdsc.sogongsogong.ui.board
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.gdsc.sogongsogong.NavViewModel
@@ -40,6 +41,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         lifecycleScope.launch {
             collectBackButtonClickEvent()
             collectBoardClickEvent()
+            collectWritePostFabClickEvent()
         }
     }
 
@@ -51,6 +53,13 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private suspend fun collectBoardClickEvent() {
         navViewModel.boardClickEvent.collect {
+            // TODO: 게시글 확인
+        }
+    }
+
+    private suspend fun collectWritePostFabClickEvent() {
+        // FIXME: collect 하지 않는 오류
+        navViewModel.writePostFabClickEvent.collect {
             showWritePostActivity()
         }
     }
