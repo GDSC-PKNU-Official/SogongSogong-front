@@ -114,7 +114,8 @@ class MainViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) 
         onMain {
             myCustomPosts.value = repository.getEntirePost2(lastPost)
         }
-    }fun getOnePost(){
+    }
+    fun getOnePost(){
         onMain {
             myResponse.value = repository.getOnePost()
         }
