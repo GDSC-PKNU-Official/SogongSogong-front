@@ -204,7 +204,7 @@ interface SimpleApi {
 
     @PUT("/hashtag/user")
     fun putHashtagUser(
-        @Query("userId") userId: Int,
+        @Query("userId") userId: Int, // long이 아니네..?왜지
         @Query("hashName") hashName: List<String>
     ): Call<Post?>?
 
