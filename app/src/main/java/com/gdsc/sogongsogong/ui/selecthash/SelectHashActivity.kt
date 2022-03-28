@@ -16,10 +16,13 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
 
     private val selectHAshViewModel: SelectHashViewModel by viewModels { defaultViewModelProviderFactory }
 
+    private val selectHashAdapter by lazy { SelectHashAdapter() }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setBinding()
+        setRecyclerView() // FIXME: 해시태그 선택에 반응하도록 변경
         setCoroutine()
     }
 
@@ -29,6 +32,8 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
 
     private fun setRecyclerView() {
         // TODO: 해시태그 선택에 따라 어댑터 변경
+        binding.rvSelectHashContents.adapter = selectHashAdapter
+        selectHashAdapter.submitList(listOf("농업 임업 및 어업", "금융 및 보험업", "금융 및 보험업"))
     }
 
     private fun setCoroutine() = lifecycleScope.launch {
