@@ -1,13 +1,14 @@
 package com.gdsc.sogongsogong.ui.board
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityBoardBinding
 import com.gdsc.sogongsogong.ui.base.BaseActivity
+import com.gdsc.sogongsogong.ui.writepost.WritePostActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -38,6 +39,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     private fun setCoroutine() {
         lifecycleScope.launch {
             collectBackButtonClickEvent()
+            collectBoardClickEvent()
         }
     }
 
@@ -45,5 +47,15 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         navViewModel.backButtonEvent.collect {
             finish()
         }
+    }
+
+    private suspend fun collectBoardClickEvent() {
+        navViewModel.boardClickEvent.collect {
+            showWritePostActivity()
+        }
+    }
+
+    private fun showWritePostActivity() {
+        startActivity(Intent(this, WritePostActivity::class.java))
     }
 }
