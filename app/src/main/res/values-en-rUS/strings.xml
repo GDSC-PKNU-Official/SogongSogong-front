@@ -70,4 +70,9 @@
     <string name="thumbs_up">" "</string>
     <string name="writeButton">" "</string>
     <string name="profile">" "</string>
+    <string name="completeSignUp">Complete Sign Up</string>
+    <string name="authorize">Authorize</string>
+    <string name="authorizeLater">Authorize Later</string>
+    <string name="representative">Representative</string>
+
 </resources>
