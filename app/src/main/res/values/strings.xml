@@ -85,5 +85,7 @@
     <string name="detail">더보기</string>
     <string name="hot">핫</string>
     <string name="comment">댓글</string>
+    <string name="category">업태분류</string>
+    <string name="etcCategory">기타분류</string>
 
 </resources>
