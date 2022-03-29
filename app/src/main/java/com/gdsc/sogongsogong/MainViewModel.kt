@@ -12,7 +12,10 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class MainViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) : BaseViewModel(dispatcherProvider) {
+class MainViewModel @Inject constructor(
+    dispatcherProvider: DispatcherProvider,
+    private val repository: Repository
+) : BaseViewModel(dispatcherProvider) {
 
     private var _myResponse: MutableLiveData//<Response<Post>>
     val myResponse: MutableLiveData() = _myResponse
