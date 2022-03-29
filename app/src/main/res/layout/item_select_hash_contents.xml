@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="item"
+            type="String" />
 
     </data>
 
@@ -24,6 +27,7 @@
             android:paddingEnd="26dp"
             android:paddingBottom="10dp"
             android:background="@drawable/edge_notice"
+            android:text="@{item}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="농업 임업 및 어업" />

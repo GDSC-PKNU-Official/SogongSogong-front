@@ -102,4 +102,19 @@
 
     </fragment>
 
+    <activity
+        android:id="@+id/writePostActivity"
+        android:name="com.gdsc.sogongsogong.ui.writepost.WritePostActivity"
+        android:label="글쓰기"
+        tools:layout="@layout/activity_write_post">
+
+    </activity>
+
+    <activity
+        android:id="@+id/selectHashActivity"
+        android:name="com.gdsc.sogongsogong.ui.selecthash.SelectHashActivity"
+        android:label="해시태그 선택"
+        tools:layout="@layout/activity_select_hash">
+
+    </activity>
 </navigation>

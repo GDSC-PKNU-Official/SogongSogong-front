@@ -82,6 +82,7 @@
             android:background="@drawable/shape_fab_border"
             android:contentDescription="@string/writeButton"
             android:elevation="10dp"
+            android:onClick="@{() -> navViewModel.emitWritePostFabClickEvent()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
