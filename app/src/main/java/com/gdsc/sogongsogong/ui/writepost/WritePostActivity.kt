@@ -1,5 +1,6 @@
 package com.gdsc.sogongsogong.ui.writepost
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -7,6 +8,7 @@ import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityWritePostBinding
 import com.gdsc.sogongsogong.ui.base.BaseActivity
+import com.gdsc.sogongsogong.ui.selecthash.SelectHashActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -30,6 +32,7 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
     private fun setCoroutine() {
         lifecycleScope.launch {
             collectAddImageButton()
+            collectSelectHashTag()
         }
     }
 
@@ -57,5 +60,15 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
     private fun hasAuthor(): Boolean {
         // TODO: 갤러리 접근 권한을 확인한다.
         return false
+    }
+
+    private suspend fun collectSelectHashTag() {
+        navViewModel.selectHashTagClickEvent.collect {
+            showSelectHashActivity()
+        }
+    }
+
+    private fun showSelectHashActivity() {
+        startActivity(Intent(this, SelectHashActivity::class.java))
     }
 }

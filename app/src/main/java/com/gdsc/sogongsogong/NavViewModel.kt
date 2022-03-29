@@ -23,6 +23,12 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     private val _addImageClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val addImageClickEvent: SharedFlow<Unit> = _addImageClickEvent
 
+    private val _selectHashTagClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val selectHashTagClickEvent: SharedFlow<Unit> = _selectHashTagClickEvent
+
+    private val _writePostFabClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val writePostFabClickEvent: SharedFlow<Unit> = _writePostFabClickEvent
+
     fun emitSearchBarClickEvent() = onMain {
         _searchBarClickEvent.emit(Unit)
     }
@@ -37,5 +43,13 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
 
     fun emitAddImageClickEvent() = onMain {
         _addImageClickEvent.emit(Unit)
+    }
+
+    fun emitSelectHashTagClickEvent() = onMain {
+        _selectHashTagClickEvent.emit(Unit)
+    }
+
+    fun emitWritePostFabClickEvent() = onMain {
+        _writePostFabClickEvent.emit(Unit)
     }
 }

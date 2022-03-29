@@ -81,10 +81,14 @@
     <string name="sogongSogong">소공소공</string>
     <string name="hashTagBoard">해시태그 게시판</string>
     <string name="select_hash_tag">해시태그 선택하기</string>
+
     <string name="completeSignUp">가입완료</string>
     <string name="authorize">인증하기</string>
     <string name="authorizeLater">나중에 인증하기</string>
     <string name="representative">대표자명</string>
+
+    <string name="reset">초기화하기</string>
+    <string name="complete_select">선택완료</string>
 
 
 </resources>
