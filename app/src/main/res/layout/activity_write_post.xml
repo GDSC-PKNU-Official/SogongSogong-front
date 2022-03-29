@@ -53,6 +53,7 @@
             android:paddingStart="2dp"
             android:paddingBottom="7dp"
             android:paddingEnd="2.81dp"
+            android:onClick="@{() -> navViewModel.emitWritePostCompleteClickEvent()}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

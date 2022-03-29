@@ -40,6 +40,9 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
         lifecycleScope.launch {
             collectBackButton()
         }
+        lifecycleScope.launch {
+            collectCompleteButton()
+        }
     }
 
     private suspend fun collectAddImageButton() {
@@ -80,6 +83,13 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
 
     private suspend fun collectBackButton() {
         navViewModel.backButtonEvent.throttleFirst().collect {
+            finish()
+        }
+    }
+
+    private suspend fun collectCompleteButton() {
+        navViewModel.writePostCompleteClickEvent.throttleFirst().collect {
+            // TODO: post viewmodel로 로직 이동
             finish()
         }
     }
