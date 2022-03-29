@@ -32,6 +32,8 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
     private fun setCoroutine() {
         lifecycleScope.launch {
             collectAddImageButton()
+        }
+        lifecycleScope.launch {
             collectSelectHashTag()
         }
     }
