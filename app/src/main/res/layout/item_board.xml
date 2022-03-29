@@ -7,6 +7,15 @@
         <variable
             name="boardViewModel"
             type="com.gdsc.sogongsogong.ui.board.BoardViewModel" />
+        <variable
+            name="item"
+            type="com.gdsc.sogongsogong.data.entity.Post" />
+        <variable
+            name="scrapCount"
+            type="Integer" />
+        <variable
+            name="commentCount"
+            type="Integer" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -46,6 +55,7 @@
             android:layout_marginTop="2dp"
             android:textSize="12dp"
             android:textColor="@color/black"
+            android:text="@{item.body}"
             app:layout_constraintTop_toBottomOf="@id/tv_itemBoard_profile"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="내용내용"/>
@@ -57,6 +67,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginTop="20dp"
             android:textSize="8dp"
+            android:text="@{item.regdate}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="4시간 전"/>
@@ -78,6 +89,7 @@
             android:layout_marginBottom="10dp"
             android:textColor="@color/point_color"
             android:textSize="12dp"
+            android:text="@{scrapCount}"
             app:layout_constraintEnd_toStartOf="@id/img_board_commentIcon"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text=" 30" />
@@ -100,6 +112,7 @@
             android:layout_marginEnd="14dp"
             android:textSize="12dp"
             android:textColor="@color/main_color"
+            android:text="@{commentCount}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text=" 12"/>
