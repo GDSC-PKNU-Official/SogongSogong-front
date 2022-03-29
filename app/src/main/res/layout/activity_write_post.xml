@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="71.5dp"
             android:layout_marginStart="22.8dp"
+            android:onClick="@{() -> navViewModel.emitBackButtonEvent()}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:drawableStartCompat="@drawable/ic_back" />

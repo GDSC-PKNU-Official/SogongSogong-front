@@ -9,6 +9,7 @@ import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityWritePostBinding
 import com.gdsc.sogongsogong.ui.base.BaseActivity
 import com.gdsc.sogongsogong.ui.selecthash.SelectHashActivity
+import com.gdsc.sogongsogong.util.throttleFirst
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -35,6 +36,9 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
         }
         lifecycleScope.launch {
             collectSelectHashTag()
+        }
+        lifecycleScope.launch {
+            collectBackButton()
         }
     }
 
@@ -72,5 +76,11 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
 
     private fun showSelectHashActivity() {
         startActivity(Intent(this, SelectHashActivity::class.java))
+    }
+
+    private suspend fun collectBackButton() {
+        navViewModel.backButtonEvent.throttleFirst().collect {
+            finish()
+        }
     }
 }
