@@ -30,9 +30,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:textColor="@color/black"
             android:layout_marginTop="15dp"
+            android:textColor="@color/black"
             android:textSize="12dp"
+            android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_itemBoard_profile"
             tools:text="익명" />
@@ -60,23 +61,48 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="4시간 전"/>
 
+        <ImageView
+            android:id="@+id/img_itemBoard_starIcon"
+            android:layout_width="11.67dp"
+            android:layout_height="11.67dp"
+            android:src="@drawable/img_board_list_scrap_custom"
+            app:layout_constraintEnd_toStartOf="@id/tv_itemBoard_star"
+            app:layout_constraintBottom_toBottomOf="@id/tv_itemBoard_star"
+            app:layout_constraintTop_toTopOf="@id/tv_itemBoard_star" />
+
         <TextView
             android:id="@+id/tv_itemBoard_star"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            app:drawableStartCompat="@drawable/ic_star"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/point_color"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@id/img_board_commentIcon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text=" 30" />
+
+        <ImageView
+            android:id="@+id/img_board_commentIcon"
+            android:layout_width="13dp"
+            android:layout_height="10dp"
+            android:src="@drawable/img_comment_purple"
+            android:contentDescription="@string/comment"
             app:layout_constraintEnd_toStartOf="@id/tv_itemBoard_comment"
-            app:layout_constraintBottom_toBottomOf="@id/tv_itemBoard_comment" />
+            app:layout_constraintBottom_toBottomOf="@id/tv_itemBoard_comment"
+            app:layout_constraintTop_toTopOf="@id/tv_itemBoard_comment" />
 
         <TextView
             android:id="@+id/tv_itemBoard_comment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
+            android:layout_marginEnd="14dp"
+            android:textSize="12dp"
+            android:textColor="@color/main_color"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text=" 12"/>
 
         <View
             android:id="@+id/divider_itemBoard"
