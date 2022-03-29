@@ -18,7 +18,7 @@
             android:layout_width="98.83dp"
             android:layout_height="46.43dp"
             android:layout_marginTop="45dp"
-            android:contentDescription="@string/sogongSogong"
+            android:contentDescription="@string/sogongsogong"
             android:src="@drawable/img_logo_title_purple"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"

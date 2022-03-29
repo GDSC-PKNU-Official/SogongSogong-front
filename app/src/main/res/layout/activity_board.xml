@@ -7,6 +7,16 @@
         <variable
             name="navViewModel"
             type="com.gdsc.sogongsogong.NavViewModel" />
+        <!--        hot 게시글-->
+        <variable
+            name="hotItem"
+            type="com.gdsc.sogongsogong.data.entity.Post" />
+        <variable
+            name="hotGoodCount"
+            type="String" />
+        <variable
+            name="hotCommentCount"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -94,6 +104,7 @@
             android:layout_marginStart="8dp"
             android:textStyle="bold"
             android:textSize="12dp"
+            android:text="@{hotItem.title}"
             app:layout_constraintTop_toTopOf="@id/edge_board_hotPost"
             app:layout_constraintStart_toEndOf="@id/img_board_hotLogo"
             tools:text="코로나 지원금 신청 방법과 꿀팁" />
@@ -104,6 +115,7 @@
             android:layout_height="wrap_content"
             android:textSize="10dp"
             android:textColor="#C7C7C7"
+            android:text="@{hotItem.regdate}"
             app:layout_constraintTop_toBottomOf="@id/tv_board_hotBoard"
             app:layout_constraintStart_toStartOf="@id/tv_board_hotBoard"
             tools:text="17:50" />
