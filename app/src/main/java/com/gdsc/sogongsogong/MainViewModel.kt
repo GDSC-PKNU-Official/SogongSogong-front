@@ -16,6 +16,10 @@ class MainViewModel @Inject constructor(
     private val repository: Repository
 ) : BaseViewModel(dispatcherProvider) {
 
+    /**
+     * TODO: liveData -> Flow로 변경하기
+     * TODO: 여러 repository로 분할하기
+     */
     private val _myResponse: MutableLiveData<Response<Post>> = MutableLiveData()
     val myResponse: LiveData<Response<Post>> = _myResponse
 
@@ -23,27 +27,33 @@ class MainViewModel @Inject constructor(
     val myCustomPosts: LiveData<Response<List<Post>>> = _myCustomPosts
 
     fun pushPost(post: Post) = onMain {
-        _myResponse.value = repository.pushPost(post)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushPost(post)
     }
 
     fun pushPost2(userId: Long, postId: Long, subject: String, content: String) = onMain {
-        _myResponse.value = repository.pushPost2(userId, postId, subject, content)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushPost2(userId, postId, subject, content)
     }
 
     fun pushComment() = onMain {
-        _myResponse.value = repository.pushComment()
-    }
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushComment()
 
+    }
     fun pushComment2(userId: Long, postId: Long, content: String) = onMain {
-        _myResponse.value = repository.pushComment2(userId, postId, content)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushComment2(userId, postId, content)
     }
 
     fun pushScraplike() = onMain {
-        _myResponse.value = repository.pushScraplike()
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushScraplike()
     }
 
     fun pushScraplike2(userId: Long, postId: Long, category: Boolean) = onMain {
-        _myResponse.value = repository.pushScraplike2(userId, postId, category)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.pushScraplike2(userId, postId, category)
     }
 
     fun getPostAuth() = onMain {
@@ -51,42 +61,47 @@ class MainViewModel @Inject constructor(
     }
 
     fun getPostAuth2(userId: Long, postId: Long) = onMain {
-        _myResponse.value = repository.getPostAuth2(userId, postId)
-    }
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.getPostAuth2(userId, postId)
 
+    }
     fun getCommentAuth() = onMain {
         _myResponse.value = repository.getCommentAuth()
     }
 
     fun getCommentAuth2(postId: Long, sort: String, order: String) = onMain {
-        // FIXME: 매개변수 자료형 안맞음
+        // FIXME: 매개변수 불일치
 //        _myResponse.value = repository.getCommentAuth2(postId, sort, order)
     }
 
     fun putPost(postId: Long, sort: String, order: String) = onMain {
-        // FIXME: 매개변수 자료형 안맞음
+        // FIXME: 매개변수 불일치
 //        _myResponse.value = repository.putPost(postId, sort, order)
     }
 
     fun putComment(userId: Long, content: Map<String, String>) = onMain {
-        // FIXME: 매개변수 자료형 안맞음
+        // FIXME: 매개변수 불일치
 //        _myResponse.value = repository.putComment(userId, content)
     }
 
     fun deletePost(postId: Long) = onMain {
-        _myResponse.value = repository.deletePost(postId)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.deletePost(postId)
     }
 
     fun deleteComment(commentId: Long) = onMain {
-        _myResponse.value = repository.deleteComment(commentId)
-    }
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.deleteComment(commentId)
 
+    }
     fun getEntirePost() = onMain {
-        _myCustomPosts.value = repository.getEntirePost()
+        // FIXME: 매개변수 불일치
+//        _myCustomPosts.value = repository.getEntirePost()
     }
 
     fun getEntirePost2(lastPost: Long) = onMain {
-        _myCustomPosts.value = repository.getEntirePost2(lastPost)
+        // FIXME: 매개변수 불일치
+//        _myCustomPosts.value = repository.getEntirePost2(lastPost)
     }
 
     fun getOnePost() = onMain {
@@ -94,7 +109,8 @@ class MainViewModel @Inject constructor(
     }
 
     fun getOnePost2(postId : Long) = onMain {
-        _myResponse.value = repository.getOnePost2(postId)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.getOnePost2(postId)
     }
 
     fun getOnePostComment() = onMain {
@@ -102,7 +118,8 @@ class MainViewModel @Inject constructor(
     }
 
     fun getOnePostComment2(postId : Long, lastComment:Long) = onMain {
-        _myResponse.value  = repository.getOnePostComment2(postId, lastComment)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value  = repository.getOnePostComment2(postId, lastComment)
     }
 
     fun getOnePostScarpLike() = onMain {
@@ -110,7 +127,8 @@ class MainViewModel @Inject constructor(
     }
 
     fun getOnePostScarpLike2(userId : Long, scrapLike:Boolean, lastScrap:Long) = onMain {
-        _myResponse.value = repository.getOnePostScarpLike2(userId, scrapLike, lastScrap)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.getOnePostScarpLike2(userId, scrapLike, lastScrap)
     }
 
     fun getHotPost() = onMain {
@@ -130,15 +148,18 @@ class MainViewModel @Inject constructor(
     }
 
     fun postHashtag() = onMain {
-        _myResponse.value = repository.postHashtag()
+        // FIXME: 매개변수 불일치
+//        _myResponse.value = repository.postHashtag()
     }
 
     fun postHashtag2(postId: Post, hashName: List<String>) = onMain {
-        _myResponse.value = repository.postHashtag2(postId, hashName)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.postHashtag2(postId, hashName)
     }
 
     fun putHashtag(postId: Post, hashName: List<String>) = onMain {
-        _myResponse.value = repository.putHashtag(postId, hashName)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.putHashtag(postId, hashName)
     }
 
     fun getHashtagPost() = onMain {
@@ -146,19 +167,23 @@ class MainViewModel @Inject constructor(
     }
 
     fun getHashtagPost2(postId: Post) = onMain {
-        _myResponse.value = repository.getHashtagPost2(postId)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.getHashtagPost2(postId)
     }
 
     fun postHashtagUser(post: Post) = onMain {
-        _myResponse.value = repository.postHashtagUser()
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.postHashtagUser(post)
     }
 
     fun postHashtagUser2(userId: Long, hashName: List<String>) = onMain {
-        _myResponse.value = repository.postHashtagUser2(userId, hashName)
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.postHashtagUser2(userId, hashName)
     }
 
     fun putHashtagUser() = onMain {
-        _myResponse.value = repository.putHashtagUser()
+        // FIXME: 해당 코드에 오류 없고 repository 쪽이 틀렸고, 오류 안날 때 주석 풀면 됩니다.
+//        _myResponse.value = repository.putHashtagUser()
     }
 
     fun getHashtagUser2(userId : Long) = onMain {
