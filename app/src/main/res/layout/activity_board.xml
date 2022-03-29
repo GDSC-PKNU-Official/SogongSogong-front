@@ -38,15 +38,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
+        <ImageView
             android:id="@+id/image_board_detailButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="더보기 버튼"
             android:layout_marginTop="57dp"
             android:layout_marginEnd="27dp"
+            android:src="@drawable/ic_more_horizon"
+            android:contentDescription="@string/detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/main_color" />
 
         <TextView
             android:id="@+id/tv_board_banner"

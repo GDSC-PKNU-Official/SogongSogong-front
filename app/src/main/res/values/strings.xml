@@ -83,5 +83,6 @@
     <string name="select_hash_tag">해시태그 선택하기</string>
     <string name="reset">초기화하기</string>
     <string name="complete_select">선택완료</string>
+    <string name="detail">더보기</string>
 
 </resources>
