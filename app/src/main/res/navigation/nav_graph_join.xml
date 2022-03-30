@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_join"
+    app:startDestination="@id/businessTypeFragment">
+
+    <fragment
+        android:id="@+id/businessTypeFragment"
+        android:label="@string/typeOfBusiness"
+        android:name="com.gdsc.sogongsogong.ui.businesstype.BusinessTypeFragment" />
+</navigation>
