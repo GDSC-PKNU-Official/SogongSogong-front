@@ -2,10 +2,23 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph_join"
-    app:startDestination="@id/businessTypeFragment">
+    app:startDestination="@id/businessAuthFragment">
 
     <fragment
         android:id="@+id/businessTypeFragment"
         android:label="@string/typeOfBusiness"
-        android:name="com.gdsc.sogongsogong.ui.businesstype.BusinessTypeFragment" />
+        android:name="com.gdsc.sogongsogong.ui.businesstype.BusinessTypeFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/businessAuthFragment"
+        android:label="@string/authorize"
+        android:name="com.gdsc.sogongsogong.ui.businessauth.BusinessAuthFragment">
+
+        <action
+            android:id="@+id/action_businessAuth_to_businessType"
+            app:popUpTo="@id/businessAuthFragment"
+            app:destination="@id/businessTypeFragment" />
+    </fragment>
 </navigation>
