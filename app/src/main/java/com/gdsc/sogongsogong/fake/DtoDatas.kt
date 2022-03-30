@@ -23,6 +23,10 @@ class DtoDatas {
         val subject: String,
         val content: String
     )
+    data class putCommentDto(
+        val commentId: Long,
+        val content: String
+    )
     data class postHashtag2Dto(
         val postId: Long,
         val hashName: List<String>
