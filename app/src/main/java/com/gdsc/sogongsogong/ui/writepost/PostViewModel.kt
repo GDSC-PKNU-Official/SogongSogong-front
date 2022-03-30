@@ -13,7 +13,7 @@ class PostViewModel @Inject constructor(
 ): BaseViewModel(dispatcherProvider) {
 
     fun postPost() = onMain {
-        repository.pushPost(1, 1, "sub", "cont")
+        repository.pushPost2(1, 1, "sub", "cont")
 //        repository.pushPost(userId, postId, subject, content)
     }
 }

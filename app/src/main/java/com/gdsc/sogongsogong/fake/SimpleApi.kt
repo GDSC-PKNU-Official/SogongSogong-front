@@ -18,9 +18,7 @@ interface SimpleApi {
 
     // 사용자가 제목, 내용을 입력한 뒤 게시글을 등록한다.
 
-    @FormUrlEncoded
     @POST("/board/post")
-
     suspend fun pushPost2(
         @Body pushPost2Dto: DtoDatas.pushPost2Dto
     ): Response<DtoDatas.pushPost2Dto>
