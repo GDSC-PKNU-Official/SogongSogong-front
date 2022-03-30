@@ -93,5 +93,9 @@
     <string name="wholesale_and_retail_business">wholesale and retail business</string>
     <string name="typeOfBusiness">typeOfBusiness</string>
     <string name="e_commerce">e-commerce</string>
-
+    <string name="inputRepresentative">enter the representative</string>
+    <string name="openingDate">opening date</string>
+    <string name="licenseNumber">license number</string>
+    <string name="enter_the_number_except">Enter the Number except \'-\'</string>
+    <string name="pickDate">date</string>
 </resources>
