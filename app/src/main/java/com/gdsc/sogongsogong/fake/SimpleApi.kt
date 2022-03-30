@@ -26,11 +26,8 @@ interface SimpleApi {
     @FormUrlEncoded
     @POST("/board/post")
     suspend fun pushPost2(
-        @Field("userId") userId: Long,
-        @Field("postid") postId: Int,
-        @Field("subject") subject: String,
-        @Field("content") content: String
-    ): Response<Post>
+        @Body pushPost2Dto: DtoDatas.pushPost2Dto
+    ): Response<DtoDatas.pushPost2Dto>
 
     // 사용자가 어떤 게시글에 댓글을 등록한다
     @POST("/board/comments")
@@ -41,10 +38,8 @@ interface SimpleApi {
     @FormUrlEncoded
     @POST("/board/comments")
     suspend fun pushComment2(
-        @Field("userId") userId: Long,
-        @Field("postId") postId: Long, // postid를 comment에서 쓸 수 있는건지 아니면 백에서 따로 처리하시는지 궁금해서 질문 드립니다!
-        @Field("content") content: String
-    ): Response<Post>
+        @Body pushComment2Dto: DtoDatas.pushComment2Dto
+    ): Response<DtoDatas.pushComment2Dto>
 
     // 사용자가 어떤 게시글에 스크랩, 좋아요 버튼을 누른다.
     @POST("/board/scraplikes")
@@ -55,10 +50,8 @@ interface SimpleApi {
     @FormUrlEncoded
     @POST("/board/scraplikes")
     suspend fun pushScraplike2(
-        @Field("userId") userId: Long,
-        @Field("postId") postId: Long,
-        @Field("content") category: Boolean
-    ): Response<Post>
+        @Body pushScraplike2Dto: DtoDatas.pushScraplike2Dto
+    ): Response<DtoDatas.pushScraplike2Dto>
 
     //게시글 및 댓글을 수정/삭제
     @GET("/board/post-auth")
