@@ -5,13 +5,9 @@ import com.gdsc.sogongsogong.fake.RetrofitInstance
 import retrofit2.Response
 
 class Repository {
-//    suspend fun pushPost(post: Post): Response<Post> {
-//        return RetrofitInstance.api.getPost(post)
-//    }
-
-//    suspend fun pushPost2(userId: Long, postId: Long, subject: String, content: String): Response<Post> {
-//        return RetrofitInstance.api.getPost2(userId, postId, subject, content)
-//    }
+    suspend fun pushPost(userId: Long, postId: Long, subject: String, content: String): Response<Post> {
+        return RetrofitInstance.api.pushPost(userId, postId, subject, content)
+    }
 
 //    suspend fun pushComment(): Response<Post> {
 //        return RetrofitInstance.api.pushComment()
