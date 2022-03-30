@@ -21,4 +21,5 @@
     <color name="searchbar_gray">#ACACAC</color>
     <color name="edge_gray">#E1E1E1</color>
     <color name="category_background">#FFECE2F2</color>
+    <color name="auth_button_gray">#9C9C9C</color>
 </resources>
