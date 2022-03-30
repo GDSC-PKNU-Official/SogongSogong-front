@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="navViewModel"
+            type="com.gdsc.sogongsogong.NavViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/image_hashboard_backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="51.17dp"
+            android:layout_marginStart="14.84dp"
+            android:onClick="@{() -> navViewModel.emitBackButtonEvent()}"
+            app:drawableStartCompat="@drawable/ic_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_hashboard_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="142dp"
+            android:layout_marginTop="49dp"
+            android:layout_marginEnd="144dp"
+            android:text="해시태그게시판"
+            android:textColor="@color/black"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/image_hashboard_detailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="더보기 버튼"
+            android:layout_marginTop="57dp"
+            android:layout_marginEnd="27dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_home_information4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="내가 선택한 해시"
+            android:textColor="@color/main_color"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_hashboard_banner"
+            app:layout_constraintStart_toStartOf="@+id/tv_hashboard_banner"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hashboard_title"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_hashboard_banner"
+            android:layout_width="332dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_round_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.482"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hashboard_title" />
+
+        <TextView
+            android:id="@+id/chip_hashTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/shape_hash_tag"
+            android:text="@string/roodCustomer"
+            android:textColor="@color/white"
+            android:textSize="12dp"
+            app:drawableEndCompat="@drawable/ic_close"
+            app:drawableTint="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/tv_hashboard_banner"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_information4" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="23dp"
+            android:layout_height="25dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_hashboard_banner"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hashboard_banner"
+            app:srcCompat="@drawable/img_thumbs_up" />
+
+        <TextView
+            android:id="@+id/tv_hash_information"
+            android:layout_width="141dp"
+            android:layout_height="22dp"
+            android:text="지금 인기있는 해시"
+            android:textColor="@color/main_color"
+            android:textSize="16dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hashboard_banner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_hashboard_information"
+            android:layout_width="339dp"
+            android:layout_height="36dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintStart_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hash_information">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/layout_hashboard_swipeRefresh"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/tv_hashboard_banner"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tv_hashboard_banner"
+            app:layout_constraintTop_toBottomOf="@+id/rv_hashboard_information">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_board_post"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
