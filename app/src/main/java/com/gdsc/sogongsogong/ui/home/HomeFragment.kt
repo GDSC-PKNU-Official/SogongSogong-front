@@ -49,6 +49,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         lifecycleScope.launch {
 //            hotItem = homeViewModel.fetchPost()
         }
+
+        hotItem = FakeFactory.getFakePost()
         hotLikeCount = "30"
         hotCommentCount = "12"
     }
