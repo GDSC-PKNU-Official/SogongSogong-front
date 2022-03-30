@@ -19,6 +19,8 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
 
     private val navViewModel: NavViewModel by viewModels {defaultViewModelProviderFactory}
 
+    private val postViewModel: PostViewModel by viewModels { defaultViewModelProviderFactory }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -28,6 +30,7 @@ class WritePostActivity : BaseActivity<ActivityWritePostBinding>(R.layout.activi
 
     private fun setBinding() {
         binding.navViewModel = navViewModel
+        binding.postViewModel = postViewModel
     }
 
     private fun setCoroutine() {
