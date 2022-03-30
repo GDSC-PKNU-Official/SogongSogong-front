@@ -6,7 +6,9 @@ import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
+import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.databinding.ActivityBoardBinding
+import com.gdsc.sogongsogong.fake.FakeFactory
 import com.gdsc.sogongsogong.ui.base.BaseActivity
 import com.gdsc.sogongsogong.ui.writepost.WritePostActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,6 +28,8 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         setBinding()
         setAdapter()
         setCoroutine()
+        submitPost()
+        setHotPost()
     }
 
     private fun setBinding() {
@@ -34,6 +38,11 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private fun setAdapter() {
         binding.rvBoardPost.adapter = adapter
+    }
+
+    private fun submitPost() {
+        // TODO: boardViewModel.fetch
+        adapter.submitList(FakeFactory.getFakePosts())
     }
 
     private fun setCoroutine() {
@@ -47,6 +56,12 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         lifecycleScope.launch {
             collectWritePostFabClickEvent()
         }
+    }
+
+    private fun setHotPost() = with(binding) {
+        hotItem = FakeFactory.getFakePost()
+        hotCommentCount = (hotItem as Post).commentCount.toString()
+        hotGoodCount = (hotItem as Post).goodCount.toString()
     }
 
     private suspend fun collectBackButtonClickEvent() {
