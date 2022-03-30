@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -55,7 +56,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:gravity="center_vertical"
-                    android:text=""
+                    android:text="현재 등록된 사업자등록번호는"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </LinearLayout>
 
@@ -72,7 +73,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="6dp"
                     android:gravity="center_vertical"
-                    android:text=""
+                    android:text="0000"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
             </LinearLayout>
 
@@ -81,18 +82,18 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="56dp"
         android:text="@string/newBusinessNumButton"
-        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="182dp" />
 
     <Button
         android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="59dp"
         android:text="@string/reBusinessNumButton"
-        tools:layout_editor_absoluteX="150dp"
+        tools:layout_editor_absoluteX="32dp"
         tools:layout_editor_absoluteY="229dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
