@@ -30,7 +30,7 @@
 
         <TextView
             android:id="@+id/tv_selectHash_firstCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/category"
             android:textColor="@color/main_color"
@@ -44,11 +44,12 @@
             android:background="@{selectHashViewModel.isSelectedCategory ? @drawable/selector_selected_hash : @drawable/edge_notice}"
             android:onClick="@{() -> selectHashViewModel.emitCategoryClickEvent()}"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rv_selectHash_contents"
             app:layout_constraintTop_toBottomOf="@id/tv_selectHash_title" />
 
         <TextView
             android:id="@+id/tv_selectHash_secondCategory"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/etcCategory"
             android:textColor="@color/main_color"
@@ -61,6 +62,7 @@
             android:background="@{selectHashViewModel.isSelectedEtc ? @drawable/selector_selected_hash : @drawable/edge_notice}"
             android:onClick="@{() -> selectHashViewModel.emitEtcCategoryClickEvent()}"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/rv_selectHash_contents"
             app:layout_constraintTop_toBottomOf="@id/tv_selectHash_firstCategory" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -95,7 +97,7 @@
                 android:id="@+id/tv_selectHash_selectedHash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="블랙컨슈머"
+                android:text="@string/roodCustomer"
                 android:textColor="@color/white"
                 android:background="@drawable/shpae_selecthash_hash"
                 app:layout_constraintTop_toBottomOf="@id/tv_selectHash_description"

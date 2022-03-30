@@ -33,7 +33,13 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
     private fun setRecyclerView() {
         // TODO: 해시태그 선택에 따라 어댑터 변경
         binding.rvSelectHashContents.adapter = selectHashAdapter
-        selectHashAdapter.submitList(listOf("농업 임업 및 어업", "금융 및 보험업", "금융 및 보험업"))
+        selectHashAdapter.submitList(
+            listOf(
+                "agriculture and fisheries",
+                "financial and insurance industries",
+                "financial and insurance industries"
+            )
+        )
     }
 
     private fun setCoroutine() {

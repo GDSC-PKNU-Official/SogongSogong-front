@@ -85,8 +85,8 @@
     <string name="detail">more</string>
     <string name="hot">Hot</string>
     <string name="comment">Comment</string>
-    <string name="hotIcon">핫 아이콘</string>
+    <string name="hotIcon">hotIcon</string>
     <string name="newComment">There\'s new comment!</string>
-    <string name="category">업태분류</string>
-    <string name="etcCategory">기타분류</string>
+    <string name="category">business condition</string>
+    <string name="etcCategory">Other selection</string>
 </resources>
