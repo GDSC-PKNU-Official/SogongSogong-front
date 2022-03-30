@@ -19,17 +19,15 @@ interface SimpleApi {
     // 사용자가 제목, 내용을 입력한 뒤 게시글을 등록한다.
 
     @POST("/board/post")
+    suspend fun pushPost(
+        @Body post: Post
+    ):Response<Post>
+
+    @FormUrlEncoded
+    @POST("/board/post")
     suspend fun pushPost2(
         @Body pushPost2Dto: DtoDatas.pushPost2Dto
     ): Response<DtoDatas.pushPost2Dto>
-
-    suspend fun pushPost(
-        @Field("userId") userId: Long,
-        @Field("postId") postId: Long,
-        @Field("subject") subject: String,
-        @Field("content") content: String
-    ): Response<Post>
-
 
     // 사용자가 어떤 게시글에 댓글을 등록한다
     @POST("/board/comments")
@@ -81,16 +79,14 @@ interface SimpleApi {
     //수정 버튼을 누르고 글을 수정 재등록
     @PUT("/board/post/{id}")
     fun putPost(
-        @Query("postId") postId: Int,
-        @Query("subject") subject: String,
-        @Query("content") content: String
-    ): Call<Post?>?
+        //@Query("postId") postId: Int,
+        @Body putPostDto: DtoDatas.putPostDto
+    ): Response<DtoDatas.putPostDto>
 
     @PUT("/board/comment/{id}")
     fun putComment(
-        @Query("commentId") commentId: Long,
-        @Query("content") content: String
-    ): Call<Post?>?
+        @Body putCommentDto: DtoDatas.putCommentDto
+    ): Response<DtoDatas.putCommentDto>
 
     //삭제 버튼
     @DELETE("/board/post/{id}")
@@ -167,15 +163,13 @@ interface SimpleApi {
     @FormUrlEncoded
     @POST("/hashtag/post")
     suspend fun postHashtag2(
-        @Field("postId") postId: Long,
-        @Field("hashName") hashName: List<String>
+        @Body postHashtag2Dto: DtoDatas.postHashtag2Dto
     ): Response<Post>
 
     @PUT("/hashtag/post")
     fun putHashtag(
-        @Query("postId") postId: Int,
-        @Query("hashName") hashName: List<String>
-    ): Call<Post?>?
+        @Body putHashtagDto: DtoDatas.putHashtagDto
+    ): Response<DtoDatas.putHashtagDto>
 
     @GET("/hashtag/post")
     suspend fun getHashtagPost() : Response<Post>
@@ -193,15 +187,13 @@ interface SimpleApi {
     @FormUrlEncoded
     @POST("/hashtag/user")
     suspend fun postHashtagUser2(
-        @Field("userId") userId: Long,
-        @Field("hashName") hashName: List<String>
-    ): Response<Post>
+        @Body postHashtagUser2Dto: DtoDatas.postHashtagUser2Dto
+    ): Response<DtoDatas.postHashtagUser2Dto>
 
     @PUT("/hashtag/user")
     fun putHashtagUser(
-        @Query("userId") userId: Int, // long이 아니네..?왜지
-        @Query("hashName") hashName: List<String>
-    ): Call<Post?>?
+        @Body putHashtagUserDto: DtoDatas.putHashtagUserDto
+    ): Response<DtoDatas.putHashtagUserDto>
 
     @GET("/hashtag/user")
     suspend fun getHashtagUser() : Response<Post>
@@ -235,9 +227,7 @@ interface SimpleApi {
 
     @GET("/user/business")
     suspend fun getUserBusiness2(
-        @Query("num") num : String,
-        @Query("startDate") startDate : String,
-        @Query("pName") pName : String
-    ) : Response<Post>
+        @Body getUserBusiness2Dto: DtoDatas.getUserBusiness2Dto
+    ) : Response<DtoDatas.getUserBusiness2Dto>
 
 }
