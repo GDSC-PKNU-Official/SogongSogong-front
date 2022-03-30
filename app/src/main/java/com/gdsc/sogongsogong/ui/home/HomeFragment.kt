@@ -26,6 +26,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private val navViewModel: NavViewModel by viewModels { defaultViewModelProviderFactory }
 
+    private val homeViewModel: HomeViewModel by viewModels { defaultViewModelProviderFactory }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -35,10 +37,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         submitHomeBoard(posts = FakeFactory.getFakePosts())
     }
 
-    private fun initBinding() {
-        binding.rvHomeInformation.adapter = informationAdapter
-        binding.rvHomeBoard.adapter = boardAdapter
-        binding.navViewModel = navViewModel
+    private fun initBinding() = with(binding) {
+        rvHomeInformation.adapter = informationAdapter
+        rvHomeBoard.adapter = boardAdapter
+        navViewModel = navViewModel
+
+        setDataBindingVar()
+    }
+
+    private fun setDataBindingVar() = with(binding) {
+        lifecycleScope.launch {
+//            hotItem = homeViewModel.fetchPost()
+        }
+        hotLikeCount = "30"
+        hotCommentCount = "12"
     }
 
     private fun submitInformationBanner() {

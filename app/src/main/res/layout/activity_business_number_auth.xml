@@ -5,68 +5,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/img_sogongsogong_signup"
-        tools:layout_editor_absoluteY="16dp" />
-
     <LinearLayout
-        android:layout_width="366dp"
-        android:layout_height="562dp"
+        android:layout_width="378dp"
+        android:layout_height="693dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_sogongsogong_signup" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="@string/representative" />
+            android:text="@string/representative"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/editTextNumber"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:textColor="@color/light_gray"
-            tools:text="대표자명을 입력해주세요"/>
+            android:textColor="@color/dark_gray"
+            tools:text="대표자명을 입력해주세요" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="개업일자"/>
+            android:text="개업일자"
+            android:textColor="@color/black" />
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="302dp"
-            android:layout_height="292dp" />
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="@color/dark_gray"
+            tools:text="YYYY - MM - DD" />
 
         <TextView
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:text="사업자등록번호" />
+            android:text="사업자등록번호"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/editTextDate"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:textColor="@color/light_gray"
-            tools:text="‘-’구분없이 입력해주세요."/>
+            android:textColor="@color/dark_gray"
+            tools:text="‘-’구분없이 입력해주세요." />
 
         <Button
             android:id="@+id/button"
@@ -79,6 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="다음에 인증할래요" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

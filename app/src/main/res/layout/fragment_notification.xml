@@ -11,58 +11,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_notification_titleLogo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:id="@+id/img_notification_titleLogo"
+            android:layout_width="110dp"
+            android:layout_height="46.43dp"
             android:layout_marginTop="45dp"
+            android:src="@drawable/img_logo_title_purple"
+            android:contentDescription="@string/sogongsogong"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:text="소공소공"/>
 
-        <View
-            android:id="@+id/edge_notification_firstBox"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/edge_notice"
-            android:layout_marginTop="15.69dp"
-            android:layout_marginStart="28dp"
-            android:layout_marginEnd="27dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_notification_titleLogo" />
-
-        <TextView
-            android:id="@+id/tv_notification_comment"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_notification_contents"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/notice"
-            android:textColor="@color/black"
-            android:textSize="14dp"
-            android:gravity="center"
-            android:layout_marginTop="14dp"
-            android:layout_marginStart="24dp"
-            android:drawablePadding="29dp"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
-            app:layout_constraintTop_toTopOf="@id/edge_notification_firstBox"
-            app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
-
-        <TextView
-            android:id="@+id/tv_notification_topic"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/notice"
-            android:textColor="@color/black"
-            android:textSize="14dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginStart="24dp"
-            android:drawablePadding="29dp"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
-            app:layout_constraintTop_toBottomOf="@id/tv_notification_comment"
-            app:layout_constraintStart_toStartOf="@id/edge_notification_firstBox" />
-
-
-
+            android:layout_marginTop="9.57dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/img_notification_titleLogo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -17,4 +17,8 @@
     <color name="fake_white">#F0F0F0</color>
     <color name="dark_gray">#BBBBBB</color>
     <color name="point_color">#FFB300</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="searchbar_gray">#ACACAC</color>
+    <color name="edge_gray">#E1E1E1</color>
+    <color name="category_background">#FFECE2F2</color>
 </resources>

@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class DataSourceModule {
 
     @Binds
-    abstract fun bindToDoDataSource(dataSource: PostRemoteDataSourceImpl): PostRemoteDataSource
+    abstract fun bindPostDataSource(dataSource: PostRemoteDataSourceImpl): PostRemoteDataSource
 }

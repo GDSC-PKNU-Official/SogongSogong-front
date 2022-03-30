@@ -18,16 +18,20 @@ interface SimpleApi {
 
     // 사용자가 제목, 내용을 입력한 뒤 게시글을 등록한다.
 
-    @POST("/board/post")
-    suspend fun pushPost(
-        @Body post: Post
-    ):Response<Post>
-
     @FormUrlEncoded
     @POST("/board/post")
+
     suspend fun pushPost2(
         @Body pushPost2Dto: DtoDatas.pushPost2Dto
     ): Response<DtoDatas.pushPost2Dto>
+
+    suspend fun pushPost(
+        @Field("userId") userId: Long,
+        @Field("postId") postId: Long,
+        @Field("subject") subject: String,
+        @Field("content") content: String
+    ): Response<Post>
+
 
     // 사용자가 어떤 게시글에 댓글을 등록한다
     @POST("/board/comments")
