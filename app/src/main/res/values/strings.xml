@@ -97,6 +97,10 @@
     <string name="comment">댓글</string>
     <string name="category">업태분류</string>
     <string name="etcCategory">기타분류</string>
+    <string name="sector">업종</string>
+    <string name="wholesale_and_retail_business">wholesale and retail business</string>
+    <string name="typeOfBusiness">종목</string>
+    <string name="e_commerce">전자상거래</string>
 
 
 </resources>
