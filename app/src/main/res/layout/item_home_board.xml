@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:text="@{item.title}"
-            android:textSize="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:text="제목제목제목제목"/>
@@ -39,31 +40,65 @@
             android:id="@+id/tv_homeBoard_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="10dp"
+            android:textSize="10sp"
             android:text="@{item.regdate}"
             app:layout_constraintTop_toBottomOf="@id/tv_homeBoard_title"
             app:layout_constraintStart_toStartOf="@id/tv_homeBoard_title"
             tools:text="17:50"/>
 
-        <TextView
-            android:id="@+id/tv_homeBoard_like"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:text="@{scrapCount.toString()}"
-            app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
-            app:layout_constraintEnd_toStartOf="@id/tv_homeBoard_comment"
-            app:drawableStartCompat="@drawable/ic_star"
-            tools:text="30" />
+        <ImageView
+            android:id="@+id/img_homeBoard_like"
+            android:layout_width="11.67dp"
+            android:layout_height="11.67dp"
+            android:elevation="9dp"
+            android:src="@drawable/ic_star"
+            android:layout_marginEnd="3dp"
+            android:contentDescription="@string/like"
+            app:layout_constraintEnd_toStartOf="@id/tv_homeBoard_likeCount"
+            app:layout_constraintTop_toTopOf="@id/tv_homeBoard_likeCount"
+            app:layout_constraintBottom_toBottomOf="@id/tv_homeBoard_likeCount"/>
 
         <TextView
-            android:id="@+id/tv_homeBoard_comment"
+            android:id="@+id/tv_homeBoard_likeCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:elevation="9dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/point_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:text="@{scrapCount.toString()}"
+            app:layout_constraintEnd_toStartOf="@id/img_homeBoard_comment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="30"/>
+
+        <ImageView
+            android:id="@+id/img_homeBoard_comment"
+            android:layout_width="11.67dp"
+            android:layout_height="11.67dp"
+            android:elevation="9dp"
+            android:src="@drawable/img_comment_purple"
+            android:contentDescription="@string/commentedPost"
+            android:layout_marginEnd="3dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_homeBoard_commentCount"
+            app:layout_constraintTop_toTopOf="@id/tv_homeBoard_commentCount"
+            app:layout_constraintBottom_toBottomOf="@id/tv_homeBoard_commentCount"/>
+
+        <TextView
+            android:id="@+id/tv_homeBoard_commentCount"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:elevation="9dp"
+            android:layout_marginEnd="12dp"
+            android:textColor="@color/main_color"
+            android:textSize="12sp"
+            android:textStyle="bold"
             android:text="@{commentCount.toString()}"
-            app:drawableStartCompat="@drawable/ic_comment_purple"
-            app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
+            android:gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="12" />
+            app:layout_constraintTop_toTopOf="@id/tv_homeBoard_title"
+            tools:text="12"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
