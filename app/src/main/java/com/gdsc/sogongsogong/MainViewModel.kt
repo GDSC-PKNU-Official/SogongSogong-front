@@ -210,7 +210,7 @@ class MainViewModel @Inject constructor(
         _myResponse.value = repository.getUserBusiness()
     }
 
-    fun getUserBusiness2(num: String, startDate: String, pName: String) = onMain {
-        _myResponse.value = repository.getUserBusiness2(num, startDate, pName)
-    }
+//    fun getUserBusiness2(num: String, startDate: String, pName: String) = onMain {
+//        _myResponse.value = repository.getUserBusiness2(num, startDate, pName)
+//    }
 }

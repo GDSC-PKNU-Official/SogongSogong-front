@@ -6,9 +6,9 @@ import com.gdsc.sogongsogong.fake.RetrofitInstance
 import retrofit2.Response
 
 class Repository {
-    suspend fun pushPost(userId: Long, postId: Long, subject: String, content: String): Response<Post> {
-        return RetrofitInstance.api.pushPost(userId, postId, subject, content)
-    }
+//    suspend fun pushPost(userId: Long, postId: Long, subject: String, content: String): Response<Post> {
+//        return RetrofitInstance.api.pushPost(userId, postId, subject, content)
+//    }
 
     suspend fun pushPost2(userId: Long, postId: Long, subject: String, content: String) {
         RetrofitInstance.api.pushPost2(pushPost2Dto = DtoDatas.pushPost2Dto( userId, postId, subject, content ))
@@ -160,7 +160,7 @@ class Repository {
         return RetrofitInstance.api.getUserBusiness()
     }
 
-    suspend fun getUserBusiness2(num: String, startDate: String, pName: String): Response<Post> {
-        return RetrofitInstance.api.getUserBusiness2(num, startDate, pName)
-    }
+//    suspend fun getUserBusiness2(num: String, startDate: String, pName: String): Response<Post> {
+//        return RetrofitInstance.api.getUserBusiness2(num, startDate, pName)
+//    }
 }
