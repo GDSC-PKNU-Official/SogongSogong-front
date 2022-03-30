@@ -16,16 +16,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_home_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <View
+                android:id="@+id/background_home_topBox"
+                android:layout_width="match_parent"
+                android:layout_height="339dp"
+                android:background="@drawable/edge_home_tobbox"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_home_title"
+                android:layout_width="110dp"
+                android:layout_height="46.43dp"
                 android:text="@string/sogongsogong"
                 android:layout_marginTop="45dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:drawableStartCompat="@drawable/ic_home" />
+                android:contentDescription="@string/sogongsogong"
+                android:src="@drawable/img_logo_white"
+                app:layout_constraintTop_toTopOf="@id/background_home_topBox"
+                app:layout_constraintStart_toStartOf="@id/background_home_topBox"
+                app:layout_constraintEnd_toEndOf="@id/background_home_topBox" />
 
             <TextView
                 android:id="@+id/tv_home_search"
@@ -35,22 +43,119 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
                 android:onClick="@{() -> navViewModel.emitSearchBarClickEvent()}"
-                app:layout_constraintTop_toBottomOf="@id/tv_home_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:drawableEndCompat="@drawable/ic_search"
-                tools:text="소상공인 재난지원금" />
+                android:background="@drawable/edge_searchbar"
+                app:layout_constraintTop_toBottomOf="@id/img_home_title"
+                app:layout_constraintStart_toStartOf="@id/background_home_topBox"
+                app:layout_constraintEnd_toEndOf="@id/background_home_topBox"
+                app:drawableEndCompat="@drawable/ic_search" />
 
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/container_home_hotPost"
+            <View
+                android:id="@+id/background_home_hotBox"
                 android:layout_width="0dp"
                 android:layout_height="166dp"
                 android:layout_marginTop="33dp"
                 android:layout_marginStart="25dp"
                 android:layout_marginEnd="23dp"
+                android:background="@drawable/edge_home_hotbox"
+                android:elevation="8dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_search"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintStart_toStartOf="@id/background_home_topBox"
+                app:layout_constraintEnd_toEndOf="@id/background_home_topBox" />
+
+            <ImageView
+                android:id="@+id/img_home_hotIcon"
+                android:layout_width="36dp"
+                android:layout_height="23dp"
+                android:src="@drawable/img_hot_yellow"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="17dp"
+                android:contentDescription="@string/hotIcon"
+                android:elevation="9dp"
+                app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
+                app:layout_constraintStart_toStartOf="@id/background_home_hotBox" />
+
+            <ImageView
+                android:id="@+id/img_home_hotMore"
+                android:layout_width="16dp"
+                android:layout_height="4dp"
+                android:layout_marginTop="31dp"
+                android:layout_marginEnd="17dp"
+                android:elevation="9dp"
+                app:layout_constraintEnd_toEndOf="@id/background_home_hotBox"
+                app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
+                tools:src="@drawable/img_board_list_hot" />
+
+            <TextView
+                android:id="@+id/tv_home_hotTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="17dp"
+                android:textColor="@color/main_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:elevation="9dp"
+                app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
+                app:layout_constraintStart_toStartOf="@id/background_home_hotBox"
+                tools:text="소상공인 재난지원금 정리~" />
+
+            <TextView
+                android:id="@+id/tv_home_hotContent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="9dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_home_hotTitle"
+                app:layout_constraintStart_toStartOf="@id/tv_home_hotTitle"
+                tools:text="코로나 재난지원금 은행 소상공인 대상 지원 정보글" />
+
+            <ImageView
+                android:id="@+id/img_home_hotLike"
+                android:layout_width="11.67dp"
+                android:layout_height="11.67dp"
+                android:elevation="9dp"
+                android:src="@drawable/ic_star"
+                app:layout_constraintEnd_toStartOf="@id/tv_home_hotLikeCount"
+                app:layout_constraintTop_toTopOf="@id/tv_home_hotLikeCount"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_hotLikeCount"/>
+
+            <TextView
+                android:id="@+id/tv_home_hotLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="9dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/main_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/img_home_hotComment"
+                app:layout_constraintBottom_toBottomOf="@id/background_home_hotBox"
+                tools:text="30"/>
+
+            <ImageView
+                android:id="@+id/img_home_hotComment"
+                android:layout_width="13dp"
+                android:layout_height="10dp"
+                android:elevation="9dp"
+                android:src="@drawable/img_comment_purple"
+                android:layout_marginEnd="3dp"
+                app:layout_constraintEnd_toStartOf="@id/tv_home_hotCommentCount"
+                app:layout_constraintTop_toTopOf="@id/tv_home_hotCommentCount"
+                app:layout_constraintBottom_toBottomOf="@id/tv_home_hotCommentCount" />
+
+            <TextView
+                android:id="@+id/tv_home_hotCommentCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="9dp"
+                android:layout_marginEnd="17dp"
+                android:layout_marginBottom="15dp"
+                android:textColor="@color/main_color"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/background_home_hotBox"
+                app:layout_constraintBottom_toBottomOf="@id/background_home_hotBox"
+                tools:text="12" />
 
             <TextView
                 android:id="@+id/tv_home_information"
@@ -60,8 +165,9 @@
                 android:layout_marginTop="35dp"
                 android:layout_marginStart="25dp"
                 android:textSize="16dp"
+                android:textStyle="bold"
                 android:textColor="@color/main_color"
-                app:layout_constraintTop_toBottomOf="@id/container_home_hotPost"
+                app:layout_constraintTop_toBottomOf="@id/background_home_hotBox"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
@@ -80,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sogongsogongboard"
                 android:textSize="16dp"
+                android:textStyle="bold"
                 android:textColor="@color/main_color"
                 android:layout_marginTop="28dp"
                 app:layout_constraintTop_toBottomOf="@id/rv_home_information"
