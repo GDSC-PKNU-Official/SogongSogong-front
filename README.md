@@ -138,7 +138,7 @@ The first is through the search bar at the main page, second one is through 'Has
 
 ### Front-End
 #### Directory structure
-<details open="open">
+<details>
 <summary>OPEN</summary>
     
 ├── README.md  
@@ -223,8 +223,9 @@ The first is through the search bar at the main page, second one is through 'Has
 
 #### Screen structure
 - Screen can be divided in **Main screen** and **Bottom navigation**.
-<img src="https://i.imgur.com/zHKlUfE.jpg" width="80%">
-
+<p align="center">
+  <img src="https://i.imgur.com/zHKlUfE.jpg" width="80%">
+</p>
 
 
 ### Back-End
