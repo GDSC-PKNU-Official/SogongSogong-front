@@ -78,10 +78,14 @@
     <string name="thumbs_up">따봉</string>
     <string name="writeButton">글쓰기 버튼</string>
     <string name="profile">프로필 사진</string>
-    <string name="sogongSogong">소공소공</string>
     <string name="hashTagBoard">해시태그 게시판</string>
     <string name="select_hash_tag">해시태그 선택하기</string>
     <string name="reset">초기화하기</string>
     <string name="complete_select">선택완료</string>
+    <string name="detail">더보기</string>
+    <string name="hot">핫</string>
+    <string name="comment">댓글</string>
+    <string name="category">업태분류</string>
+    <string name="etcCategory">기타분류</string>
 
 </resources>

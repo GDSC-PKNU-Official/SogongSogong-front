@@ -59,15 +59,25 @@
     <string name="newBusinessNumButton">Regist New License</string>
     <string name="reBusinessNumButton">Regist Another License</string>
     <string name="boardList">Board List</string>
-    <string name="register">" "</string>
-    <string name="sogongsogongTalk">" "</string>
-    <string name="canTwoMaxHashTag">" "</string>
-    <string name="selectHashTag">" "</string>
-    <string name="roodCustomer">" "</string>
-    <string name="like">" "</string>
-    <string name="scrap">" "</string>
-    <string name="notice">" "</string>
-    <string name="thumbs_up">" "</string>
-    <string name="writeButton">" "</string>
-    <string name="profile">" "</string>
+    <string name="register">Post</string>
+    <string name="sogongsogongTalk">SogongSogong Talk</string>
+    <string name="canTwoMaxHashTag">You can put up to two hashtags.</string>
+    <string name="selectHashTag">Please select a hashtag.</string>
+    <string name="roodCustomer">Rude Customer</string>
+    <string name="like">Like</string>
+    <string name="scrap">Scrap</string>
+
+
+    <string name="notice">Notice</string>
+    <string name="thumbs_up">Thumbs Up</string>
+    <string name="writeButton">Post Button</string>
+    <string name="profile">Profile Photo</string>
+    <string name="hashTagBoard">Hashtag Board</string>
+    <string name="select_hash_tag">Select the Hashtag</string>
+    <string name="reset">Clear</string>
+    <string name="complete_select">Selection Complete</string>
+    <string name="detail">more</string>
+    <string name="hot">Hot</string>
+    <string name="comment">Comment</string>
+
 </resources>
