@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    private const val BASE_URL = ""
+    private const val BASE_URL = "http://34.82.10.241:8080/"
 
     val api = clientBuilder(BASE_URL).create(Api::class.java)
 
