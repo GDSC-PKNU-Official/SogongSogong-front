@@ -1,10 +1,12 @@
 package com.gdsc.sogongsogong.ui.businesstype
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.gdsc.sogongsogong.MainActivity
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.FragmentBusinessTypeBinding
 import com.gdsc.sogongsogong.ui.base.BaseFragment
@@ -38,7 +40,7 @@ class BusinessTypeFragment: BaseFragment<FragmentBusinessTypeBinding>(R.layout.f
 
     private suspend fun collectCompleteSignUpClickEvent() {
         joinViewModel.completeSignUpClickEvent.collect {
-            // TODO: 가입완료 버튼 클릭 시 화면 전환
+            requireActivity().startActivity(Intent(requireContext(), MainActivity::class.java))
         }
     }
 }
