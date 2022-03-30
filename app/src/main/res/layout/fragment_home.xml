@@ -129,7 +129,7 @@
                 android:layout_width="11.67dp"
                 android:layout_height="11.67dp"
                 android:elevation="9dp"
-                android:src="@drawable/ic_star"
+                android:src="@drawable/ic_star_purple"
                 app:layout_constraintEnd_toStartOf="@id/tv_home_hotLikeCount"
                 app:layout_constraintTop_toTopOf="@id/tv_home_hotLikeCount"
                 app:layout_constraintBottom_toBottomOf="@id/tv_home_hotLikeCount"/>
