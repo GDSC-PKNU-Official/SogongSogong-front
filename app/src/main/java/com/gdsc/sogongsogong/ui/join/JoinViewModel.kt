@@ -13,7 +13,15 @@ class JoinViewModel @Inject constructor(dispatcherProvider: DispatcherProvider):
     private val _completeSignUpClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val completeSignUpClickEvent: SharedFlow<Unit> = _completeSignUpClickEvent
 
+    // TODO: 인증하기, 나중에 인증하기 구분
+    private val _authorizeClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
+    val authorizeClickEvent: SharedFlow<Unit> = _authorizeClickEvent
+
     fun emitCompleteSignUpClickEvent() = onMain {
         _completeSignUpClickEvent.emit(Unit)
+    }
+
+    fun emitAuthorizeClickEvent() = onDefault {
+        _authorizeClickEvent.emit(Unit)
     }
 }
