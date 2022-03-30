@@ -60,17 +60,6 @@
     <string name="reBusinessNumButton">Regist Another License</string>
     <string name="boardList">Board List</string>
 
-    <string name="register">" "</string>
-    <string name="sogongsogongTalk">" "</string>
-    <string name="canTwoMaxHashTag">" "</string>
-    <string name="selectHashTag">" "</string>
-    <string name="roodCustomer">" "</string>
-    <string name="like">" "</string>
-    <string name="scrap">" "</string>
-    <string name="notice">" "</string>
-    <string name="thumbs_up">" "</string>
-    <string name="writeButton">" "</string>
-    <string name="profile">" "</string>
     <string name="completeSignUp">Complete Sign Up</string>
     <string name="authorize">Authorize</string>
     <string name="authorizeLater">Authorize Later</string>
@@ -96,6 +85,8 @@
     <string name="detail">more</string>
     <string name="hot">Hot</string>
     <string name="comment">Comment</string>
-
-
+    <string name="hotIcon">hotIcon</string>
+    <string name="newComment">There\'s new comment!</string>
+    <string name="category">business condition</string>
+    <string name="etcCategory">Other selection</string>
 </resources>
