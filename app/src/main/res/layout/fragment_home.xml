@@ -7,6 +7,18 @@
         <variable
             name="navViewModel"
             type="com.gdsc.sogongsogong.NavViewModel" />
+
+        <variable
+            name="hotItem"
+            type="com.gdsc.sogongsogong.data.entity.Post" />
+
+        <variable
+            name="hotLikeCount"
+            type="String" />
+
+        <variable
+            name="hotCommentCount"
+            type="String" />
     </data>
 
     <ScrollView
@@ -76,14 +88,16 @@
 
             <ImageView
                 android:id="@+id/img_home_hotMore"
-                android:layout_width="16dp"
-                android:layout_height="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="31dp"
                 android:layout_marginEnd="17dp"
                 android:elevation="9dp"
+                android:contentDescription="@string/detail"
+                android:src="@drawable/ic_more_horizon"
                 app:layout_constraintEnd_toEndOf="@id/background_home_hotBox"
                 app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
-                tools:src="@drawable/img_board_list_hot" />
+                app:tint="@color/main_color" />
 
             <TextView
                 android:id="@+id/tv_home_hotTitle"
@@ -95,6 +109,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:elevation="9dp"
+                android:text="@{hotItem.title}"
                 app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
                 app:layout_constraintStart_toStartOf="@id/background_home_hotBox"
                 tools:text="소상공인 재난지원금 정리~" />
@@ -104,6 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="9dp"
+                android:text="@{hotItem.body}"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_hotTitle"
                 app:layout_constraintStart_toStartOf="@id/tv_home_hotTitle"
                 tools:text="코로나 재난지원금 은행 소상공인 대상 지원 정보글" />
@@ -125,6 +141,7 @@
                 android:elevation="9dp"
                 android:layout_marginEnd="12dp"
                 android:layout_marginBottom="15dp"
+                android:text="@{hotLikeCount}"
                 android:textColor="@color/main_color"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -150,6 +167,7 @@
                 android:elevation="9dp"
                 android:layout_marginEnd="17dp"
                 android:layout_marginBottom="15dp"
+                android:text="@{hotCommentCount}"
                 android:textColor="@color/main_color"
                 android:textSize="12sp"
                 android:textStyle="bold"
