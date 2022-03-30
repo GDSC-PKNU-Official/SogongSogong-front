@@ -8,11 +8,13 @@ import com.gdsc.sogongsogong.MainActivity
 import com.gdsc.sogongsogong.R
 import com.gdsc.sogongsogong.databinding.ActivityJoinBinding
 import com.gdsc.sogongsogong.ui.base.BaseActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class JoinActivity : BaseActivity<ActivityJoinBinding>(R.layout.activity_join) {
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
         setInitPage()
     }
@@ -34,10 +36,10 @@ class JoinActivity : BaseActivity<ActivityJoinBinding>(R.layout.activity_join) {
 
     // TODO: set init fragment
     private fun setInitFragment() {
-//        val navHost = NavHostFragment.create(R.navigation.nav_graph_join)
-//        supportFragmentManager.beginTransaction()
-//            .replace(R.id., navHost) // TODO: set start fragment id
-//            .setPrimaryNavigationFragment(navHost)
-//            .commit()
+        val navHost = NavHostFragment.create(R.navigation.nav_graph_join)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.container_join_fragment, navHost) // TODO: set start fragment id
+            .setPrimaryNavigationFragment(navHost)
+            .commit()
     }
 }

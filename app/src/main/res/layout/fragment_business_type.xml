@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="joinViewModel"
+            type="com.gdsc.sogongsogong.ui.join.JoinViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_businessType_logo"
+            android:layout_width="233dp"
+            android:layout_height="106dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="26dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/img_business_type" />
+
+        <TextView
+            android:id="@+id/tv_businessType_sector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="46dp"
+            android:layout_marginStart="26dp"
+            android:textSize="14sp"
+            android:text="@string/sector"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/img_businessType_logo" />
+
+        <TextView
+            android:id="@+id/spinner_businessType_sector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+            android:paddingStart="13dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/wholesale_and_retail_business"
+            android:textColor="@color/black"
+            android:background="@drawable/edge_searchbar"
+            app:layout_constraintTop_toBottomOf="@id/tv_businessType_sector"
+            app:drawableEndCompat="@drawable/ic_drop_down_arrow" />
+
+        <!--    <Spinner-->
+        <!--        android:id="@+id/spinner_businessType_sector"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_centerHorizontal="true"-->
+        <!--        android:text="도매 및 소매업" -->
+        <!--        app:layout_constraintTop_toBottomOf="@id/tv_businessType_sector" />-->
+
+        <TextView
+            android:id="@+id/tv_businessType_typeOfBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="26dp"
+            android:text="@string/typeOfBusiness"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/spinner_businessType_sector" />
+
+        <!--    <Spinner-->
+        <!--        android:id="@+id/spinner2"-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_centerHorizontal="true"-->
+        <!--        android:text="전자상거래"/>-->
+
+        <TextView
+            android:id="@+id/spinner_businessType_typeOfBusiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="26dp"
+            android:layout_marginEnd="26dp"
+            android:paddingStart="13dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="5dp"
+            android:text="@string/e_commerce"
+            android:textColor="@color/black"
+            android:background="@drawable/edge_searchbar"
+            app:layout_constraintTop_toBottomOf="@id/tv_businessType_typeOfBusiness"
+            app:drawableEndCompat="@drawable/ic_drop_down_arrow" />
+
+        <TextView
+            android:id="@+id/tv_businessType_complete"
+            android:layout_width="match_parent"
+            android:layout_height="34dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="51.48dp"
+            android:text="@string/completeSignUp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/shape_long_btn"
+            android:onClick="@{() -> joinViewModel.emitCompleteSignUpClickEvent()}"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
