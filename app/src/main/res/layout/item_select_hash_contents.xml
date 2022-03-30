@@ -11,25 +11,27 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tv_itemSelectHashContents_contents"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:textSize="14dp"
-            android:layout_marginTop="33dp"
             android:paddingTop="10dp"
             android:paddingStart="27dp"
             android:paddingEnd="26dp"
             android:paddingBottom="10dp"
             android:background="@drawable/edge_notice"
             android:text="@{item}"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             tools:text="농업 임업 및 어업" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

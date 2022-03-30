@@ -2,12 +2,13 @@ package com.gdsc.sogongsogong.ui.board
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.gdsc.sogongsogong.NavViewModel
 import com.gdsc.sogongsogong.R
+import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.databinding.ActivityBoardBinding
+import com.gdsc.sogongsogong.fake.FakeFactory
 import com.gdsc.sogongsogong.ui.base.BaseActivity
 import com.gdsc.sogongsogong.ui.writepost.WritePostActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +28,8 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         setBinding()
         setAdapter()
         setCoroutine()
+        submitPost()
+        setHotPost()
     }
 
     private fun setBinding() {
@@ -37,12 +40,28 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         binding.rvBoardPost.adapter = adapter
     }
 
+    private fun submitPost() {
+        // TODO: boardViewModel.fetch
+        adapter.submitList(FakeFactory.getFakePosts())
+    }
+
     private fun setCoroutine() {
+        // TODO: 깔끔하게 바꿀 것
         lifecycleScope.launch {
             collectBackButtonClickEvent()
+        }
+        lifecycleScope.launch {
             collectBoardClickEvent()
+        }
+        lifecycleScope.launch {
             collectWritePostFabClickEvent()
         }
+    }
+
+    private fun setHotPost() = with(binding) {
+        hotItem = FakeFactory.getFakePost()
+        hotCommentCount = (hotItem as Post).commentCount.toString()
+        hotGoodCount = (hotItem as Post).goodCount.toString()
     }
 
     private suspend fun collectBackButtonClickEvent() {
@@ -58,7 +77,6 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     }
 
     private suspend fun collectWritePostFabClickEvent() {
-        // FIXME: collect 하지 않는 오류
         navViewModel.writePostFabClickEvent.collect {
             showWritePostActivity()
         }

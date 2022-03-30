@@ -32,7 +32,7 @@
             android:id="@+id/tv_selectHash_firstCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="업태분류"
+            android:text="@string/category"
             android:textColor="@color/main_color"
             android:textStyle="bold"
             android:textSize="14dp"
@@ -41,17 +41,16 @@
             android:paddingStart="27dp"
             android:paddingEnd="26dp"
             android:paddingBottom="10dp"
-            android:background="@drawable/edge_notice"
+            android:background="@{selectHashViewModel.isSelectedCategory ? @drawable/selector_selected_hash : @drawable/edge_notice}"
             android:onClick="@{() -> selectHashViewModel.emitCategoryClickEvent()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_selectHash_title" />
-
 
         <TextView
             android:id="@+id/tv_selectHash_secondCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="기타분류"
+            android:text="@string/etcCategory"
             android:textColor="@color/main_color"
             android:textStyle="bold"
             android:textSize="14dp"
@@ -59,7 +58,7 @@
             android:paddingStart="27dp"
             android:paddingEnd="26dp"
             android:paddingBottom="10dp"
-            android:background="@drawable/edge_notice"
+            android:background="@{selectHashViewModel.isSelectedEtc ? @drawable/selector_selected_hash : @drawable/edge_notice}"
             android:onClick="@{() -> selectHashViewModel.emitEtcCategoryClickEvent()}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_selectHash_firstCategory" />
@@ -141,6 +140,7 @@
                 android:textSize="12dp"
                 android:layout_marginBottom="25.5dp"
                 android:layout_marginEnd="13dp"
+                android:onClick="@{() -> selectHashViewModel.emitCompleteSelectHashEvent()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
