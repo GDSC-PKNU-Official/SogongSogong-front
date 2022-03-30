@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activity_select_hash) {
 
-    private val selectHAshViewModel: SelectHashViewModel by viewModels { defaultViewModelProviderFactory }
+    private val selectHashViewModel: SelectHashViewModel by viewModels { defaultViewModelProviderFactory }
 
     private val selectHashAdapter by lazy { SelectHashAdapter() }
 
@@ -27,7 +27,7 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
     }
 
     private fun setBinding() {
-        binding.selectHashViewModel = selectHAshViewModel
+        binding.selectHashViewModel = selectHashViewModel
     }
 
     private fun setRecyclerView() {
@@ -36,12 +36,17 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
         selectHashAdapter.submitList(listOf("농업 임업 및 어업", "금융 및 보험업", "금융 및 보험업"))
     }
 
-    private fun setCoroutine() = lifecycleScope.launch {
-        collectCategoryClickEvent()
+    private fun setCoroutine() {
+        lifecycleScope.launch {
+            collectCategoryClickEvent()
+        }
+        lifecycleScope.launch {
+            collectCompleteSelectHashEvent()
+        }
     }
 
     private suspend fun collectCategoryClickEvent() {
-        selectHAshViewModel.categoryClickEvent.collect { categoryType ->
+        selectHashViewModel.categoryClickEvent.collect { categoryType ->
             selectCategory(categoryType)
         }
     }
@@ -51,6 +56,12 @@ class SelectHashActivity: BaseActivity<ActivitySelectHashBinding>(R.layout.activ
         when (categoryType) {
             CategoryType.Category -> {}
             CategoryType.Etc -> {}
+        }
+    }
+
+    private suspend fun collectCompleteSelectHashEvent() {
+        selectHashViewModel.completeSelectHashEvent.collect {
+            finish()
         }
     }
 }

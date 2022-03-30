@@ -7,6 +7,16 @@
         <variable
             name="navViewModel"
             type="com.gdsc.sogongsogong.NavViewModel" />
+        <!--        hot 게시글-->
+        <variable
+            name="hotItem"
+            type="com.gdsc.sogongsogong.data.entity.Post" />
+        <variable
+            name="hotGoodCount"
+            type="String" />
+        <variable
+            name="hotCommentCount"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -38,34 +48,134 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
+        <ImageView
             android:id="@+id/image_board_detailButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="더보기 버튼"
             android:layout_marginTop="57dp"
             android:layout_marginEnd="27dp"
+            android:src="@drawable/ic_more_horizon"
+            android:contentDescription="@string/detail"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/main_color" />
 
         <TextView
             android:id="@+id/tv_board_banner"
-            android:layout_width="339dp"
+            android:layout_width="0dp"
             android:layout_height="70dp"
             android:layout_marginTop="30dp"
             android:layout_marginStart="11dp"
             android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_test_box"
             app:layout_constraintTop_toBottomOf="@id/tv_board_title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <View
+            android:id="@+id/edge_board_hotPost"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_round_border"
+            app:layout_constraintTop_toBottomOf="@id/tv_board_banner"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_board_hotLogo"
+            android:layout_width="25dp"
+            android:layout_height="16dp"
+            android:src="@drawable/img_hot_purple"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="11dp"
+            android:contentDescription="@string/hot"
+            app:layout_constraintTop_toTopOf="@id/edge_board_hotPost"
+            app:layout_constraintStart_toStartOf="@id/edge_board_hotPost" />
+
+        <TextView
+            android:id="@+id/tv_board_hotBoard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="8dp"
+            android:textStyle="bold"
+            android:textSize="12dp"
+            android:text="@{hotItem.title}"
+            app:layout_constraintTop_toTopOf="@id/edge_board_hotPost"
+            app:layout_constraintStart_toEndOf="@id/img_board_hotLogo"
+            tools:text="코로나 지원금 신청 방법과 꿀팁" />
+
+        <TextView
+            android:id="@+id/tv_board_hotBoardTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10dp"
+            android:textColor="#C7C7C7"
+            android:text="@{hotItem.regdate}"
+            app:layout_constraintTop_toBottomOf="@id/tv_board_hotBoard"
+            app:layout_constraintStart_toStartOf="@id/tv_board_hotBoard"
+            tools:text="17:50" />
+
+        <ImageView
+            android:id="@+id/img_board_starIcon"
+            android:layout_width="11.67dp"
+            android:layout_height="11.67dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/img_board_list_scrap_custom"
+            app:layout_constraintEnd_toStartOf="@id/tv_board_star"
+            app:layout_constraintBottom_toBottomOf="@id/tv_board_star"
+            app:layout_constraintTop_toTopOf="@id/tv_board_star" />
+
+        <TextView
+            android:id="@+id/tv_board_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/point_color"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toStartOf="@id/img_board_commentIcon"
+            app:layout_constraintBottom_toBottomOf="@id/edge_board_hotPost"
+            tools:text="30" />
+
+        <ImageView
+            android:id="@+id/img_board_commentIcon"
+            android:layout_width="13dp"
+            android:layout_height="10dp"
+            android:layout_marginEnd="4dp"
+            android:src="@drawable/img_comment_purple"
+            android:contentDescription="@string/comment"
+            app:layout_constraintEnd_toStartOf="@id/tv_board_comment"
+            app:layout_constraintBottom_toBottomOf="@id/tv_board_comment"
+            app:layout_constraintTop_toTopOf="@id/tv_board_comment" />
+
+        <TextView
+            android:id="@+id/tv_board_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="14dp"
+            android:textSize="12dp"
+            android:textColor="@color/main_color"
+            app:layout_constraintEnd_toEndOf="@id/edge_board_hotPost"
+            app:layout_constraintBottom_toBottomOf="@id/edge_board_hotPost"
+            tools:text="12"/>
+
+
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/layout_board_swipeRefresh"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintEnd_toEndOf="@id/tv_board_banner"
             app:layout_constraintStart_toStartOf="@id/tv_board_banner"
-            app:layout_constraintTop_toBottomOf="@id/tv_board_banner">
+            app:layout_constraintTop_toBottomOf="@id/edge_board_hotPost">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_board_post"
