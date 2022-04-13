@@ -102,7 +102,6 @@ Don't worry! You can regist it later.
 
 2. At the main page, there are several information, posts for you!<br>
 And bottom navigation means main page, board list, notification and settings in order.<br>
-<img src="https://i.imgur.com/77eRtx5.png" width="30%">
 
 
 3. If you want to enter boards to see posts, you can enter to them by touching at second bottom navigation.<br>
