@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.data.remote.datasource
+package com.gdsc.sogongsogong.data.remote
 
 import com.gdsc.sogongsogong.data.entity.Post
 import javax.inject.Inject

@@ -2,14 +2,12 @@ package com.gdsc.sogongsogong.ui.board
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.viewModelScope
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
-import com.gdsc.sogongsogong.data.remote.datasource.PostRemoteDataSource
+import com.gdsc.sogongsogong.data.remote.PostRemoteDataSource
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
