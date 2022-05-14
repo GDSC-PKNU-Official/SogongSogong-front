@@ -76,7 +76,6 @@ to solve the UN's SDGS No.8.<br><br>
 #### To edit file
 - Latest version of Android Studio
 - Kotlin 1.6.10
-- 추가할 것 있으면 추가해주세용
 <br>
 
 ### Installation
@@ -94,8 +93,6 @@ to solve the UN's SDGS No.8.<br><br>
 ## Usage
 #### This section explains the guidelines for how to use *Sogong Sogong*
 ###### * The pictures  down below may differ from the actual design.
-https://www.figma.com/file/Y9SIRDwAYebLzpIldOjat4/Untitled?node-id=0%3A1
-<- 앱 다 완성되고 동영상으로 녹화해서 gif로 변환해야할듯.
 
 
 1. In *Sogong Sogong*, you need business license number to sign in.<br>
@@ -105,7 +102,6 @@ Don't worry! You can regist it later.
 
 2. At the main page, there are several information, posts for you!<br>
 And bottom navigation means main page, board list, notification and settings in order.<br>
-<img src="https://i.imgur.com/77eRtx5.png" width="30%">
 
 
 3. If you want to enter boards to see posts, you can enter to them by touching at second bottom navigation.<br>
@@ -138,6 +134,7 @@ The first is through the search bar at the main page, second one is through 'Has
 
 ### Front-End
 #### Directory structure
+Directory sturcture could be changed.
 <details>
 <summary>OPEN</summary>
     
