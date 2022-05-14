@@ -22,16 +22,10 @@ class BoardViewModel @Inject constructor(
     private val _recyclerViewClickEvent = MutableSharedFlow<Unit>()
     val recyclerViewClickEvent: SharedFlow<Unit> = _recyclerViewClickEvent
 
-    fun fetchPosts(page: Int) {
-        postRemoteDataSource.fetchPosts()
-    }
-
-    fun fetchPosts() {
-        postRemoteDataSource.fetchPosts()
-    }
-
-    fun fetchPost(postId: Long) {
-        postRemoteDataSource.fetchPost(postId)
+    fun fetchAllPost(page: Int) {
+        onIo {
+            postRemoteDataSource.fetchAllPost(page.toLong())
+        }
     }
 
     fun emitRecyclerViewClickEvent() = onMain {

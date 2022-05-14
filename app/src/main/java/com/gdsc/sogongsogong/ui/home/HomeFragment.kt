@@ -34,7 +34,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         initBinding()
         setCoroutines()
         submitInformationBanner()
-        submitHomeBoard(posts = FakeFactory.getFakePosts())
+        submitHomeBoard()
     }
 
     private fun initBinding() = with(binding) {
@@ -60,8 +60,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
         informationAdapter.submitList(listOf(1, 2, 3, 4, 5, 6, 7))
     }
 
-    private fun submitHomeBoard(posts: List<Post>) {
-        boardAdapter.submitList(posts)
+    private fun submitHomeBoard() {
+        lifecycleScope.launch {
+            homeViewModel.posts.collect { posts ->
+                boardAdapter.submitList(posts)
+            }
+        }
     }
 
     private fun setCoroutines() {
