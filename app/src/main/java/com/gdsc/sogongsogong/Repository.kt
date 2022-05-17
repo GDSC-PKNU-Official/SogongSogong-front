@@ -2,7 +2,7 @@ package com.gdsc.sogongsogong
 
 import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.fake.DtoDatas
-import com.gdsc.sogongsogong.fake.RetrofitInstance
+import com.gdsc.sogongsogong.data.retrofit.ApiService
 import retrofit2.Response
 
 class Repository {
@@ -11,7 +11,7 @@ class Repository {
 //    }
 
     suspend fun pushPost2(userId: Long, postId: Long, subject: String, content: String) {
-        RetrofitInstance.api.pushPost2(pushPost2Dto = DtoDatas.pushPost2Dto( userId, postId, subject, content ))
+        ApiService.api.pushPost2(pushPost2Dto = DtoDatas.pushPost2Dto( userId, postId, subject, content ))
     }
 
 //    suspend fun pushComment(): Response<Post> {
@@ -31,7 +31,7 @@ class Repository {
 //    }
 
     suspend fun getPostAuth(): Response<Post> {
-        return RetrofitInstance.api.getPostAuth()
+        return ApiService.api.getPostAuth()
     }
 
 //    suspend fun getPostAuth2(userId: Long, postId: Long): Response<Post> {
@@ -39,7 +39,7 @@ class Repository {
 //    }
 
     suspend fun getCommentAuth(): Response<Post> {
-        return RetrofitInstance.api.getCommentAuth()
+        return ApiService.api.getCommentAuth()
     }
 
 //    suspend fun getCommentAuth2(userId: Long, commentId: Long): Response<Post> {
@@ -63,15 +63,15 @@ class Repository {
 //    }
 
     suspend fun getEntirePost(): Response<Post> {
-        return RetrofitInstance.api.getEntirePost()
+        return ApiService.api.getEntirePost()
     }
 
     suspend fun getEntirePost2(lastPost: Long): Response<Post> {
-        return RetrofitInstance.api.getEntirePost2(lastPost)
+        return ApiService.api.getEntirePost2(lastPost)
     }
 
     suspend fun getOnePost(): Response<Post> {
-        return RetrofitInstance.api.getOnePost()
+        return ApiService.api.getOnePost()
     }
 
 //    suspend fun getOnePost2(postId : Long): Response<Post> {
@@ -79,7 +79,7 @@ class Repository {
 //    }
 
     suspend fun getOnePostComment(): Response<Post> {
-        return RetrofitInstance.api.getOnePostComment()
+        return ApiService.api.getOnePostComment()
     }
 
 //    suspend fun getOnePostComment2(postId : Long, lastComment:Long): Response<Post> {
@@ -87,7 +87,7 @@ class Repository {
 //    }
 
     suspend fun getOnePostScarpLike(): Response<Post> {
-        return RetrofitInstance.api.getOnePostScarpLike()
+        return ApiService.api.getOnePostScarpLike()
     }
 
 //    suspend fun getOnePostScarpLike2(userId : Long, scrapLike:Boolean, lastScrap:Long): Response<Post> {
@@ -95,22 +95,22 @@ class Repository {
 //    }
     suspend fun getHotPost(): Response<Post> {
 
-    return RetrofitInstance.api.getHotPost()
+    return ApiService.api.getHotPost()
     }
 
     suspend fun getHotPost2(lastPost : Long): Response<Post> {
-        return RetrofitInstance.api.getHotPost2(lastPost)
+        return ApiService.api.getHotPost2(lastPost)
     }
 
     suspend fun getBestPost(): Response<Post> {
-        return RetrofitInstance.api.getBestPost()
+        return ApiService.api.getBestPost()
     }
 
     suspend fun getBestPost2(lastPost : Long): Response<Post> {
-        return RetrofitInstance.api.getBestPost2(lastPost)
+        return ApiService.api.getBestPost2(lastPost)
     }
     suspend fun postHashtag(post: Post): Response<Post> {
-        return RetrofitInstance.api.postHashtag(post)
+        return ApiService.api.postHashtag(post)
     }
 
 //    suspend fun postHashtag2(postId: Post, hashName: List<String>): Response<Post> {
@@ -123,7 +123,7 @@ class Repository {
 //    }
 
     suspend fun getHashtagPost(): Response<Post> {
-        return RetrofitInstance.api.getHashtagPost()
+        return ApiService.api.getHashtagPost()
     }
 //    suspend fun getHashtagPost2(postId: Post): Response<Post> {
 //        return RetrofitInstance.api.getHashtagPost2(postId)
@@ -142,22 +142,22 @@ class Repository {
 //    }
 
     suspend fun getHashtagUser2(userId : Long): Response<Post> {
-        return RetrofitInstance.api.getHashtagUser2(userId)
+        return ApiService.api.getHashtagUser2(userId)
     }
     suspend fun getHashtagSearchBar(): Response<Post> {
-        return RetrofitInstance.api.getHashtagSearchBar()
+        return ApiService.api.getHashtagSearchBar()
     }
     suspend fun getHashtagSearchBar2(hashtag : List<String>, lastPost : Long): Response<Post> {
-        return RetrofitInstance.api.getHashtagSearchBar2(hashtag, lastPost)
+        return ApiService.api.getHashtagSearchBar2(hashtag, lastPost)
     }
     suspend fun getHashtagSearchBoard(): Response<Post> {
-        return RetrofitInstance.api.getHashtagSearchBoard()
+        return ApiService.api.getHashtagSearchBoard()
     }
     suspend fun getHashtagSearchBoard2(userId : Long, lastPost : Long): Response<Post> {
-        return RetrofitInstance.api.getHashtagSearchBoard2(userId, lastPost)
+        return ApiService.api.getHashtagSearchBoard2(userId, lastPost)
     }
     suspend fun getUserBusiness(): Response<Post> {
-        return RetrofitInstance.api.getUserBusiness()
+        return ApiService.api.getUserBusiness()
     }
 
 //    suspend fun getUserBusiness2(num: String, startDate: String, pName: String): Response<Post> {
