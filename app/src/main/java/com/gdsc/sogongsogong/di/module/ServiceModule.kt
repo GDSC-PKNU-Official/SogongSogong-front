@@ -1,6 +1,6 @@
 package com.gdsc.sogongsogong.di.module
 
-import com.gdsc.sogongsogong.data.api.PostService
+import com.gdsc.sogongsogong.data.api.post.PostService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
