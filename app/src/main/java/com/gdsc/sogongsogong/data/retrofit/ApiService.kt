@@ -1,9 +1,10 @@
-package com.gdsc.sogongsogong.fake
+package com.gdsc.sogongsogong.data.retrofit
 
+import com.gdsc.sogongsogong.fake.SimpleApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object RetrofitInstance {
+object ApiService {
 
     private const val BASE_URL = "http://34.82.10.241:8080/"
 

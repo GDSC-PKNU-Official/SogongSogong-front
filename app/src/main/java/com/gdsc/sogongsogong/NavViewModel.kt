@@ -2,6 +2,7 @@ package com.gdsc.sogongsogong
 
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
+import com.gdsc.sogongsogong.ui.boardlist.BoardType
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
@@ -13,9 +14,8 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
     private var _searchBarClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val searchBarClickEvent: SharedFlow<Unit> = _searchBarClickEvent
 
-    // TODO: 어떤 게시판인지 넘겨받기
-    private val _boardClickEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
-    val boardClickEvent: SharedFlow<Unit> = _boardClickEvent
+    private val _boardClickEvent: MutableSharedFlow<BoardType> = MutableSharedFlow()
+    val boardClickEvent: SharedFlow<BoardType> = _boardClickEvent
 
     private val _backButtonEvent: MutableSharedFlow<Unit> = MutableSharedFlow()
     val backButtonEvent: SharedFlow<Unit> = _backButtonEvent
@@ -36,8 +36,8 @@ class NavViewModel @Inject constructor(dispatcherProvider: DispatcherProvider) :
         _searchBarClickEvent.emit(Unit)
     }
 
-    fun emitBoardClickEvent() = onMain {
-        _boardClickEvent.emit(Unit)
+    fun emitBoardClickEvent(boardType: BoardType) = onMain {
+        _boardClickEvent.emit(boardType)
     }
 
     fun emitBackButtonEvent() = onMain {
