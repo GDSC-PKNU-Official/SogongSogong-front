@@ -42,10 +42,16 @@
         android:label="@string/boardList"
         tools:layout="@layout/fragment_board_list">
 
+        <!--TODO: board list-->
         <action
             android:id="@+id/action_boardList_to_board"
             app:popUpTo="@id/boardListFragment"
             app:destination="@id/boardActivity" />
+
+        <action
+            android:id="@+id/action_boardList_to_hashBoard"
+            app:popUpTo="@id/boardListFragment"
+            app:destination="@id/hashBoardActivity" />
 
         <!--bottom nav-->
         <action
@@ -64,6 +70,12 @@
         android:name="com.gdsc.sogongsogong.ui.board.BoardActivity"
         android:label="게시판"
         tools:layout="@layout/activity_board" />
+
+    <activity
+        android:id="@+id/hashBoardActivity"
+        android:name="com.gdsc.sogongsogong.ui.hashBoard.HashBoardActivity"
+        android:label="해시 게시판"
+        tools:layout="@layout/activity_hash_board" />
 
     <fragment
         android:id="@+id/myPageFragment"

@@ -40,6 +40,9 @@
             android:name=".ui.board.BoardActivity"
             android:exported="true" />
 
+        <activity android:name=".ui.hashBoard.HashBoardActivity"
+            android:exported="true" />
+
         <activity android:name=".ui.writepost.WritePostActivity"
             android:exported="true" />
 
