@@ -1,6 +1,6 @@
 package com.gdsc.sogongsogong.data.remote
 
-import com.gdsc.sogongsogong.data.api.PostService
+import com.gdsc.sogongsogong.data.api.post.PostService
 import com.gdsc.sogongsogong.data.entity.Post
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
