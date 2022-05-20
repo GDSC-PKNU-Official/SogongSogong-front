@@ -1,6 +1,6 @@
 package com.gdsc.sogongsogong.ui.board
 
-import com.gdsc.sogongsogong.FakeDispatcherProvider
+import com.gdsc.sogongsogong.extensions.FakeDispatcherProvider
 import com.gdsc.sogongsogong.data.remote.PostRemoteDataSource
 import io.kotest.core.spec.Spec
 import io.kotest.core.spec.style.BehaviorSpec
