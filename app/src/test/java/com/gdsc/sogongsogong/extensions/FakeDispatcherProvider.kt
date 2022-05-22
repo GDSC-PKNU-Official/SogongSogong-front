@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong
+package com.gdsc.sogongsogong.extensions
 
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher

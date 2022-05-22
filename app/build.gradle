@@ -40,6 +40,9 @@ android {
             useJUnitPlatform()
         }
     }
+    packagingOptions {
+        exclude "META-INF/LICENSE*"
+    }
 }
 
 
