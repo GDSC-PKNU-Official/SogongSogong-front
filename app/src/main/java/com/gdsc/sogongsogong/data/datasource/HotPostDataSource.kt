@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 interface HotPostDataSource {
 
     suspend fun fetchAllHotPosts(): Flow<List<Post>>
+
+    suspend fun fetchHotPost(): Flow<Post>
 }

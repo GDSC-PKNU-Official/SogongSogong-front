@@ -47,12 +47,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun setDataBindingVar() = with(binding) {
         lifecycleScope.launch {
-//            hotItem = homeViewModel.fetchPost()
-        }
+            homeViewModel.hotPosts.collect() { hotPost ->
+                hotItem = hotPost
+                hotLikeCount = "${hotPost?.goodCount}"
+                hotCommentCount = "${hotPost?.commentCount}"
 
-        hotItem = FakeFactory.getFakePost()
-        hotLikeCount = "30"
-        hotCommentCount = "12"
+            }
+        }
     }
 
     private fun submitInformationBanner() {

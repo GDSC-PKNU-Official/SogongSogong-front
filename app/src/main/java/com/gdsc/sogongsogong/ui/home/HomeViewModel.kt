@@ -6,10 +6,7 @@ import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,15 +19,15 @@ class HomeViewModel @Inject constructor(
     private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
     val posts: StateFlow<List<Post>> = _posts
 
-    private var _hotPosts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
-    val hotPosts: StateFlow<List<Post>> = _hotPosts
+    private var _hotPosts: StateFlow<Post?> = MutableStateFlow(null)
+    val hotPosts: StateFlow<Post?> = _hotPosts
 
     init {
         onIo {
             _posts = postDataSource.fetchInitAllPost()
                 .stateIn(this, SharingStarted.Eagerly, emptyList())
 
-            fetchAllHotPosts()
+            fetchHotPost()
         }
     }
 
@@ -39,8 +36,8 @@ class HomeViewModel @Inject constructor(
             .stateIn(this, SharingStarted.Eagerly, emptyList())
     }
 
-    private fun fetchAllHotPosts() = onIo {
-        _hotPosts = hotPostDataSource.fetchAllHotPosts()
-            .stateIn(this, SharingStarted.Eagerly, emptyList())
+    private fun fetchHotPost() = onIo {
+        _hotPosts = hotPostDataSource.fetchHotPost()
+            .stateIn(this, SharingStarted.Eagerly, null)
     }
 }
