@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.data.remote
+package com.gdsc.sogongsogong.data.remote.post
 
 import com.gdsc.sogongsogong.data.api.post.PostService
 import com.gdsc.sogongsogong.data.entity.Post
@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 class PostRemoteDataSourceImpl @Inject constructor(
     private val postService: PostService
-): PostRemoteDataSource {
+): PostDataSource {
 
     override suspend fun fetchPost(postId: Long): Flow<Post> {
         return postService.fetchPost(postId)

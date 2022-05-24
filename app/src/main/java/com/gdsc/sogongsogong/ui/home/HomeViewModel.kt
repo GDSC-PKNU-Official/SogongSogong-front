@@ -1,7 +1,7 @@
 package com.gdsc.sogongsogong.ui.home
 
 import com.gdsc.sogongsogong.data.entity.Post
-import com.gdsc.sogongsogong.data.remote.PostRemoteDataSource
+import com.gdsc.sogongsogong.data.remote.post.PostDataSource
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -14,7 +14,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     dispatcherProvider: DispatcherProvider,
-    private val postRemoteDataSource: PostRemoteDataSource,
+    private val postDataSource: PostDataSource,
 ): BaseViewModel(dispatcherProvider) {
 
     private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
@@ -22,13 +22,13 @@ class HomeViewModel @Inject constructor(
 
     init {
         onIo {
-            _posts = postRemoteDataSource.fetchInitAllPost()
+            _posts = postDataSource.fetchInitAllPost()
                 .stateIn(this, SharingStarted.Eagerly, emptyList())
         }
     }
 
     fun fetchAllPost(postId: Long) = onIo {
-        _posts = postRemoteDataSource.fetchAllPost(postId)
+        _posts = postDataSource.fetchAllPost(postId)
             .stateIn(this, SharingStarted.Eagerly, emptyList())
     }
 }
