@@ -22,13 +22,14 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private val navViewModel: NavViewModel by viewModels { defaultViewModelProviderFactory }
 
+    private val boardViewModel: BoardViewModel by viewModels { defaultViewModelProviderFactory }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setBinding()
         setAdapter()
         setCoroutine()
-        submitPost()
         setHotPost()
     }
 
@@ -40,9 +41,8 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         binding.rvBoardPost.adapter = adapter
     }
 
-    private fun submitPost() {
-        // TODO: boardViewModel.fetch
-        adapter.submitList(FakeFactory.getFakePosts())
+    private fun submitPosts(posts: List<Post>) {
+        adapter.submitList(posts)
     }
 
     private fun setCoroutine() {
@@ -55,6 +55,9 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         }
         lifecycleScope.launch {
             collectWritePostFabClickEvent()
+        }
+        lifecycleScope.launch {
+            collectPost()
         }
     }
 
@@ -79,6 +82,12 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     private suspend fun collectWritePostFabClickEvent() {
         navViewModel.writePostFabClickEvent.collect {
             showWritePostActivity()
+        }
+    }
+
+    private suspend fun collectPost() {
+        boardViewModel.posts.collect { posts ->
+            submitPosts(posts)
         }
     }
 
