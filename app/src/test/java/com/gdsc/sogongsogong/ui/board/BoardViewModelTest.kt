@@ -1,7 +1,7 @@
 package com.gdsc.sogongsogong.ui.board
 
 import com.gdsc.sogongsogong.extensions.FakeDispatcherProvider
-import com.gdsc.sogongsogong.data.remote.post.PostDataSource
+import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import io.kotest.core.spec.style.BehaviorSpec
 import io.mockk.mockk
 import io.kotest.matchers.shouldBe

@@ -3,7 +3,7 @@ package com.gdsc.sogongsogong.ui.board
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
-import com.gdsc.sogongsogong.data.remote.post.PostDataSource
+import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow

@@ -1,4 +1,4 @@
-package com.gdsc.sogongsogong.data.remote.post
+package com.gdsc.sogongsogong.data.datasource
 
 import com.gdsc.sogongsogong.data.entity.Post
 import kotlinx.coroutines.flow.Flow

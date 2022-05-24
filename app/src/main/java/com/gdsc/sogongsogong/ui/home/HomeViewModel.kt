@@ -1,7 +1,7 @@
 package com.gdsc.sogongsogong.ui.home
 
 import com.gdsc.sogongsogong.data.entity.Post
-import com.gdsc.sogongsogong.data.remote.post.PostDataSource
+import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

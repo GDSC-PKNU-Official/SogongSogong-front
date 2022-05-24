@@ -1,6 +1,6 @@
 package com.gdsc.sogongsogong.di.module
 
-import com.gdsc.sogongsogong.data.remote.post.PostDataSource
+import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.remote.post.PostRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
