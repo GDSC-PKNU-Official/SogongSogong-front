@@ -57,6 +57,7 @@ interface SimpleApi {
     @GET("/board/post-auth")
     suspend fun getPostAuth() : Response<Post>
 
+    @FormUrlEncoded
     @GET("/board/post-auth")
     suspend fun getPostAuth2(
         @Query("userId") userId : Long,
@@ -67,14 +68,13 @@ interface SimpleApi {
     @GET("/board/comment-auth")
     suspend fun getCommentAuth() : Response<Post>
 
+    @FormUrlEncoded
     @GET("/board/comment-auth")
     suspend fun getCommentAuth2(
         @Query("userId") userId : Long,
         @Query("commentId") commentId: Long
     ): Response<List<Post>>
 
-
-    //PUT, DELETE는 코틀린 자료를 못찾아서.. java를 참고했는데 더 알아봐야 할 것 같습니다.
 
     //수정 버튼을 누르고 글을 수정 재등록
     @PUT("/board/post/{id}")
@@ -229,5 +229,4 @@ interface SimpleApi {
     suspend fun getUserBusiness2(
         @Body getUserBusiness2Dto: DtoDatas.getUserBusiness2Dto
     ) : Response<DtoDatas.getUserBusiness2Dto>
-
 }
