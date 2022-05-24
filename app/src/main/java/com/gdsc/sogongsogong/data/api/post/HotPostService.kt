@@ -10,6 +10,10 @@ interface HotPostService {
     @GET("/board/hot-post")
     suspend fun fetchHotPost(): Flow<Post>
 
+    // FIXME: list가 들어오는게 맞겠지?
+    @GET("/board/hot-post")
+    suspend fun fetchAllHotPosts(): Flow<List<Post>>
+
     // FIXME: path 어노테이션이 있는데 url에 변수가 없음
     @GET("/board/hot-post")
     suspend fun fetchHotPostByLastPost(@Path("lastPost") lastPost: Long): Flow<Post>
