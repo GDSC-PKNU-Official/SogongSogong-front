@@ -1,7 +1,7 @@
 package com.gdsc.sogongsogong.ui.board
 
 import com.gdsc.sogongsogong.extensions.FakeDispatcherProvider
-import com.gdsc.sogongsogong.data.remote.PostRemoteDataSource
+import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import io.kotest.core.spec.style.BehaviorSpec
 import io.mockk.mockk
 import io.kotest.matchers.shouldBe
@@ -12,11 +12,11 @@ import kotlinx.coroutines.flow.first
 @DelicateCoroutinesApi
 class BoardViewModelTest : BehaviorSpec() {
 
-    private val postRemoteDataSource = mockk<PostRemoteDataSource>(relaxUnitFun = true)
+    private val postDataSource = mockk<PostDataSource>(relaxUnitFun = true)
 
     private val dispatcherProvider = FakeDispatcherProvider()
 
-    private val boardViewModel = BoardViewModel(dispatcherProvider, postRemoteDataSource)
+    private val boardViewModel = BoardViewModel(dispatcherProvider, postDataSource)
 
     init {
         Given("게시판 화면에서") {
