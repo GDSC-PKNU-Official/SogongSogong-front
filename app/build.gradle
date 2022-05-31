@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'com.google.gms.google-services'
     id 'dagger.hilt.android.plugin'
+    id'kotlin-android-extensions'
 }
 
 android {
@@ -57,10 +58,13 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
 
     // firebase
-    implementation platform("com.google.firebase:firebase-bom:$bom_version")
+    //implementation platform("com.google.firebase:firebase-bom:$bom_version")
     implementation "com.google.android.gms:play-services-auth:$auth_version"
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation platform('com.google.firebase:firebase-bom:30.1.0')
+    implementation 'com.google.firebase:firebase-auth:18.0.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
 
     // hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
