@@ -8,7 +8,7 @@ import retrofit2.http.Path
 interface HotPostService {
 
     @GET("/board/hot-post")
-    suspend fun fetchHotPost(): Flow<Post>
+    suspend fun fetchHotPost(): Flow<Post?>
 
     // FIXME: list가 들어오는게 맞겠지?
     @GET("/board/hot-post")
