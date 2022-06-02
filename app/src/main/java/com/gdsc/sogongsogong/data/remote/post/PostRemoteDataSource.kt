@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.flowOf
 import kotlin.runCatching
 import javax.inject.Inject
 
-class PostRemoteDataSourceImpl @Inject constructor(
+class PostRemoteDataSource @Inject constructor(
     private val postService: PostService
 ): PostDataSource {
 

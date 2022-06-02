@@ -6,7 +6,7 @@ import com.gdsc.sogongsogong.data.entity.Post
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class HotPostRemoteDataSourceImpl @Inject constructor(
+class HotPostRemoteDataSource @Inject constructor(
     private val hotPostService: HotPostService
 ) : HotPostDataSource {
 
