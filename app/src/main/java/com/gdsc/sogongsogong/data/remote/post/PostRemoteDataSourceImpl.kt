@@ -29,6 +29,10 @@ class PostRemoteDataSourceImpl @Inject constructor(
     }.getOrDefault(flowOf(emptyList()))
 
     override suspend fun createPost(post: Post) {
-        TODO("Not yet implemented")
+        runCatching {
+            postService.postPost(post)
+        }.onFailure { throwable ->
+            throwable.printStackTrace()
+        }
     }
 }
