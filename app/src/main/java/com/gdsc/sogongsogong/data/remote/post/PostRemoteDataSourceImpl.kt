@@ -4,6 +4,8 @@ import com.gdsc.sogongsogong.data.api.post.PostService
 import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.entity.Post
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOf
+import kotlin.runCatching
 import javax.inject.Inject
 
 class PostRemoteDataSourceImpl @Inject constructor(
@@ -14,9 +16,17 @@ class PostRemoteDataSourceImpl @Inject constructor(
         return postService.fetchPost(postId)
     }
 
-    override suspend fun fetchInitAllPost() = postService.fetchInitAllPost()
+    override suspend fun fetchInitAllPost() = runCatching {
+        postService.fetchInitAllPost()
+    }.onFailure { throwable ->
+        throwable.printStackTrace()
+    }.getOrDefault(flowOf(emptyList()))
 
-    override suspend fun fetchAllPost(lastPost: Long) = postService.fetchAllPost(lastPost)
+    override suspend fun fetchAllPost(lastPost: Long) = runCatching {
+        postService.fetchAllPost(lastPost)
+    }.onFailure { throwable ->
+        throwable.printStackTrace()
+    }.getOrDefault(flowOf(emptyList()))
 
     override suspend fun createPost(post: Post) {
         TODO("Not yet implemented")
