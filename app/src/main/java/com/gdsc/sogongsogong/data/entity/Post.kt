@@ -28,3 +28,12 @@ data class Post (
     val userCheck: String
 ): Serializable
 
+data class TempPost(
+    val postId: Long,
+    val subject: String,
+    val content: String,
+    val data: Long,
+    val picture: String?,
+    val countComment: Int,
+    val countLike: Int
+)
