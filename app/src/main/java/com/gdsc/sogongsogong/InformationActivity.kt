@@ -83,7 +83,7 @@ class InformationActivity : AppCompatActivity() {
                     // 쪽수 별로 데이터를 읽는다.
                     val jObject = item.getJSONObject(i)
 
-                    textView.append("${i + 1}번 캠핑장 \n")
+                    
                     textView.append("1. title: ${ JSON_Parse(jObject,"title")}\n")
                     textView.append("2. url: ${JSON_Parse(jObject,"url")}\n")
                     textView.append("3. year: ${JSON_Parse(jObject,"year")}\n")
