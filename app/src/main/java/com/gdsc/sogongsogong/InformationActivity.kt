@@ -2,6 +2,7 @@ package com.gdsc.sogongsogong
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_information.*
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.InputStreamReader
@@ -105,5 +106,4 @@ class InformationActivity : AppCompatActivity() {
 //            }
 //        }
 //    }
-
 }
