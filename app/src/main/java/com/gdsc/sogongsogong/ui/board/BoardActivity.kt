@@ -87,7 +87,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private suspend fun collectPost() {
         boardViewModel.posts.collect { posts ->
-            submitPosts(posts)
+//            submitPosts(posts)
         }
     }
 

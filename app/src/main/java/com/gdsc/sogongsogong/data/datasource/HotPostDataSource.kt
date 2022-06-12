@@ -7,5 +7,5 @@ interface HotPostDataSource {
 
     suspend fun fetchAllHotPosts(): Flow<List<Post>>
 
-    suspend fun fetchHotPost(): Flow<Post>
+    suspend fun fetchHotPost(): Flow<Post?>
 }

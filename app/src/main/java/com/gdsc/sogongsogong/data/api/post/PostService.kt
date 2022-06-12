@@ -1,6 +1,7 @@
 package com.gdsc.sogongsogong.data.api.post
 
 import com.gdsc.sogongsogong.data.entity.Post
+import com.gdsc.sogongsogong.data.entity.TempPost
 import com.gdsc.sogongsogong.fake.DtoDatas
 import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
@@ -9,7 +10,7 @@ import retrofit2.http.*
 interface PostService {
 
     @GET("/board/entire-post")
-    suspend fun fetchInitAllPost(): Flow<List<Post>>
+    suspend fun fetchInitAllPost(): Flow<List<TempPost>>
 
     @GET("/board/entire-post/{last-post}")
     suspend fun fetchAllPost(@Path("lastPost") lastPost: Long): Flow<List<Post>>

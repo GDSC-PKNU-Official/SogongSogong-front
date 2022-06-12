@@ -69,7 +69,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private suspend fun collectPosts() {
         homeViewModel.posts.collect { posts ->
-            boardAdapter.submitList(posts)
+//            boardAdapter.submitList(posts)
         }
     }
 

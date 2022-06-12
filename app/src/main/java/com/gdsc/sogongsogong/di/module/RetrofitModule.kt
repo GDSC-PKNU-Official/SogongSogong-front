@@ -13,7 +13,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object RetrofitModule {
 
-    private const val BASE_URL = "http://34.82.10.241:8080/"
+//    private const val BASE_URL = "http://34.82.10.241:8080/"
+
+    private const val BASE_URL = "http://35.184.70.242:8080"
 
     private val gson = GsonBuilder().setLenient()
         .create()
