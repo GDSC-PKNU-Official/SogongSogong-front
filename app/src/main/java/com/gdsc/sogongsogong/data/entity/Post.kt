@@ -13,22 +13,22 @@ data class PostDetail (
     val imagePath: ArrayList<String>
 ): Serializable
 
-data class Post (
-    val boardId: Int,
-    val title: String,
-    val body: String,
-    val userId: String,
-    val regdate: String,
-    val type: String,
-    val goodCount: Int,
-    val commentCount: Int,
-    val scrapCount: Int,
-    val goodCheck: String,
-    val scrapCheck: String,
-    val userCheck: String
-): Serializable
+//data class Post (
+//    val boardId: Int,
+//    val title: String,
+//    val body: String,
+//    val userId: String,
+//    val regdate: String,
+//    val type: String,
+//    val goodCount: Int,
+//    val commentCount: Int,
+//    val scrapCount: Int,
+//    val goodCheck: String,
+//    val scrapCheck: String,
+//    val userCheck: String
+//): Serializable
 
-data class TempPost(
+data class Post(
     val postId: Long,
     val subject: String,
     val content: String,
@@ -36,4 +36,4 @@ data class TempPost(
     val picture: String?,
     val countComment: Int,
     val countLike: Int
-)
+): Serializable

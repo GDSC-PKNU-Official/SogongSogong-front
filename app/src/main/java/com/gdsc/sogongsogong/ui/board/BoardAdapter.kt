@@ -15,15 +15,15 @@ class BoardAdapter : ListAdapter<Post, BaseViewHolder<ItemBoardBinding>>(diffUti
 
     override fun onBindViewHolder(holder: BaseViewHolder<ItemBoardBinding>, position: Int) = with(holder.binding) {
         item = getItem(position)
-        goodCount = getItem(position).goodCount.toString()
-        commentCount = getItem(position).commentCount.toString()
+        goodCount = getItem(position).countLike.toString()
+        commentCount = getItem(position).countComment.toString()
     }
 
     companion object {
 
         val diffUtil by lazy {
             object : DiffUtil.ItemCallback<Post>() {
-                override fun areContentsTheSame(oldItem: Post, newItem: Post) = oldItem.boardId == newItem.boardId
+                override fun areContentsTheSame(oldItem: Post, newItem: Post) = oldItem.postId == newItem.postId
                 override fun areItemsTheSame(oldItem: Post, newItem: Post) = oldItem == newItem
             }
         }

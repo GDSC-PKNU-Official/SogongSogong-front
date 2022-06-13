@@ -15,15 +15,15 @@ class HomeBoardAdapter : ListAdapter<Post, BaseViewHolder<ItemHomeBoardBinding>>
 
     override fun onBindViewHolder(holder: BaseViewHolder<ItemHomeBoardBinding>, position: Int) = with(holder.binding) {
         item = getItem(position)
-        scrapCount = getItem(position).scrapCount
-        commentCount = getItem(position).scrapCount
+        scrapCount = getItem(position).countLike //FIXME
+        commentCount = getItem(position).countComment
     }
 
     companion object {
 
         val diffUtil by lazy {
             object : DiffUtil.ItemCallback<Post>() {
-                override fun areContentsTheSame(oldItem: Post, newItem: Post) = oldItem.boardId == newItem.boardId
+                override fun areContentsTheSame(oldItem: Post, newItem: Post) = oldItem.postId == newItem.postId
 
                 override fun areItemsTheSame(oldItem: Post, newItem: Post) = oldItem == newItem
             }

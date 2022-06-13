@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.entity.Post
-import com.gdsc.sogongsogong.data.entity.TempPost
 import com.gdsc.sogongsogong.ui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
@@ -20,8 +19,8 @@ class BoardViewModel @Inject constructor(
     private var _board: MutableLiveData<String> = MutableLiveData() // FIXME: entity로 변경
     val board: LiveData<String> = _board
 
-    private var _posts: StateFlow<List<TempPost>> = MutableStateFlow(emptyList())
-    val posts: StateFlow<List<TempPost>> = _posts
+    private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
+    val posts: StateFlow<List<Post>> = _posts
 
     private val _recyclerViewClickEvent = MutableSharedFlow<Unit>()
     val recyclerViewClickEvent: SharedFlow<Unit> = _recyclerViewClickEvent

@@ -62,9 +62,9 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     }
 
     private fun setHotPost() = with(binding) {
-        hotItem = FakeFactory.getFakePost()
-        hotCommentCount = (hotItem as Post).commentCount.toString()
-        hotGoodCount = (hotItem as Post).goodCount.toString()
+//        hotItem = FakeFactory.getFakePost()
+        hotCommentCount = (hotItem as Post).countComment.toString()
+        hotGoodCount = (hotItem as Post).countLike.toString()
     }
 
     private suspend fun collectBackButtonClickEvent() {
@@ -87,7 +87,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private suspend fun collectPost() {
         boardViewModel.posts.collect { posts ->
-//            submitPosts(posts)
+            submitPosts(posts)
         }
     }
 
