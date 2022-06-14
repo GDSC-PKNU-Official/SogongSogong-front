@@ -2,20 +2,19 @@ package com.gdsc.sogongsogong.data.api.post
 
 import com.gdsc.sogongsogong.data.entity.Post
 import com.gdsc.sogongsogong.fake.DtoDatas
-import kotlinx.coroutines.flow.Flow
 import retrofit2.Response
 import retrofit2.http.*
 
 interface PostService {
 
     @GET("/board/entire-post")
-    suspend fun fetchInitAllPost(): Flow<List<Post>>
+    suspend fun fetchInitAllPost(): List<Post>
 
     @GET("/board/entire-post/{last-post}")
-    suspend fun fetchAllPost(@Path("lastPost") lastPost: Long): Flow<List<Post>>
+    suspend fun fetchAllPost(@Path("lastPost") lastPost: Long): List<Post>
 
     @GET("/board/one-post/{id}")
-    suspend fun fetchPost(@Path("id") id: Long): Flow<Post>
+    suspend fun fetchPost(@Path("id") id: Long): Post
 
     @FormUrlEncoded
     @POST("/board/post")
