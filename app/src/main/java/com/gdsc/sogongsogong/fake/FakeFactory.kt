@@ -5,20 +5,15 @@ import com.gdsc.sogongsogong.data.entity.Post
 
 object FakeFactory {
 
-//    fun getFakePost(): Post = Post(
-//        boardId = 0,
-//        title = "How to apply for COVID-19 subsidy and tips.",
-//        body = "Contents",
-//        userId = "Anonymous",
-//        regdate = "17:50",
-//        type = "",
-//        goodCount = 30,
-//        commentCount = 12,
-//        scrapCount = 10,
-//        goodCheck = "",
-//        scrapCheck = "",
-//        userCheck = ""
-//    )
+    fun getFakePost(): Post = Post(
+        postId = 0,
+        subject = "",
+        content = "How to apply for COVID-19 subsidy and tips.",
+        date = "17:50",
+        picture = null,
+        countComment = 12,
+        countLike = 30
+    )
 
 //    fun getFakePosts(): List<Post> = listOf(
 //        Post(

@@ -62,7 +62,7 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
     }
 
     private fun setHotPost() = with(binding) {
-//        hotItem = FakeFactory.getFakePost()
+        hotItem = FakeFactory.getFakePost()
         hotCommentCount = (hotItem as Post).countComment.toString()
         hotGoodCount = (hotItem as Post).countLike.toString()
     }
