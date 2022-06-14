@@ -30,7 +30,8 @@ class BoardViewModel @Inject constructor(
     }
 
     private fun fetchInitAllPosts() = onIo {
-        _posts= postDataSource.fetchInitAllPost()
+        // FIXME: flow 제거할지 결정
+        _posts = flowOf(postDataSource.fetchInitAllPost())
             .stateIn(this, SharingStarted.Eagerly, emptyList())
     }
 
