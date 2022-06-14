@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
 
     init {
         onIo {
-            _posts = postDataSource.fetchInitAllPost()
+            _posts = flowOf(postDataSource.fetchInitAllPost())
                 .stateIn(this, SharingStarted.Eagerly, emptyList())
 
             fetchHotPost()
@@ -32,12 +32,12 @@ class HomeViewModel @Inject constructor(
     }
 
     fun fetchAllPost(postId: Long) = onIo {
-//        _posts = postDataSource.fetchAllPost(postId)
-//            .stateIn(this, SharingStarted.Eagerly, emptyList())
+        _posts = flowOf(postDataSource.fetchAllPost(postId))
+            .stateIn(this, SharingStarted.Eagerly, emptyList())
     }
 
     private fun fetchHotPost() = onIo {
-        _hotPosts = hotPostDataSource.fetchHotPost()
+        _hotPosts = flowOf(hotPostDataSource.fetchHotPost())
             .stateIn(this, SharingStarted.Eagerly, null)
     }
 }
