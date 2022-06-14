@@ -51,7 +51,6 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
 
     // navigation component
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -84,11 +83,12 @@ dependencies {
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofit_adapter_version"
 
     // bottom nav
     implementation "com.google.android.material:material:$material_version"
 
-    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.0.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipe_version"
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
