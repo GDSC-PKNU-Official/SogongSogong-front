@@ -109,7 +109,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:elevation="9dp"
-                android:text="@{hotItem.title}"
+                android:text="@{hotItem.content}"
                 app:layout_constraintTop_toTopOf="@id/background_home_hotBox"
                 app:layout_constraintStart_toStartOf="@id/background_home_hotBox"
                 tools:text="소상공인 재난지원금 정리~" />
@@ -119,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="9dp"
-                android:text="@{hotItem.body}"
+                android:text="@{hotItem.subject}"
                 app:layout_constraintTop_toBottomOf="@id/tv_home_hotTitle"
                 app:layout_constraintStart_toStartOf="@id/tv_home_hotTitle"
                 tools:text="코로나 재난지원금 은행 소상공인 대상 지원 정보글" />

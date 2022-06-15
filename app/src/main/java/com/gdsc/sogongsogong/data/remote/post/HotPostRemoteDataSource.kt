@@ -14,11 +14,11 @@ class HotPostRemoteDataSource @Inject constructor(
         hotPostService.fetchAllHotPosts()
     }.onFailure { throwable ->
         throwable.printStackTrace()
-    }.getOrDefault(flowOf(emptyList()))
+    }.getOrDefault(emptyList())
 
     override suspend fun fetchHotPost() = runCatching {
         hotPostService.fetchHotPost()
     }.onFailure { throwable ->
         throwable.printStackTrace()
-    }.getOrDefault(flowOf(null))
+    }.getOrDefault(null)
 }

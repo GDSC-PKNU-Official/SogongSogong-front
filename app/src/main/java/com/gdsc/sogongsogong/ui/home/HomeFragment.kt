@@ -63,13 +63,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(R.layout.fragment_home) {
 
     private fun setHotPost(hotPost: Post) = with(binding) {
         hotItem = hotPost
-        hotLikeCount = "${hotPost.goodCount}"
-        hotCommentCount = "${hotPost.commentCount}"
+        hotLikeCount = "${hotPost.countLike}"
+        hotCommentCount = "${hotPost.countComment}"
     }
 
     private suspend fun collectPosts() {
         homeViewModel.posts.collect { posts ->
-//            boardAdapter.submitList(posts)
+            boardAdapter.submitList(posts)
         }
     }
 
