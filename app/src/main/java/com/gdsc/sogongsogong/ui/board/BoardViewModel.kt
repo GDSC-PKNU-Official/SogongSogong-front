@@ -16,10 +16,7 @@ class BoardViewModel @Inject constructor(
     private val postDataSource: PostDataSource
 ) : BaseViewModel(dispatcherProvider) {
 
-    private var _board: MutableLiveData<String> = MutableLiveData() // FIXME: entity로 변경
-    val board: LiveData<String> = _board
-
-    private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
+    private var _posts: MutableStateFlow<List<Post>> = MutableStateFlow(emptyList())
     val posts: StateFlow<List<Post>> = _posts
 
     private val _recyclerViewClickEvent = MutableSharedFlow<Unit>()
@@ -30,15 +27,11 @@ class BoardViewModel @Inject constructor(
     }
 
     private fun fetchInitAllPosts() = onIo {
-        // FIXME: flow 제거할지 결정
-        _posts = flowOf(postDataSource.fetchInitAllPost())
-            .stateIn(this, SharingStarted.Eagerly, emptyList())
+        _posts.emit(postDataSource.fetchInitAllPost())
     }
 
-    fun fetchAllPost(page: Int) {
-        onIo {
-            postDataSource.fetchAllPost(page.toLong())
-        }
+    fun fetchAllPost(page: Int) = onIo {
+        postDataSource.fetchAllPost(page.toLong())
     }
 
     fun emitRecyclerViewClickEvent() = onMain {
