@@ -1,8 +1,6 @@
 package com.gdsc.sogongsogong.data.datasource
 
 import com.gdsc.sogongsogong.data.entity.Post
-import com.gdsc.sogongsogong.data.entity.PostList
-import kotlinx.coroutines.flow.Flow
 
 interface PostDataSource {
 
