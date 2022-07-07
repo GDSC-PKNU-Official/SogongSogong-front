@@ -27,18 +27,19 @@ class BoardViewModel @Inject constructor(
 
     init {
         fetchInitAllPosts()
+        fetchHotPost()
     }
 
     private fun fetchInitAllPosts() = onIo {
         _posts.emit(postDataSource.fetchInitAllPost())
     }
 
-    fun fetchAllPost(page: Int) = onIo {
-        postDataSource.fetchAllPost(page.toLong())
+    private fun fetchHotPost() = onIo {
+        _hotPost.emit(hotPostDataSource.fetchHotPost())
     }
 
-    fun fetchHotPost() = onIo {
-        _hotPost.emit(hotPostDataSource.fetchHotPost())
+    fun fetchAllPost(page: Int) = onIo {
+        _posts.emit(postDataSource.fetchAllPost(page.toLong()))
     }
 
     fun emitRecyclerViewClickEvent() = onMain {
