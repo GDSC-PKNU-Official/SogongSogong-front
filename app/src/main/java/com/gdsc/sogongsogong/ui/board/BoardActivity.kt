@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board) {
+class BoardActivity : BaseActivity<ActivityBoardBinding>(R.layout.activity_board) {
 
     private val adapter by lazy { BoardAdapter() }
 
