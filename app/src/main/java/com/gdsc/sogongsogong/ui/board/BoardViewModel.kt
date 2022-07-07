@@ -1,5 +1,6 @@
 package com.gdsc.sogongsogong.ui.board
 
+import com.gdsc.sogongsogong.data.datasource.HotPostDataSource
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.entity.Post
@@ -11,11 +12,15 @@ import javax.inject.Inject
 @HiltViewModel
 class BoardViewModel @Inject constructor(
     dispatcherProvider: DispatcherProvider,
-    private val postDataSource: PostDataSource
+    private val postDataSource: PostDataSource,
+    private val hotPostDataSource: HotPostDataSource
 ) : BaseViewModel(dispatcherProvider) {
 
-    private var _posts: MutableStateFlow<List<Post>> = MutableStateFlow(emptyList())
+    private val _posts: MutableStateFlow<List<Post>> = MutableStateFlow(emptyList())
     val posts: StateFlow<List<Post>> = _posts
+
+    private val _hotPost: MutableStateFlow<Post?> = MutableStateFlow(null)
+    val hotPost: StateFlow<Post?> = _hotPost
 
     private val _recyclerViewClickEvent = MutableSharedFlow<Unit>()
     val recyclerViewClickEvent: SharedFlow<Unit> = _recyclerViewClickEvent
@@ -30,6 +35,10 @@ class BoardViewModel @Inject constructor(
 
     fun fetchAllPost(page: Int) = onIo {
         postDataSource.fetchAllPost(page.toLong())
+    }
+
+    fun fetchHotPost() = onIo {
+        _hotPost.emit(hotPostDataSource.fetchHotPost())
     }
 
     fun emitRecyclerViewClickEvent() = onMain {
