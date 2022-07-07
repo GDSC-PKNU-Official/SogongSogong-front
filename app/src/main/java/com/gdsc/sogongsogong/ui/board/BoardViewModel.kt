@@ -1,7 +1,5 @@
 package com.gdsc.sogongsogong.ui.board
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.entity.Post
