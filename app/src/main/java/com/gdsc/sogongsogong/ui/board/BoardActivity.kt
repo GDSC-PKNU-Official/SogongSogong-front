@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board) {
+class BoardActivity : BaseActivity<ActivityBoardBinding>(R.layout.activity_board) {
 
     private val adapter by lazy { BoardAdapter() }
 
@@ -30,7 +30,6 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         setBinding()
         setAdapter()
         setCoroutine()
-        setHotPost()
     }
 
     private fun setBinding() {
@@ -59,13 +58,11 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
         lifecycleScope.launch {
             collectPost()
         }
+        lifecycleScope.launch {
+            collectHotPost()
+        }
     }
 
-    private fun setHotPost() = with(binding) {
-        hotItem = FakeFactory.getFakePost()
-        hotCommentCount = (hotItem as Post).countComment.toString()
-        hotGoodCount = (hotItem as Post).countLike.toString()
-    }
 
     private suspend fun collectBackButtonClickEvent() {
         navViewModel.backButtonEvent.collect {
@@ -93,5 +90,17 @@ class BoardActivity: BaseActivity<ActivityBoardBinding>(R.layout.activity_board)
 
     private fun showWritePostActivity() {
         startActivity(Intent(this, WritePostActivity::class.java))
+    }
+
+    private suspend fun collectHotPost() {
+        boardViewModel.hotPost.collect { hotPost ->
+            hotPost?.let { setHotPost(hotPost) }
+        }
+    }
+
+    private fun setHotPost(hotPost: Post) = with(binding) {
+        hotItem = hotPost
+        hotCommentCount = (hotItem as Post).countComment.toString()
+        hotGoodCount = (hotItem as Post).countLike.toString()
     }
 }

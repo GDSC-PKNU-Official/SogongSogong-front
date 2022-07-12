@@ -1,7 +1,6 @@
 package com.gdsc.sogongsogong.ui.board
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import com.gdsc.sogongsogong.data.datasource.HotPostDataSource
 import com.gdsc.sogongsogong.di.dispatcher.DispatcherProvider
 import com.gdsc.sogongsogong.data.datasource.PostDataSource
 import com.gdsc.sogongsogong.data.entity.Post
@@ -13,32 +12,34 @@ import javax.inject.Inject
 @HiltViewModel
 class BoardViewModel @Inject constructor(
     dispatcherProvider: DispatcherProvider,
-    private val postDataSource: PostDataSource
+    private val postDataSource: PostDataSource,
+    private val hotPostDataSource: HotPostDataSource
 ) : BaseViewModel(dispatcherProvider) {
 
-    private var _board: MutableLiveData<String> = MutableLiveData() // FIXME: entity로 변경
-    val board: LiveData<String> = _board
-
-    private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
+    private val _posts: MutableStateFlow<List<Post>> = MutableStateFlow(emptyList())
     val posts: StateFlow<List<Post>> = _posts
+
+    private val _hotPost: MutableStateFlow<Post?> = MutableStateFlow(null)
+    val hotPost: StateFlow<Post?> = _hotPost
 
     private val _recyclerViewClickEvent = MutableSharedFlow<Unit>()
     val recyclerViewClickEvent: SharedFlow<Unit> = _recyclerViewClickEvent
 
     init {
         fetchInitAllPosts()
+        fetchHotPost()
     }
 
     private fun fetchInitAllPosts() = onIo {
-        // FIXME: flow 제거할지 결정
-        _posts = flowOf(postDataSource.fetchInitAllPost())
-            .stateIn(this, SharingStarted.Eagerly, emptyList())
+        _posts.emit(postDataSource.fetchInitAllPost())
     }
 
-    fun fetchAllPost(page: Int) {
-        onIo {
-            postDataSource.fetchAllPost(page.toLong())
-        }
+    private fun fetchHotPost() = onIo {
+        _hotPost.emit(hotPostDataSource.fetchHotPost())
+    }
+
+    fun fetchAllPost(page: Int) = onIo {
+        _posts.emit(postDataSource.fetchAllPost(page.toLong()))
     }
 
     fun emitRecyclerViewClickEvent() = onMain {

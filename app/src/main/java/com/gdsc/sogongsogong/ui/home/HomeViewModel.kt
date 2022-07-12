@@ -14,30 +14,28 @@ class HomeViewModel @Inject constructor(
     dispatcherProvider: DispatcherProvider,
     private val postDataSource: PostDataSource,
     private val hotPostDataSource: HotPostDataSource
-): BaseViewModel(dispatcherProvider) {
+) : BaseViewModel(dispatcherProvider) {
 
-    private var _posts: StateFlow<List<Post>> = MutableStateFlow(emptyList())
+    private val _posts: MutableStateFlow<List<Post>> = MutableStateFlow(emptyList())
     val posts: StateFlow<List<Post>> = _posts
 
-    private var _hotPosts: StateFlow<Post?> = MutableStateFlow(null)
+    private val _hotPosts: MutableStateFlow<Post?> = MutableStateFlow(null)
     val hotPosts: StateFlow<Post?> = _hotPosts
 
     init {
-        onIo {
-            _posts = flowOf(postDataSource.fetchInitAllPost())
-                .stateIn(this, SharingStarted.Eagerly, emptyList())
+        fetchInitAllPost()
+        fetchHotPost()
+    }
 
-            fetchHotPost()
-        }
+    private fun fetchInitAllPost() = onIo {
+        _posts.emit(postDataSource.fetchInitAllPost())
     }
 
     fun fetchAllPost(postId: Long) = onIo {
-        _posts = flowOf(postDataSource.fetchAllPost(postId))
-            .stateIn(this, SharingStarted.Eagerly, emptyList())
+        _posts.emit(postDataSource.fetchAllPost(postId))
     }
 
-    private fun fetchHotPost() = onIo {
-        _hotPosts = flowOf(hotPostDataSource.fetchHotPost())
-            .stateIn(this, SharingStarted.Eagerly, null)
+    fun fetchHotPost() = onIo {
+        _hotPosts.emit(hotPostDataSource.fetchHotPost())
     }
 }
